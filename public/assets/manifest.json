@@ -1,0 +1,1472 @@
+[
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/10/cropped-1.png",
+    "local": "/assets/home/cropped-1.png",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/elementor/thumbs/dasdsadsadsaS-1-omrd4ulvx7kv9vbm9tga6a5c3bxmr44ip1062zrgye.jpg",
+    "local": "/assets/home/dasdsadsadsaS-1-omrd4ulvx7kv9vbm9tga6a5c3bxmr44ip1062zrgye.jpg",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/productos-1.png",
+    "local": "/assets/home/productos-1.png",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/CLIENTESWEB-nuevo.png",
+    "local": "/assets/home/CLIENTESWEB-nuevo.png",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/10/a.png",
+    "local": "/assets/home/a.png",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/plugins/essential-addons-for-elementor-lite/assets/admin/images/templately/logo-icon.svg",
+    "local": "/assets/home/logo-icon.svg",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/productos-1-300x25.png",
+    "local": "/assets/home/productos-1-300x25.png",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/productos-1-768x65.png",
+    "local": "/assets/home/productos-1-768x65.png",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/productos-1-1024x87.png",
+    "local": "/assets/home/productos-1-1024x87.png",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/productos-1-600x51.png",
+    "local": "/assets/home/productos-1-600x51.png",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/PizarraTomi2Seccion.png",
+    "local": "/assets/pizarras/PizarraTomi2Seccion.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/DescriboSeccion.png",
+    "local": "/assets/pizarras/DescriboSeccion.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Ebeam-Seccion.png",
+    "local": "/assets/pizarras/Ebeam-Seccion.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Mimio-Seccion.png",
+    "local": "/assets/pizarras/Mimio-Seccion.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/PizarraTomi2Seccion-300x195.png",
+    "local": "/assets/pizarras/PizarraTomi2Seccion-300x195.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/PizarraTomi2Seccion-600x391.png",
+    "local": "/assets/pizarras/PizarraTomi2Seccion-600x391.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/DescriboSeccion-300x195.png",
+    "local": "/assets/pizarras/DescriboSeccion-300x195.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/DescriboSeccion-600x391.png",
+    "local": "/assets/pizarras/DescriboSeccion-600x391.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Ebeam-Seccion-300x195.png",
+    "local": "/assets/pizarras/Ebeam-Seccion-300x195.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Ebeam-Seccion-600x391.png",
+    "local": "/assets/pizarras/Ebeam-Seccion-600x391.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Mimio-Seccion-300x195.png",
+    "local": "/assets/pizarras/Mimio-Seccion-300x195.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Mimio-Seccion-600x391.png",
+    "local": "/assets/pizarras/Mimio-Seccion-600x391.png",
+    "folder": "pizarras"
+  },
+  {
+    "src": "http://www.laclasedigital.com.ar/wp-content/uploads/2016/08/esqueletosymodelos-300x273.jpg",
+    "local": "/assets/laboratorios/esqueletosymodelos-300x273.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "http://www.laclasedigital.com.ar/wp-content/uploads/2016/08/sensor-173x300.jpg",
+    "local": "/assets/laboratorios/sensor-173x300.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "http://www.laclasedigital.com.ar/wp-content/uploads/2016/08/sensor2-173x300.jpg",
+    "local": "/assets/laboratorios/sensor2-173x300.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "http://www.laclasedigital.com.ar/wp-content/uploads/2016/08/no-300x159.jpg",
+    "local": "/assets/laboratorios/no-300x159.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "http://www.laclasedigital.com.ar/wp-content/uploads/2016/08/gy-1-300x55.jpg",
+    "local": "/assets/laboratorios/gy-1-300x55.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/esqueletosymodelos-300x273.jpg",
+    "local": "/assets/laboratorios/esqueletosymodelos-300x273.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/esqueletosymodelos.jpg",
+    "local": "/assets/laboratorios/esqueletosymodelos.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/sensor-173x300.jpg",
+    "local": "/assets/laboratorios/sensor-173x300.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/sensor.jpg",
+    "local": "/assets/laboratorios/sensor.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/sensor2-173x300.jpg",
+    "local": "/assets/laboratorios/sensor2-173x300.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/sensor2.jpg",
+    "local": "/assets/laboratorios/sensor2.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/no-300x159.jpg",
+    "local": "/assets/laboratorios/no-300x159.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/no.jpg",
+    "local": "/assets/laboratorios/no.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/gy-1-300x55.jpg",
+    "local": "/assets/laboratorios/gy-1-300x55.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2016/08/gy-1.jpg",
+    "local": "/assets/laboratorios/gy-1.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/elementor/thumbs/dasdsadsadsaS-1-omrd4ulvx7kv9vbm9tga6a5c3bxmr44ip105n4sphc.jpg",
+    "local": "/assets/home/dasdsadsadsaS-1-omrd4ulvx7kv9vbm9tga6a5c3bxmr44ip105n4sphc.jpg",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/10/12.png",
+    "local": "/assets/home/12.png",
+    "folder": "home"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi.png",
+    "local": "/assets/productos/Tomi.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/PIZARRAi.png",
+    "local": "/assets/productos/PIZARRAi.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Ebeami.png",
+    "local": "/assets/productos/Ebeami.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/describoi.png",
+    "local": "/assets/productos/describoi.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase5.jpg",
+    "local": "/assets/productos/productosClase5.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/ROTAFOLLLIO.jpg",
+    "local": "/assets/productos/ROTAFOLLLIO.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase7.jpg",
+    "local": "/assets/productos/productosClase7.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/logo.jpg",
+    "local": "/assets/productos/logo.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/cuadrado.png",
+    "local": "/assets/productos/cuadrado.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Pantalla-interactiva.png",
+    "local": "/assets/productos/Pantalla-interactiva.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Mesa-Interactiva-THSCREEN.png",
+    "local": "/assets/productos/Mesa-Interactiva-THSCREEN.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Totem-TD-SCREEN-1.png",
+    "local": "/assets/productos/Totem-TD-SCREEN-1.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/LCD-Interactivo-TH-SCREENi.png",
+    "local": "/assets/productos/LCD-Interactivo-TH-SCREENi.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/proyector1.png",
+    "local": "/assets/productos/proyector1.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/proyector2.png",
+    "local": "/assets/productos/proyector2.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ToWmi.png",
+    "local": "/assets/productos/ToWmi.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi-7-Back.png",
+    "local": "/assets/productos/Tomi-7-Back.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi-7-Back-side.png",
+    "local": "/assets/productos/Tomi-7-Back-side.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi-7-Maestro.png",
+    "local": "/assets/productos/Tomi-7-Maestro.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase13.jpg",
+    "local": "/assets/productos/productosClase13.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase2.jpg",
+    "local": "/assets/productos/productosClase2.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase3.jpg",
+    "local": "/assets/productos/productosClase3.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase4.jpg",
+    "local": "/assets/productos/productosClase4.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Logo-Actiontec.png",
+    "local": "/assets/productos/Logo-Actiontec.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/HDMI-Interactivo-BEAM.png",
+    "local": "/assets/productos/HDMI-Interactivo-BEAM.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/HDMI-INTERACTIVO.png",
+    "local": "/assets/productos/HDMI-INTERACTIVO.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ScreamBeam.png",
+    "local": "/assets/productos/ScreamBeam.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Plataforma-TOMI.png",
+    "local": "/assets/productos/Plataforma-TOMI.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Smart-Learning-Suite.png",
+    "local": "/assets/productos/Smart-Learning-Suite.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Earling.png",
+    "local": "/assets/productos/Earling.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Gestion-de-Aulai.png",
+    "local": "/assets/productos/Gestion-de-Aulai.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Labdisc.png",
+    "local": "/assets/productos/Labdisc.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2019/05/Rasti-cuadrado-300x292.jpg",
+    "local": "/assets/productos/Rasti-cuadrado-300x292.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/Robot.jpg",
+    "local": "/assets/productos/Robot.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Chicos-y-Arduino.png",
+    "local": "/assets/productos/Chicos-y-Arduino.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/sima-corbata-200x199-1.png",
+    "local": "/assets/productos/sima-corbata-200x199-1.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/sima4-200x199-1.png",
+    "local": "/assets/productos/sima4-200x199-1.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/sima-1.png",
+    "local": "/assets/productos/sima-1.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/laclase-covid19_Mesa-de-trabajo-1-copia.png",
+    "local": "/assets/productos/laclase-covid19_Mesa-de-trabajo-1-copia.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Torso-Bixesuado-XC-208i.png",
+    "local": "/assets/productos/Torso-Bixesuado-XC-208i.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Esqueleto-a-Escala.png",
+    "local": "/assets/productos/Esqueleto-a-Escala.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Modelo-de-Esqueleto.png",
+    "local": "/assets/productos/Modelo-de-Esqueleto.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Practimani.png",
+    "local": "/assets/productos/Practimani.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Proyector-Viewsonic-PA503S.png",
+    "local": "/assets/productos/Proyector-Viewsonic-PA503S.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/Proyector-Viewsonic-Ps501x.jpg",
+    "local": "/assets/productos/Proyector-Viewsonic-Ps501x.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/MimioView.png",
+    "local": "/assets/productos/MimioView.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/camaradocumento.jpg",
+    "local": "/assets/productos/camaradocumento.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/Camara.jpg",
+    "local": "/assets/productos/Camara.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/logo_logitech_despues.jpg",
+    "local": "/assets/productos/logo_logitech_despues.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ptz-pro-2-camera.png",
+    "local": "/assets/productos/ptz-pro-2-camera.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/confe2.png",
+    "local": "/assets/productos/confe2.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/conferencecam-connect.png",
+    "local": "/assets/productos/conferencecam-connect.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase9.jpg",
+    "local": "/assets/productos/productosClase9.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Parlante-con-Bluetooth.png",
+    "local": "/assets/productos/Parlante-con-Bluetooth.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Parlante-GBR.png",
+    "local": "/assets/productos/Parlante-GBR.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Microfono-Corbatero.png",
+    "local": "/assets/productos/Microfono-Corbatero.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase10.jpg",
+    "local": "/assets/productos/productosClase10.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/PC-BANGHOi.png",
+    "local": "/assets/productos/PC-BANGHOi.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Notebook-Reciclada-Bangho.png",
+    "local": "/assets/productos/Notebook-Reciclada-Bangho.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tabletsi.png",
+    "local": "/assets/productos/Tabletsi.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/notebook-reciclada-1.png",
+    "local": "/assets/productos/notebook-reciclada-1.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Impresora.png",
+    "local": "/assets/productos/Impresora.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Carro-Portanotebooks.png",
+    "local": "/assets/productos/Carro-Portanotebooks.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Pantallas-de-Proyeccion.png",
+    "local": "/assets/productos/Pantallas-de-Proyeccion.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/mobiliarioi.png",
+    "local": "/assets/productos/mobiliarioi.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/lacase_Mesa-de-trabajo-1_Mesa-de-trabajo-1_Mesa-de-trabajo-1.png",
+    "local": "/assets/productos/lacase_Mesa-de-trabajo-1_Mesa-de-trabajo-1_Mesa-de-trabajo-1.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/PIZARRAi-150x150.png",
+    "local": "/assets/productos/PIZARRAi-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/PIZARRAi-100x100.png",
+    "local": "/assets/productos/PIZARRAi-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Ebeami-150x150.png",
+    "local": "/assets/productos/Ebeami-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Ebeami-100x100.png",
+    "local": "/assets/productos/Ebeami-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/describoi-150x150.png",
+    "local": "/assets/productos/describoi-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/describoi-100x100.png",
+    "local": "/assets/productos/describoi-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase5-300x257.jpg",
+    "local": "/assets/productos/productosClase5-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/ROTAFOLLLIO-300x257.jpg",
+    "local": "/assets/productos/ROTAFOLLLIO-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase7-300x257.jpg",
+    "local": "/assets/productos/productosClase7-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/logo-300x257.jpg",
+    "local": "/assets/productos/logo-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/cuadrado-300x257.png",
+    "local": "/assets/productos/cuadrado-300x257.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Pantalla-interactiva-150x150.png",
+    "local": "/assets/productos/Pantalla-interactiva-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Pantalla-interactiva-100x100.png",
+    "local": "/assets/productos/Pantalla-interactiva-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Mesa-Interactiva-THSCREEN-150x150.png",
+    "local": "/assets/productos/Mesa-Interactiva-THSCREEN-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Mesa-Interactiva-THSCREEN-100x100.png",
+    "local": "/assets/productos/Mesa-Interactiva-THSCREEN-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Totem-TD-SCREEN-1-150x150.png",
+    "local": "/assets/productos/Totem-TD-SCREEN-1-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Totem-TD-SCREEN-1-100x100.png",
+    "local": "/assets/productos/Totem-TD-SCREEN-1-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/LCD-Interactivo-TH-SCREENi-150x150.png",
+    "local": "/assets/productos/LCD-Interactivo-TH-SCREENi-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/LCD-Interactivo-TH-SCREENi-100x100.png",
+    "local": "/assets/productos/LCD-Interactivo-TH-SCREENi-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/proyector1-150x150.png",
+    "local": "/assets/productos/proyector1-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/proyector1-100x100.png",
+    "local": "/assets/productos/proyector1-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/proyector2-150x150.png",
+    "local": "/assets/productos/proyector2-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/proyector2-100x100.png",
+    "local": "/assets/productos/proyector2-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ToWmi-150x150.png",
+    "local": "/assets/productos/ToWmi-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ToWmi-100x100.png",
+    "local": "/assets/productos/ToWmi-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi-7-Back-150x150.png",
+    "local": "/assets/productos/Tomi-7-Back-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi-7-Back-100x100.png",
+    "local": "/assets/productos/Tomi-7-Back-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi-7-Back-side-150x150.png",
+    "local": "/assets/productos/Tomi-7-Back-side-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi-7-Back-side-100x100.png",
+    "local": "/assets/productos/Tomi-7-Back-side-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi-7-Maestro-150x150.png",
+    "local": "/assets/productos/Tomi-7-Maestro-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tomi-7-Maestro-100x100.png",
+    "local": "/assets/productos/Tomi-7-Maestro-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase13-300x257.jpg",
+    "local": "/assets/productos/productosClase13-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase2-300x257.jpg",
+    "local": "/assets/productos/productosClase2-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase3-300x257.jpg",
+    "local": "/assets/productos/productosClase3-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase4-300x257.jpg",
+    "local": "/assets/productos/productosClase4-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Logo-Actiontec-150x150.png",
+    "local": "/assets/productos/Logo-Actiontec-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Logo-Actiontec-100x100.png",
+    "local": "/assets/productos/Logo-Actiontec-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/HDMI-Interactivo-BEAM-150x150.png",
+    "local": "/assets/productos/HDMI-Interactivo-BEAM-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/HDMI-Interactivo-BEAM-100x100.png",
+    "local": "/assets/productos/HDMI-Interactivo-BEAM-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/HDMI-INTERACTIVO-150x150.png",
+    "local": "/assets/productos/HDMI-INTERACTIVO-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/HDMI-INTERACTIVO-100x100.png",
+    "local": "/assets/productos/HDMI-INTERACTIVO-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ScreamBeam-150x150.png",
+    "local": "/assets/productos/ScreamBeam-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ScreamBeam-100x100.png",
+    "local": "/assets/productos/ScreamBeam-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Plataforma-TOMI-150x150.png",
+    "local": "/assets/productos/Plataforma-TOMI-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Plataforma-TOMI-100x100.png",
+    "local": "/assets/productos/Plataforma-TOMI-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Smart-Learning-Suite-150x150.png",
+    "local": "/assets/productos/Smart-Learning-Suite-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Smart-Learning-Suite-100x100.png",
+    "local": "/assets/productos/Smart-Learning-Suite-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Earling-150x150.png",
+    "local": "/assets/productos/Earling-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Earling-100x100.png",
+    "local": "/assets/productos/Earling-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Gestion-de-Aulai-150x150.png",
+    "local": "/assets/productos/Gestion-de-Aulai-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Gestion-de-Aulai-100x100.png",
+    "local": "/assets/productos/Gestion-de-Aulai-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Labdisc-150x150.png",
+    "local": "/assets/productos/Labdisc-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Labdisc-100x100.png",
+    "local": "/assets/productos/Labdisc-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2019/05/Rasti-cuadrado.jpg",
+    "local": "/assets/productos/Rasti-cuadrado.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Chicos-y-Arduino-150x150.png",
+    "local": "/assets/productos/Chicos-y-Arduino-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Chicos-y-Arduino-100x100.png",
+    "local": "/assets/productos/Chicos-y-Arduino-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/sima-corbata-200x199-1-150x150.png",
+    "local": "/assets/productos/sima-corbata-200x199-1-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/sima4-200x199-1-150x150.png",
+    "local": "/assets/productos/sima4-200x199-1-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/sima-1-150x150.png",
+    "local": "/assets/productos/sima-1-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/laclase-covid19_Mesa-de-trabajo-1-copia-300x83.png",
+    "local": "/assets/productos/laclase-covid19_Mesa-de-trabajo-1-copia-300x83.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/laclase-covid19_Mesa-de-trabajo-1-copia-1024x282.png",
+    "local": "/assets/productos/laclase-covid19_Mesa-de-trabajo-1-copia-1024x282.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/laclase-covid19_Mesa-de-trabajo-1-copia-768x212.png",
+    "local": "/assets/productos/laclase-covid19_Mesa-de-trabajo-1-copia-768x212.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Torso-Bixesuado-XC-208i-150x150.png",
+    "local": "/assets/productos/Torso-Bixesuado-XC-208i-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Torso-Bixesuado-XC-208i-100x100.png",
+    "local": "/assets/productos/Torso-Bixesuado-XC-208i-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Esqueleto-a-Escala-150x150.png",
+    "local": "/assets/productos/Esqueleto-a-Escala-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Esqueleto-a-Escala-100x100.png",
+    "local": "/assets/productos/Esqueleto-a-Escala-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Modelo-de-Esqueleto-150x150.png",
+    "local": "/assets/productos/Modelo-de-Esqueleto-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Modelo-de-Esqueleto-100x100.png",
+    "local": "/assets/productos/Modelo-de-Esqueleto-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Practimani-150x150.png",
+    "local": "/assets/productos/Practimani-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Practimani-100x100.png",
+    "local": "/assets/productos/Practimani-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Proyector-Viewsonic-PA503S-150x150.png",
+    "local": "/assets/productos/Proyector-Viewsonic-PA503S-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Proyector-Viewsonic-PA503S-100x100.png",
+    "local": "/assets/productos/Proyector-Viewsonic-PA503S-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/Proyector-Viewsonic-Ps501x-150x150.jpg",
+    "local": "/assets/productos/Proyector-Viewsonic-Ps501x-150x150.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/MimioView-150x150.png",
+    "local": "/assets/productos/MimioView-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/camaradocumento-150x150.jpg",
+    "local": "/assets/productos/camaradocumento-150x150.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/Camara-300x290.jpg",
+    "local": "/assets/productos/Camara-300x290.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/logo_logitech_despues-150x150.jpg",
+    "local": "/assets/productos/logo_logitech_despues-150x150.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/logo_logitech_despues-300x300.jpg",
+    "local": "/assets/productos/logo_logitech_despues-300x300.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/logo_logitech_despues-100x100.jpg",
+    "local": "/assets/productos/logo_logitech_despues-100x100.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ptz-pro-2-camera-150x150.png",
+    "local": "/assets/productos/ptz-pro-2-camera-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ptz-pro-2-camera-300x300.png",
+    "local": "/assets/productos/ptz-pro-2-camera-300x300.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/ptz-pro-2-camera-100x100.png",
+    "local": "/assets/productos/ptz-pro-2-camera-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/confe2-150x150.png",
+    "local": "/assets/productos/confe2-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/confe2-300x300.png",
+    "local": "/assets/productos/confe2-300x300.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/confe2-100x100.png",
+    "local": "/assets/productos/confe2-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/conferencecam-connect-150x150.png",
+    "local": "/assets/productos/conferencecam-connect-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/conferencecam-connect-300x300.png",
+    "local": "/assets/productos/conferencecam-connect-300x300.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/conferencecam-connect-100x100.png",
+    "local": "/assets/productos/conferencecam-connect-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase9-300x257.jpg",
+    "local": "/assets/productos/productosClase9-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Parlante-con-Bluetooth-150x150.png",
+    "local": "/assets/productos/Parlante-con-Bluetooth-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Parlante-con-Bluetooth-100x100.png",
+    "local": "/assets/productos/Parlante-con-Bluetooth-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Parlante-GBR-150x150.png",
+    "local": "/assets/productos/Parlante-GBR-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Parlante-GBR-100x100.png",
+    "local": "/assets/productos/Parlante-GBR-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Microfono-Corbatero-150x150.png",
+    "local": "/assets/productos/Microfono-Corbatero-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Microfono-Corbatero-100x100.png",
+    "local": "/assets/productos/Microfono-Corbatero-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/10/productosClase10-300x257.jpg",
+    "local": "/assets/productos/productosClase10-300x257.jpg",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/PC-BANGHOi-150x150.png",
+    "local": "/assets/productos/PC-BANGHOi-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/PC-BANGHOi-100x100.png",
+    "local": "/assets/productos/PC-BANGHOi-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Notebook-Reciclada-Bangho-150x150.png",
+    "local": "/assets/productos/Notebook-Reciclada-Bangho-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Notebook-Reciclada-Bangho-100x100.png",
+    "local": "/assets/productos/Notebook-Reciclada-Bangho-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tabletsi-150x150.png",
+    "local": "/assets/productos/Tabletsi-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Tabletsi-100x100.png",
+    "local": "/assets/productos/Tabletsi-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/notebook-reciclada-1-150x150.png",
+    "local": "/assets/productos/notebook-reciclada-1-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/notebook-reciclada-1-100x100.png",
+    "local": "/assets/productos/notebook-reciclada-1-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Impresora-150x150.png",
+    "local": "/assets/productos/Impresora-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Impresora-100x100.png",
+    "local": "/assets/productos/Impresora-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Carro-Portanotebooks-150x150.png",
+    "local": "/assets/productos/Carro-Portanotebooks-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Carro-Portanotebooks-100x100.png",
+    "local": "/assets/productos/Carro-Portanotebooks-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Pantallas-de-Proyeccion-150x150.png",
+    "local": "/assets/productos/Pantallas-de-Proyeccion-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/Pantallas-de-Proyeccion-100x100.png",
+    "local": "/assets/productos/Pantallas-de-Proyeccion-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/mobiliarioi-150x150.png",
+    "local": "/assets/productos/mobiliarioi-150x150.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2018/11/mobiliarioi-100x100.png",
+    "local": "/assets/productos/mobiliarioi-100x100.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/lacase_Mesa-de-trabajo-1_Mesa-de-trabajo-1_Mesa-de-trabajo-1-300x61.png",
+    "local": "/assets/productos/lacase_Mesa-de-trabajo-1_Mesa-de-trabajo-1_Mesa-de-trabajo-1-300x61.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/lacase_Mesa-de-trabajo-1_Mesa-de-trabajo-1_Mesa-de-trabajo-1-1024x209.png",
+    "local": "/assets/productos/lacase_Mesa-de-trabajo-1_Mesa-de-trabajo-1_Mesa-de-trabajo-1-1024x209.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2020/12/lacase_Mesa-de-trabajo-1_Mesa-de-trabajo-1_Mesa-de-trabajo-1-768x157.png",
+    "local": "/assets/productos/lacase_Mesa-de-trabajo-1_Mesa-de-trabajo-1_Mesa-de-trabajo-1-768x157.png",
+    "folder": "productos"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/epic-pen-pro220-220.png",
+    "local": "/assets/descargas/epic-pen-pro220-220.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/1305af8b-42c0-4b0d-86f3-5712a4857ca9.png",
+    "local": "/assets/descargas/1305af8b-42c0-4b0d-86f3-5712a4857ca9.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/SMART-Learning-Suit-Software-02.jpg",
+    "local": "/assets/descargas/SMART-Learning-Suit-Software-02.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/Canva_Logo.png",
+    "local": "/assets/descargas/Canva_Logo.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/sound-200x200-1.png",
+    "local": "/assets/descargas/sound-200x200-1.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/desktop_7b3c95e5-04d1-41af-b646-4386282b2129-1.png",
+    "local": "/assets/descargas/desktop_7b3c95e5-04d1-41af-b646-4386282b2129-1.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/descarga.png",
+    "local": "/assets/descargas/descarga.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/wilber-big.png",
+    "local": "/assets/descargas/wilber-big.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/260px-Inkscape-logo.png",
+    "local": "/assets/descargas/260px-Inkscape-logo.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/descarga-1-1.jpg",
+    "local": "/assets/descargas/descarga-1-1.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/Dth2WCu-1.png",
+    "local": "/assets/descargas/Dth2WCu-1.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/voki_logo-1.png",
+    "local": "/assets/descargas/voki_logo-1.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/fb-incredibox-1.jpg",
+    "local": "/assets/descargas/fb-incredibox-1.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/Plickers-logo-1.png",
+    "local": "/assets/descargas/Plickers-logo-1.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/descarga-2.jpg",
+    "local": "/assets/descargas/descarga-2.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/phet-social-media-logo-1.png",
+    "local": "/assets/descargas/phet-social-media-logo-1.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/2068e235-e87a-4dbe-9708-b14be38b94a7_900_900-1.png",
+    "local": "/assets/descargas/2068e235-e87a-4dbe-9708-b14be38b94a7_900_900-1.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/thinglinkforteachers-1.png",
+    "local": "/assets/descargas/thinglinkforteachers-1.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/4YIb6YSU_400x400.jpg",
+    "local": "/assets/descargas/4YIb6YSU_400x400.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/1200px-Prezi_logo_transparent_2012.svg.png",
+    "local": "/assets/descargas/1200px-Prezi_logo_transparent_2012.svg.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/unnamed.png",
+    "local": "/assets/descargas/unnamed.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/descarga-1.png",
+    "local": "/assets/descargas/descarga-1.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/5908be56f2643179ececac661a9482f6.png",
+    "local": "/assets/descargas/5908be56f2643179ececac661a9482f6.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/descarga-2.png",
+    "local": "/assets/descargas/descarga-2.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/S4A.png",
+    "local": "/assets/descargas/S4A.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/refer-to-manual.png",
+    "local": "/assets/descargas/refer-to-manual.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/mblock.png",
+    "local": "/assets/descargas/mblock.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/images-1.jpg",
+    "local": "/assets/descargas/images-1.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/descarga-3.png",
+    "local": "/assets/descargas/descarga-3.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2022/04/pizarron.jpg",
+    "local": "/assets/descargas/pizarron.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/epic-pen-pro220-220-150x150.png",
+    "local": "/assets/descargas/epic-pen-pro220-220-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/1305af8b-42c0-4b0d-86f3-5712a4857ca9-150x150.png",
+    "local": "/assets/descargas/1305af8b-42c0-4b0d-86f3-5712a4857ca9-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/SMART-Learning-Suit-Software-02-150x150.jpg",
+    "local": "/assets/descargas/SMART-Learning-Suit-Software-02-150x150.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/Canva_Logo-150x150.png",
+    "local": "/assets/descargas/Canva_Logo-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/sound-200x200-1-150x150.png",
+    "local": "/assets/descargas/sound-200x200-1-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/desktop_7b3c95e5-04d1-41af-b646-4386282b2129-1-150x150.png",
+    "local": "/assets/descargas/desktop_7b3c95e5-04d1-41af-b646-4386282b2129-1-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/descarga-150x150.png",
+    "local": "/assets/descargas/descarga-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/wilber-big-150x150.png",
+    "local": "/assets/descargas/wilber-big-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/07/260px-Inkscape-logo-150x150.png",
+    "local": "/assets/descargas/260px-Inkscape-logo-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/descarga-1-1-150x150.jpg",
+    "local": "/assets/descargas/descarga-1-1-150x150.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/Dth2WCu-1-150x150.png",
+    "local": "/assets/descargas/Dth2WCu-1-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/fb-incredibox-1-150x150.jpg",
+    "local": "/assets/descargas/fb-incredibox-1-150x150.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/Plickers-logo-1-150x150.png",
+    "local": "/assets/descargas/Plickers-logo-1-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/descarga-2-150x150.jpg",
+    "local": "/assets/descargas/descarga-2-150x150.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/phet-social-media-logo-1-150x150.png",
+    "local": "/assets/descargas/phet-social-media-logo-1-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/2068e235-e87a-4dbe-9708-b14be38b94a7_900_900-1-150x150.png",
+    "local": "/assets/descargas/2068e235-e87a-4dbe-9708-b14be38b94a7_900_900-1-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/08/thinglinkforteachers-1-150x150.png",
+    "local": "/assets/descargas/thinglinkforteachers-1-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/4YIb6YSU_400x400-150x150.jpg",
+    "local": "/assets/descargas/4YIb6YSU_400x400-150x150.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/1200px-Prezi_logo_transparent_2012.svg-150x150.png",
+    "local": "/assets/descargas/1200px-Prezi_logo_transparent_2012.svg-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/unnamed-150x150.png",
+    "local": "/assets/descargas/unnamed-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/descarga-1-150x150.png",
+    "local": "/assets/descargas/descarga-1-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/5908be56f2643179ececac661a9482f6-150x150.png",
+    "local": "/assets/descargas/5908be56f2643179ececac661a9482f6-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/descarga-2-150x150.png",
+    "local": "/assets/descargas/descarga-2-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/refer-to-manual-150x150.png",
+    "local": "/assets/descargas/refer-to-manual-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/09/mblock-150x150.png",
+    "local": "/assets/descargas/mblock-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/images-1-150x150.jpg",
+    "local": "/assets/descargas/images-1-150x150.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2021/10/descarga-3-150x150.png",
+    "local": "/assets/descargas/descarga-3-150x150.png",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2022/04/pizarron-240x300.jpg",
+    "local": "/assets/descargas/pizarron-240x300.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2022/04/pizarron-768x960.jpg",
+    "local": "/assets/descargas/pizarron-768x960.jpg",
+    "folder": "descargas"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/juegos/assets/img/cuantoSabes_cuerpo.jpeg",
+    "local": "/assets/juegos/cuantoSabes_cuerpo.jpeg",
+    "folder": "juegos"
+  },
+  {
+    "src": "http://www.laclasedigital.com.ar/wp-content/uploads/2014/01/cienciasmedicas-300x192.jpg",
+    "local": "/assets/laboratorios/cienciasmedicas-300x192.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "http://www.laclasedigital.com.ar/wp-content/uploads/2014/01/quimica-300x192.jpg",
+    "local": "/assets/laboratorios/quimica-300x192.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "http://www.laclasedigital.com.ar/wp-content/uploads/2014/01/fisica-300x192.jpg",
+    "local": "/assets/laboratorios/fisica-300x192.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "http://www.laclasedigital.com.ar/wp-content/uploads/2014/01/robotica-300x192.jpg",
+    "local": "/assets/laboratorios/robotica-300x192.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2014/01/cienciasmedicas-150x96.jpg",
+    "local": "/assets/laboratorios/cienciasmedicas-150x96.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2014/01/cienciasmedicas.jpg",
+    "local": "/assets/laboratorios/cienciasmedicas.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2014/01/quimica-150x96.jpg",
+    "local": "/assets/laboratorios/quimica-150x96.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2014/01/quimica.jpg",
+    "local": "/assets/laboratorios/quimica.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2014/01/fisica-150x96.jpg",
+    "local": "/assets/laboratorios/fisica-150x96.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2014/01/fisica.jpg",
+    "local": "/assets/laboratorios/fisica.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2014/01/robotica-150x96.jpg",
+    "local": "/assets/laboratorios/robotica-150x96.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/wp-content/uploads/2014/01/robotica.jpg",
+    "local": "/assets/laboratorios/robotica.jpg",
+    "folder": "laboratorios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/listadeprecios/images/logo.png",
+    "local": "/assets/precios/logo.png",
+    "folder": "precios"
+  },
+  {
+    "src": "https://www.laclasedigital.com.ar/listadeprecios/images/productos.png",
+    "local": "/assets/precios/productos.png",
+    "folder": "precios"
+  }
+]
