@@ -239,11 +239,11 @@ export default function ProductsSection() {
   return (
     <section id="productos" className="section-pad bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <SectionHeading
+        {/* <SectionHeading
           badge="Catálogo Completo"
           title="Todo lo que necesita tu institución"
           subtitle="Desde pizarras portátiles hasta simuladores de RCP. Equipamos aulas, laboratorios y espacios de capacitación docente."
-        />
+        /> */}
 
         {/* Filter Pills */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-10">

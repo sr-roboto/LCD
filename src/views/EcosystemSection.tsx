@@ -20,7 +20,7 @@ export default function EcosystemSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <span className="badge badge-green mb-4">Ecosistema Digital</span>
+          {/* <span className="badge badge-green mb-4">Ecosistema Digital</span> */}
           <h2 className="text-3xl md:text-4xl font-black text-[#0B2447] mb-4 mt-4">
             Plataformas conectadas
           </h2>

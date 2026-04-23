@@ -18,7 +18,7 @@ export default function DifferentiatorsSection() {
           transition={{ duration: 0.5 }}
           ref={ref}
         >
-          <span className="badge badge-blue mb-4">Por qué elegirnos</span>
+          {/* <span className="badge badge-blue mb-4">Por qué elegirnos</span> */}
           <h2 className="text-3xl md:text-4xl font-black text-[#0B2447] mb-4 mt-4">
             No somos un proveedor más.
           </h2>
