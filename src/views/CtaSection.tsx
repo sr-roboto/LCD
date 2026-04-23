@@ -22,9 +22,9 @@ export default function CtaSection() {
       </div>
 
       <div className="relative max-w-3xl mx-auto px-4 text-center">
-        <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 text-white text-xs font-black uppercase tracking-wider mb-6">
+        {/* <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 text-white text-xs font-black uppercase tracking-wider mb-6">
           ✨ Hablemos
-        </span>
+        </span> */}
         <h2 className="text-3xl md:text-5xl font-black text-white mb-5 leading-tight">
           ¿Listo para transformar tu institución?
         </h2>
