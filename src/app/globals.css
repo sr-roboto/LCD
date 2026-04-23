@@ -170,3 +170,26 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   transform: translateY(-2px);
 }
+
+/* Bento product card */
+.product-bento-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 12px rgba(11,36,71,0.06);
+}
+.product-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(11,36,71,0.18);
+}
+.product-bento-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1.5px solid var(--card-accent, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.product-bento-card:hover::after {
+  opacity: 0.5;
+}

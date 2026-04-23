@@ -4,9 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import {
-  ChevronRight, Monitor, Cpu, Heart, BookOpen, Star, ArrowRight,
-  ShieldCheck, Users, Wifi, Download, Video, DollarSign, Wrench,
-  Microscope, PlayCircle, MessageCircle
+  Monitor, Cpu, BookOpen, Star, ArrowRight,
+  ShieldCheck, Users, Download, Video, DollarSign, Wrench,
+  MessageCircle, Zap, FlaskConical, HeartPulse, Armchair,
+  GraduationCap, ChevronRight
 } from "lucide-react";
 
 /* ===========================
@@ -26,92 +27,112 @@ const categories = [
   {
     id: "pizarras-portatiles",
     title: "Pizarras Digitales Portátiles",
-    desc: "Mimio, eBeam — Convierte cualquier superficie en interactiva.",
+    brand: "Mimio · eBeam",
+    desc: "Convierte cualquier superficie plana en una pizarra interactiva. Sin instalación fija, sin obra.",
     href: "/productos/pizarras-digitales-portatiles",
     img: "/assets/pizarras/PizarraTomi2Seccion.png",
-    color: "from-blue-600 to-blue-800",
-    products: ["Mimio Teach", "Mimio Pad", "eBeam Classic", "Pizarra TOMi"],
-  },
-  {
-    id: "pizarron-digital",
-    title: "Pizarrón Digital THScreen",
-    desc: "Superficies interactivas de alta durabilidad sin proyector.",
-    href: "/productos/pizarron-digital",
-    img: "/assets/productos/LCD-Interactivo-TH-SCREENi.png",
-    color: "from-violet-600 to-violet-800",
-    products: ["THScreen 60\"", "Mesa Interactiva", "Tótem THScreen"],
+    accent: "#3B82F6",
+    Icon: Monitor,
+    size: "wide",
   },
   {
     id: "pantallas",
     title: "Pantallas Interactivas",
-    desc: "ViewSonic, Tótems y mesas táctiles de última generación.",
+    brand: "ViewSonic · Newline",
+    desc: "Pantallas 4K táctiles de alta durabilidad con software educativo integrado.",
     href: "/productos/pantallas-interactivas",
     img: "/assets/productos/Pantalla-interactiva.png",
-    color: "from-sky-600 to-sky-800",
-    products: ["ViewBoard 65\" 4K", "Totem Táctil 55\"", "Mesa iMO"],
+    accent: "#8B5CF6",
+    Icon: Monitor,
+    size: "tall",
+  },
+  {
+    id: "tomi",
+    title: "TOMI 7 — PC Docente",
+    brand: "TOMI Digital",
+    desc: "La computadora personal del docente. Todo en uno, sin cables, con gamificación integrada.",
+    href: "/productos/tomi-7",
+    img: "/assets/productos/Tomi-7-Maestro.png",
+    accent: "#00C9A7",
+    Icon: Cpu,
+    size: "normal",
   },
   {
     id: "proyectores",
     title: "Proyectores Interactivos",
-    desc: "BenQ, Epson, ViewSonic — Ultra-corto alcance y alta resolución.",
+    brand: "BenQ · Epson · ViewSonic",
+    desc: "Ultra-corto alcance, sin sombras y alta resolución para el aula moderna.",
     href: "/productos/proyectores-interactivos",
     img: "/assets/productos/proyector1.png",
-    color: "from-teal-600 to-teal-800",
-    products: ["BenQ MW864ST", "Epson Brightlink", "ViewSonic PA505W"],
+    accent: "#F59E0B",
+    Icon: Zap,
+    size: "normal",
   },
   {
-    id: "tomi",
-    title: "TOMI 7 – PC Docente",
-    desc: "La computadora personal del docente. Todo en uno, sin cables.",
-    href: "/productos/tomi-7",
-    img: "/assets/productos/Tomi-7-Maestro.png",
-    color: "from-indigo-600 to-indigo-800",
-    products: ["TOMI 7 Base", "TOMI 7 Plus", "TOMi Digital Platform"],
+    id: "pizarron-digital",
+    title: "Pizarrón Digital THScreen",
+    brand: "THScreen",
+    desc: "Superficie interactiva de alta durabilidad, sin proyector externo.",
+    href: "/productos/pizarron-digital",
+    img: "/assets/productos/LCD-Interactivo-TH-SCREENi.png",
+    accent: "#EC4899",
+    Icon: Monitor,
+    size: "normal",
   },
   {
     id: "hdmi",
     title: "HDMI Inalámbrico",
-    desc: "ActionTec, ScreenBeam — Conectá sin cables a cualquier pantalla.",
+    brand: "ActionTec · ScreenBeam",
+    desc: "Conectá sin cables a cualquier pantalla o proyector del aula.",
     href: "/productos/hdmi-inalambrico",
     img: "/assets/productos/HDMI-Interactivo-BEAM.png",
-    color: "from-cyan-600 to-cyan-800",
-    products: ["ScreenBeam 750", "ActionTec MyWirelessTV5", "Yamaha CS-500"],
+    accent: "#06B6D4",
+    Icon: Zap,
+    size: "normal",
   },
   {
     id: "robotica",
     title: "Robótica y Programación",
-    desc: "Arduino, Rasti, SIMA, Gigo — Aprender haciendo.",
+    brand: "Arduino · Rasti · SIMA · Gigo",
+    desc: "Kits de robótica y programación para aprender haciendo desde sala de 4.",
     href: "/productos/robotica",
     img: "/assets/productos/Chicos-y-Arduino.png",
-    color: "from-orange-600 to-orange-800",
-    products: ["Kit Arduino Starter", "Rasti Ingeniería", "SIMA Robot Social"],
+    accent: "#F97316",
+    Icon: GraduationCap,
+    size: "wide",
   },
   {
     id: "laboratorios",
     title: "Laboratorios Digitales",
-    desc: "Labdisc, Lab Idiomas — Ciencias y lenguas en el aula del siglo XXI.",
+    brand: "Labdisc · Sanako",
+    desc: "Ciencias y lenguas en el aula del siglo XXI. Sensores portátiles con software integrado.",
     href: "/productos/laboratorios-digitales",
     img: "/assets/productos/Labdisc.png",
-    color: "from-lime-600 to-lime-800",
-    products: ["Labdisc Enviro", "Labdisc Gensci", "Lab Idioma Sanako"],
+    accent: "#22C55E",
+    Icon: FlaskConical,
+    size: "normal",
   },
   {
     id: "salud",
-    title: "Ciencias de la Salud / RCP",
-    desc: "Practi-Man, torsos NT3 — Simuladores de primer nivel.",
+    title: "Ciencias de la Salud",
+    brand: "Practi-Man · Nasco",
+    desc: "Simuladores RCP con feedback electrónico. Certificados AHA/ILCOR.",
     href: "/productos/ciencias-de-la-salud",
     img: "/assets/productos/Practimani.png",
-    color: "from-rose-600 to-rose-800",
-    products: ["Practi-Man Adult", "Torso NT3", "DEA Trainer"],
+    accent: "#EF4444",
+    Icon: HeartPulse,
+    size: "normal",
   },
   {
     id: "mobiliario",
     title: "Mobiliario Educativo",
-    desc: "Carros porta-tablets, bases con carga y ergonomía flexible.",
+    brand: "Carros · Bases · Pupitres",
+    desc: "Soluciones ergonómicas para integrar la tecnología al espacio físico del aula.",
     href: "/productos/mobiliario",
     img: "/assets/productos/Carro-Portanotebooks.png",
-    color: "from-stone-600 to-stone-800",
-    products: ["Carro 30 tablets", "Pupitre Smart", "Base proyector móvil"],
+    accent: "#6366F1",
+    Icon: Armchair,
+    size: "normal",
   },
 ];
 
@@ -183,7 +204,7 @@ export default function Home() {
           <div className="relative max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="badge badge-accent mb-6">
-                🎓 Ecosistema Educativo Integral
+                <GraduationCap className="w-3.5 h-3.5" /> Ecosistema Educativo Integral
               </div>
               <h1 className="text-5xl lg:text-6xl font-black leading-tight mb-6 tracking-tight">
                 El aula del futuro{" "}
@@ -297,53 +318,64 @@ export default function Home() {
         </section>
 
         {/* ─── PRODUCT CATEGORIES ─── */}
-        <section id="productos" className="section-pad bg-white">
+        <section id="productos" className="section-pad bg-[#F4F7FC]">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-14">
+            <div className="mb-14">
               <span className="badge badge-accent mb-4">Catálogo Completo</span>
               <h2 className="text-3xl md:text-4xl font-black text-[#0B2447] mb-4">
-                Todo lo que necesita tu institución
+                Todo lo que necesita<br className="hidden md:block" /> tu institución
               </h2>
-              <p className="text-gray-500 max-w-2xl mx-auto">
-                Desde pizarras portátiles hasta simuladores de RCP. Equipamos aulas, laboratorios y espacios de capacitación docente.
+              <p className="text-gray-500 max-w-xl">
+                Desde pizarras portátiles hasta simuladores de RCP. Hardware oficial + soporte pedagógico.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-              {categories.map((cat) => (
-                <Link
-                  key={cat.id}
-                  href={cat.href}
-                  className="group rounded-2xl border border-gray-100 overflow-hidden hover-lift bg-white"
-                >
-                  {/* Color bar */}
-                  <div className={`h-1.5 bg-gradient-to-r ${cat.color}`} />
-                  {/* Product image */}
-                  <div className="aspect-[4/3] bg-gray-50 overflow-hidden flex items-center justify-center p-4">
-                    <img
-                      src={cat.img}
-                      alt={cat.title}
-                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  {/* Card text */}
-                  <div className="p-5">
-                    <h3 className="font-bold text-[#0B2447] mb-2 text-sm leading-tight">{cat.title}</h3>
-                    <p className="text-xs text-gray-500 mb-4 leading-relaxed">{cat.desc}</p>
-                    <ul className="space-y-1 mb-4">
-                      {cat.products.slice(0, 3).map((p) => (
-                        <li key={p} className="text-xs text-gray-400 flex items-center gap-1.5">
-                          <div className="w-1 h-1 rounded-full bg-[#00C9A7]" />
-                          {p}
-                        </li>
-                      ))}
-                    </ul>
-                    <span className="text-xs font-bold text-[#00C9A7] flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Ver productos <ChevronRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                </Link>
-              ))}
+            {/* Bento editorial grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-4">
+              {categories.map((cat, i) => {
+                const isWide = cat.size === "wide";
+                const isTall = cat.size === "tall";
+                return (
+                  <Link
+                    key={cat.id}
+                    href={cat.href}
+                    className={`product-bento-card group relative overflow-hidden rounded-2xl bg-white border border-gray-100 flex flex-col justify-between cursor-pointer
+                      ${isWide ? "col-span-2" : ""}
+                      ${isTall ? "row-span-2" : ""}
+                    `}
+                    style={{ "--card-accent": cat.accent } as React.CSSProperties}
+                  >
+                    {/* Background image */}
+                    <div className="absolute inset-0">
+                      <img
+                        src={cat.img}
+                        alt={cat.title}
+                        className="w-full h-full object-contain object-center p-6 group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B2447]/85 via-[#0B2447]/20 to-transparent" />
+                    </div>
+
+                    {/* Top accent line */}
+                    <div className="absolute top-0 left-0 right-0 h-0.5 rounded-t-2xl" style={{ background: cat.accent }} />
+
+                    {/* Brand chip */}
+                    <div className="relative p-4">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full" style={{ background: `${cat.accent}25`, color: cat.accent }}>
+                        {cat.brand}
+                      </span>
+                    </div>
+
+                    {/* Bottom text */}
+                    <div className="relative p-4">
+                      <h3 className="font-black text-white text-sm leading-snug mb-1">{cat.title}</h3>
+                      <p className="text-white/60 text-xs leading-relaxed hidden group-hover:block transition-all">{cat.desc}</p>
+                      <span className="mt-2 text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: cat.accent }}>
+                        Ver productos <ChevronRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -358,7 +390,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="badge badge-warn mb-6">
-                  ⚕️ Sección Especial — Ciencias de la Salud
+                  <HeartPulse className="w-3.5 h-3.5" /> Sección Especial — Ciencias de la Salud
                 </div>
                 <h2 className="text-3xl md:text-4xl font-black mb-6 leading-tight">
                   Entrenamos manos para{" "}
@@ -509,7 +541,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="btn-outline !text-white !border-white/30 hover:!bg-white hover:!text-[#0B2447] text-base"
               >
-                💬 WhatsApp
+                <MessageCircle className="w-5 h-5" /> WhatsApp
               </Link>
             </div>
           </div>
