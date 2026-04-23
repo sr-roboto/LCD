@@ -5,21 +5,21 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 
-function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
+function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
   const [n, setN] = useState(0);
   useEffect(() => {
     if (!isInView) return;
     let cur = 0;
-    const step = value / (1600 / 16);
+    const step = end / (1600 / 16);
     const t = setInterval(() => {
       cur += step;
-      if (cur >= value) { setN(value); clearInterval(t); }
+      if (cur >= end) { setN(end); clearInterval(t); }
       else setN(Math.floor(cur));
     }, 16);
     return () => clearInterval(t);
-  }, [isInView, value]);
+  }, [isInView, end]);
   return <span ref={ref}>{n}{suffix}</span>;
 }
 
