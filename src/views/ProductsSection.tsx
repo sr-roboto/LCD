@@ -68,11 +68,11 @@ function ProductCard({
 
         {/* Image */}
         <div className="aspect-[4/3] bg-[#F5F9FC] flex items-center justify-center p-6 relative overflow-hidden">
-          {cat.isNew && (
+          {/* {cat.isNew && (
             <span className="absolute top-3 right-3 badge badge-green flex items-center gap-1">
               <Sparkles className="w-2.5 h-2.5" /> Nuevo
             </span>
-          )}
+          )} */}
           <img
             src={cat.img}
             alt={cat.title}

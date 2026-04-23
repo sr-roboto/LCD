@@ -11,7 +11,7 @@ export default function RcpSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="rcp" className="section-pad bg-[#0B2447] relative overflow-hidden">
+    <section id="rcp" className="section-pad bg-slate-950 relative overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#0099D7]/10 rounded-full blur-[100px]" />
@@ -26,7 +26,7 @@ export default function RcpSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="badge badge-warn mb-6">⚕️ Ciencias de la Salud</span>
+            {/* <span className="badge badge-warn mb-6">⚕️ Ciencias de la Salud</span> */}
             <h2 className="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
               Entrenamos manos para{" "}
               <span className="text-[#61CE70]">salvar vidas.</span>
