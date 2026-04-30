@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:15
+    container_name: lcd_postgres
+    environment:
+      POSTGRES_USER: lcd_user
+      POSTGRES_PASSWORD: lcd_password_secure
+      POSTGRES_DB: lcd_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - lcd_network
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lcd_web
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql://lcd_user:lcd_password_secure@db:5432/lcd_db?schema=public
+      - JWT_SECRET=genera_un_string_largo_y_aleatorio_aqui
+      - NODE_ENV=production
+    depends_on:
+      - db
+    networks:
+      - lcd_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: lcd_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - web
+    restart: unless-stopped
+    networks:
+      - lcd_network
+
+networks:
+  lcd_network:
+    driver: bridge
+
+volumes:
+  pgdata:
