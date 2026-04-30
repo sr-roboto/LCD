@@ -6,7 +6,10 @@ COPY package.json pnpm-lock.yaml ./
 RUN corepack enable pnpm && pnpm i --frozen-lockfile
 
 # Etapa 2: Construcción
+# Etapa 2: Construcción
 FROM node:20-alpine AS builder
+# Prisma requiere openssl y compatibilidad de libc en Alpine para ejecutarse
+RUN apk add --no-cache openssl libc6-compat
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -17,6 +20,8 @@ RUN corepack enable pnpm && pnpm build
 
 # Etapa 3: Producción (Runner)
 FROM node:20-alpine AS runner
+# Prisma también requiere esto en producción
+RUN apk add --no-cache openssl libc6-compat
 WORKDIR /app
 
 ENV NODE_ENV=production
