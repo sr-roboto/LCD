@@ -115,8 +115,8 @@ export default function BlogView({ user }: { user: any }) {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {posts.map((post, i) => (
-              <Animate key={post.id} type="fade-up" delay={i * 100}>
+            {posts.map((post) => (
+              <Animate key={post.id} type="fade-up" delay={100}>
                 <Link href={`/blog/${post.id}`} className="block group h-full">
                   <div className="bg-white p-8 rounded-3xl border border-gray-100 h-full flex flex-col transition-all group-hover:shadow-xl group-hover:border-blue-100 group-hover:-translate-y-1">
                     <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
-import type { ReactNode, CSSProperties } from "react";
+import type { ReactNode, CSSProperties, ElementType } from "react";
 
 type AnimType = "fade-up" | "fade-down" | "fade-left" | "fade-right" | "zoom-in" | "flip-up";
 type Delay = 0 | 100 | 150 | 200 | 300 | 400 | 500 | 600 | 700 | 800;
@@ -13,7 +13,7 @@ interface AnimateProps {
   /** Extra Tailwind/class string to pass through */
   className?: string;
   style?: CSSProperties;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
   threshold?: number;
 }
 
@@ -42,7 +42,6 @@ export default function Animate({
   const visibleClass = inView ? "in-view" : "";
 
   return (
-    // @ts-expect-error dynamic tag
     <Tag
       ref={ref}
       className={`${animClass} ${delayClass} ${visibleClass} ${className}`}

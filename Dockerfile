@@ -34,8 +34,9 @@ RUN adduser --system --uid 1001 nextjs
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-# Asegurar que Prisma también viaje al standalone si es necesario (generalmente ya está en node_modules standalone)
-
+# Copiar el esquema de Prisma y su configuración para poder correr comandos (db push) en producción
+COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+COPY --from=builder --chown=nextjs:nodejs /app/prisma.config.ts ./
 USER nextjs
 
 EXPOSE 3000
