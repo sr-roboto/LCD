@@ -77,7 +77,7 @@ export default function LandingView() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-200 bg-white text-sm text-blue-600 mb-8 shadow-sm font-medium"
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse bg-blue-500" />
-            Más de 20 años transformando aulas
+            Más de 15 años transformando aulas
           </motion.div>
 
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
@@ -122,8 +122,8 @@ export default function LandingView() {
               className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all"
               style={{ backgroundColor: 'var(--brand-blue)' }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  'var(--brand-blue-hover)')
+              (e.currentTarget.style.backgroundColor =
+                'var(--brand-blue-hover)')
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.backgroundColor = 'var(--brand-blue)')

@@ -32,18 +32,18 @@ export default function Navbar({ user }: { user: any }) {
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full bg-white transition-shadow duration-200 ${
-        scrolled ? "shadow-sm" : "border-b border-gray-100"
-      }`}
+      className={`sticky top-0 z-50 w-full bg-white transition-shadow duration-200 ${scrolled ? "shadow-sm" : "border-b border-gray-100"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
-            <span className="text-xl font-bold text-gray-900">
+            <img src="/lcd_logo.png" alt="La Clase Digital" width={140} height={40} className="cursor-pointer" />
+            {/* <span className="text-xl font-bold text-gray-900">
               La Clase{" "}
               <span style={{ color: "var(--brand-blue)" }}>Digital</span>
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop nav */}
