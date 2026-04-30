@@ -66,11 +66,11 @@ export default function DescargasView() {
       <section className="page-hero-gradient py-20 px-4 text-center">
         <Animate type="fade-down">
           <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "var(--brand-blue)" }}>
-            Recursos y Formación
+            Recursos
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Descargas y Cursos</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Descargas</h1>
           <p className="text-lg text-gray-500 max-w-xl mx-auto">
-            Instaladores, manuales, herramientas y formación docente — todo en un solo lugar.
+            Instaladores, manuales, herramientas — todo en un solo lugar.
           </p>
         </Animate>
       </section>
