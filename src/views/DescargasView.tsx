@@ -76,9 +76,8 @@ export default function DescargasView() {
       </section>
 
       {/* Cursos */}
-      <section className="py-16 px-4 bg-white">
+      {/* <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          {/* Featured: Diplomado */}
           <Animate type="zoom-in">
             <div
               className="rounded-2xl p-8 mb-10 flex flex-col md:flex-row items-center gap-6"
@@ -146,7 +145,7 @@ export default function DescargasView() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Download groups */}
       <section className="py-16 px-4 bg-gray-50">
