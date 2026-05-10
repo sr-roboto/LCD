@@ -120,7 +120,7 @@ export default function LandingView() {
 
               <div className="flex flex-wrap gap-3">
                 <Link href="/contacto" className="btn-lime flex items-center gap-2">
-                  Solicitar Demo <ArrowRight className="w-4 h-4" />
+                  Contáctanos <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link href="https://www.youtube.com/user/ondafilms/videos" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-all"
@@ -245,7 +245,7 @@ export default function LandingView() {
           </Animate>
           <Animate type="zoom-in" delay={200}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/CLIENTESWEB-nuevo.png" alt="Clientes" className="w-full max-w-4xl mx-auto object-contain rounded-xl shadow-sm" />
+            <img src="/assets/CLIENTESWEB-nuevo.png" alt="Clientes" className="w-full max-w-4xl mx-auto object-contain object-center " />
           </Animate>
         </div>
       </section>

@@ -148,16 +148,16 @@ export default function DescargasView() {
       </section> */}
 
       {/* Download groups */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-gray-50 " >
         <div className="max-w-5xl mx-auto space-y-10">
           {groups.map((g, gi) => (
             <Animate key={g.title} type="fade-left" delay={gi === 0 ? 0 : gi === 1 ? 200 : 400}>
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 {/* Header */}
-                <div className="px-6 py-4 flex items-center gap-3 border-b border-gray-100"
-                  style={{ backgroundColor: `${g.color}0d` }}>
-                  <g.icon className="w-5 h-5" style={{ color: g.color }} />
-                  <h2 className="font-bold text-gray-900">{g.title}</h2>
+                <div className="px-6 py-4 flex items-center gap-3 border-b border-gray-100 "
+                  style={{ backgroundColor: `var(--brand-navy)` }}>
+                  <g.icon className="w-5 h-5" style={{ color: `var(--brand-cyan)` }} />
+                  <h2 className="font-bold text-white">{g.title}</h2>
                 </div>
                 {/* Items */}
                 <ul className="divide-y divide-gray-50">
