@@ -159,7 +159,7 @@ const games = [
 
 const features = [
   { icon: BookOpen, label: "Tablero didáctico incluido" },
-  { icon: Printer,  label: "Fichas imprimibles" },
+  { icon: Printer, label: "Fichas imprimibles" },
   { icon: Smartphone, label: "App con preguntas editables (Free)" },
   { icon: CheckCircle, label: "Imprimís las veces que necesités" },
 ];
@@ -178,7 +178,7 @@ function GamePlayer({ game, onClose }: { game: typeof games[0]; onClose: () => v
     >
       <div
         className={`relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl flex flex-col
-          ${fullscreen ? "w-full h-full rounded-none" : "w-full max-w-5xl" }`}
+          ${fullscreen ? "w-full h-full rounded-none" : "w-full max-w-5xl"}`}
         style={{ height: fullscreen ? "100%" : "80vh" }}
       >
         {/* Header bar */}
@@ -187,13 +187,13 @@ function GamePlayer({ game, onClose }: { game: typeof games[0]; onClose: () => v
           <span className="text-white font-semibold text-sm flex-1 truncate">{game.title}</span>
           <button
             onClick={() => setFullscreen(!fullscreen)}
-            className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-700 text-gray-200 hover:bg-gray-600 transition-colors"
+            className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-700 text-gray-200 hover:bg-gray-600 transition-colors cursor-pointer"
           >
-            {fullscreen ? "↙ Salir" : "⛶ Pantalla completa"}
+            {fullscreen ? "⬅ Salir" : "⛶ Pantalla completa"}
           </button>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-lg bg-gray-700 hover:bg-red-600 flex items-center justify-center text-white transition-colors text-sm font-bold"
+            className="w-8 h-8 rounded-lg bg-gray-700 hover:bg-red-600 flex items-center justify-center text-white transition-colors text-sm font-bold cursor-pointer "
           >✕</button>
         </div>
 
@@ -215,7 +215,7 @@ function GamePlayer({ game, onClose }: { game: typeof games[0]; onClose: () => v
           <button
             onClick={() => setDiceOpen(!diceOpen)}
             title="Tirar dado educativo"
-            className="w-12 h-12 rounded-full flex items-center justify-center shadow-xl text-white transition-all hover:scale-110 active:scale-95"
+            className="w-12 h-12 rounded-full flex items-center justify-center shadow-xl text-white transition-all hover:scale-110 active:scale-95 cursor-pointer"
             style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}
           >
             <Dices className="w-5 h-5" />
@@ -314,7 +314,7 @@ function TiltCard({
             <button
               onClick={(e) => { e.stopPropagation(); onPlay(); }}
               className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-[11px] font-bold
-                         text-white transition-colors"
+                         text-white transition-colors cursor-pointer"
               style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}
             >
               <Dices className="w-3.5 h-3.5" /> Jugar
@@ -326,7 +326,7 @@ function TiltCard({
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[11px] font-semibold
-                         bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200 transition-colors"
+                         bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200 transition-colors "
             >
               <Download className="w-3.5 h-3.5" /> Info
             </Link>
@@ -435,7 +435,7 @@ export default function JuegosView() {
             >
               <div className="relative">
                 {/* Pulse ring */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-blue-200 animate-pulse-ring" />
+                <div className="absolute inset-0 rounded-2xl border-2 " />
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img

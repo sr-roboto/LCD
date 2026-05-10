@@ -5,30 +5,30 @@ import { X, RotateCcw } from "lucide-react";
 
 /* ─── 6 caras ──────────────────────────────────────────────── */
 const FACES = [
-  { id: 1, label: "1",     bg: "#ffffff", fg: "#1e293b", isText: false },
-  { id: 2, label: "2",     bg: "#ffffff", fg: "#1e293b", isText: false },
-  { id: 3, label: "3",     bg: "#ffffff", fg: "#1e293b", isText: false },
-  { id: 4, label: "4",     bg: "#ffffff", fg: "#1e293b", isText: false },
-  { id: 5, label: "Play",  bg: "#059669", fg: "#ffffff", isText: true  },
-  { id: 6, label: "Hable", bg: "#7C3AED", fg: "#ffffff", isText: true  },
+  { id: 1, label: "1", bg: "#ffffff", fg: "#1e293b", isText: false },
+  { id: 2, label: "2", bg: "#ffffff", fg: "#1e293b", isText: false },
+  { id: 3, label: "3", bg: "#ffffff", fg: "#1e293b", isText: false },
+  { id: 4, label: "4", bg: "#ffffff", fg: "#1e293b", isText: false },
+  { id: 5, label: "Play", bg: "#059669", fg: "#ffffff", isText: true },
+  { id: 6, label: "Hable", bg: "#7C3AED", fg: "#ffffff", isText: true },
 ];
 
 /* Posición de puntos por número */
-const PIPS: Record<number, [number,number][]> = {
-  1: [[50,50]],
-  2: [[28,28],[72,72]],
-  3: [[28,28],[50,50],[72,72]],
-  4: [[28,28],[72,28],[28,72],[72,72]],
+const PIPS: Record<number, [number, number][]> = {
+  1: [[50, 50]],
+  2: [[28, 28], [72, 72]],
+  3: [[28, 28], [50, 50], [72, 72]],
+  4: [[28, 28], [72, 28], [28, 72], [72, 72]],
 };
 
 /* Rotación objetivo de cada cara */
-const TARGET: Record<number,[number,number]> = {
-  1: [0,0],       // frente
-  2: [0,180],     // atrás
-  3: [0,-90],     // derecha
-  4: [0,90],      // izquierda
-  5: [90,0],      // arriba
-  6: [-90,0],     // abajo
+const TARGET: Record<number, [number, number]> = {
+  1: [0, 0],       // frente
+  2: [0, 180],     // atrás
+  3: [0, -90],     // derecha
+  4: [0, 90],      // izquierda
+  5: [90, 0],      // arriba
+  6: [-90, 0],     // abajo
 };
 
 const S = 100; // tamaño del dado en px
@@ -75,8 +75,6 @@ export default function DiceRoller({ onClose, inline = false }: Props) {
           width: S, height: S,
           transform,
           background: f.bg,
-          borderRadius: 12,
-          border: "2px solid rgba(0,0,0,0.10)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -103,7 +101,7 @@ export default function DiceRoller({ onClose, inline = false }: Props) {
                 borderRadius: "50%",
                 background: f.fg,
                 left: `calc(${cx}% - 7px)`,
-                top:  `calc(${cy}% - 7px)`,
+                top: `calc(${cy}% - 7px)`,
                 boxShadow: "0 1px 3px rgba(0,0,0,0.25)",
               }} />
             ))}
@@ -148,7 +146,7 @@ export default function DiceRoller({ onClose, inline = false }: Props) {
           onClick={onClose}
           className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
         >
-          <X className="w-3.5 h-3.5 text-white" />
+          <X className="w-3.5 h-3.5 text-white cursor-pointer " />
         </button>
       </div>
 
@@ -185,7 +183,7 @@ export default function DiceRoller({ onClose, inline = false }: Props) {
         <button
           onClick={roll}
           disabled={rolling}
-          className="flex items-center gap-2 px-7 py-2.5 rounded-xl font-bold text-white text-sm transition-all"
+          className="flex items-center gap-2 px-7 py-2.5 rounded-xl font-bold text-white text-sm transition-all cursor-pointer"
           style={{
             background: rolling ? "rgba(255,255,255,0.08)" : "linear-gradient(135deg,#2563EB,#7C3AED)",
             opacity: rolling ? 0.5 : 1,
