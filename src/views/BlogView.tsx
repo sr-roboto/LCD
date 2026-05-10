@@ -18,7 +18,11 @@ export default function BlogView({ user }: { user: any }) {
     fetch("/api/blog")
       .then((res) => res.json())
       .then((data) => {
-        setPosts(data);
+        setPosts(Array.isArray(data) ? data : []);
+        setLoading(false);
+      })
+      .catch(() => {
+        setPosts([]);
         setLoading(false);
       });
   }, []);
@@ -40,7 +44,7 @@ export default function BlogView({ user }: { user: any }) {
         setContent("");
         // Reload posts
         const updatedPosts = await fetch("/api/blog").then((r) => r.json());
-        setPosts(updatedPosts);
+        setPosts(Array.isArray(updatedPosts) ? updatedPosts : []);
         router.refresh();
       }
     } catch (error) {

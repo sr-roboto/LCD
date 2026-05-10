@@ -1,0 +1,50 @@
+services:
+  db:
+    image: postgres:15
+    container_name: lcd_postgres_dev
+    environment:
+      POSTGRES_USER: lcd_user
+      POSTGRES_PASSWORD: lcd_password_secure
+      POSTGRES_DB: lcd_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_dev:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - lcd_network_dev
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: lcd_web_dev
+    environment:
+      - DATABASE_URL=postgresql://lcd_user:lcd_password_secure@db:5432/lcd_db?schema=public
+      - JWT_SECRET=genera_un_string_largo_y_aleatorio_aqui
+      - NODE_ENV=development
+      # ── Polling: necesario en Docker/Windows (inotify no funciona con NTFS) ──
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
+      - NEXT_WEBPACK_USEPOLLING=1
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      # Volúmenes anónimos: node_modules y .next viven SOLO en el contenedor
+      # para evitar conflictos de binarios Windows vs Alpine Linux
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - lcd_network_dev
+
+networks:
+  lcd_network_dev:
+    driver: bridge
+
+volumes:
+  pgdata_dev:

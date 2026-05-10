@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getSession } from "@/lib/auth";
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-jakarta",
 });
 
 export const metadata: Metadata = {
@@ -46,7 +47,7 @@ export default async function RootLayout({
   const user = await getSession();
   
   return (
-    <html lang="es" className={inter.variable} suppressHydrationWarning>
+    <html lang="es" className={plusJakartaSans.variable} suppressHydrationWarning>
       <head>
         <meta name="geo.region" content="AR" />
         <meta name="geo.placename" content="Buenos Aires" />

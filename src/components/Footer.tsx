@@ -76,7 +76,7 @@ export default function Footer() {
     <>
 
       {/* ── Footer ──────────────────────────────────────────── */}
-      <footer className="bg-gray-950 text-white">
+      <footer style={{ background: "var(--brand-navy-deep)", color: "white" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
 
@@ -85,7 +85,7 @@ export default function Footer() {
               <Link href="/" className="inline-block mb-4">
                 <span className="text-xl font-bold text-white">
                   La Clase{" "}
-                  <span style={{ color: "var(--brand-blue)" }}>Digital</span>
+                  <span style={{ color: "var(--brand-cyan)" }}>Digital</span>
                 </span>
               </Link>
               <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
@@ -114,7 +114,7 @@ export default function Footer() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-sm text-gray-400 hover:text-white transition-colors"
+                        className="text-sm footer-link"
                       >
                         {link.label}
                       </Link>
@@ -140,7 +140,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-8 h-8 rounded-md flex items-center justify-center text-gray-500 hover:text-white hover:bg-white/10 transition-colors"
+                  className="w-8 h-8 flex items-center justify-center footer-social"
                 >
                   <Icon className="w-4 h-4" />
                 </Link>
