@@ -180,7 +180,7 @@ export default function LandingView() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {solutions.map((sol, i) => (
-              <Animate key={sol.title} type="fade-up" delay={i * 150}>
+              <Animate key={sol.title} type="fade-up" delay={([0, 150, 300] as const)[i]}>
                 <Link href={sol.href} className="group block overflow-hidden rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" style={{ border: '1px solid #e5e7eb' }}>
                   {/* Image area with fallback bg */}
                   <div className="relative overflow-hidden" style={{ height: 220 }}>
@@ -283,7 +283,7 @@ export default function LandingView() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {partners.map((p, i) => (
-              <Animate key={p.name} type="fade-up" delay={200 + i * 100}>
+              <Animate key={p.name} type="fade-up" delay={([200, 300, 400] as const)[i]}>
                 <Link href={p.href} target="_blank" rel="noopener noreferrer"
                   className="group rounded-xl border-2 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-3"
                   style={{ borderColor: `${p.color}33`, backgroundColor: p.bg }}>
@@ -319,7 +319,7 @@ export default function LandingView() {
           </Animate>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {differentiators.map((d, i) => (
-              <Animate key={d.title} type="fade-up" delay={i * 100}>
+              <Animate key={d.title} type="fade-up" delay={([0, 100, 200, 300] as const)[i]}>
                 <div className="rounded-xl p-6 transition-all hover:-translate-y-1"
                   style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
