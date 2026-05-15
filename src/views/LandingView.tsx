@@ -40,7 +40,9 @@ function BrandsMarquee() {
 }
 
 /* ─── Solution card ──────────────────────────────────────────── */
-function SolutionCard({ sol, delay }: { sol: typeof solutions[0]; delay: number }) {
+type Delay = 0 | 100 | 150 | 200 | 300 | 400 | 500 | 600 | 700 | 800;
+
+function SolutionCard({ sol, delay }: { sol: typeof solutions[0]; delay: Delay }) {
   return (
     <Animate type="fade-up" delay={delay}>
       <div
@@ -179,9 +181,10 @@ export default function LandingView() {
           </Animate>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {solutions.map((sol, i) => (
-              <SolutionCard key={sol.title} sol={sol} delay={i * 70} />
-            ))}
+            {solutions.map((sol, i) => {
+              const delays: Delay[] = [0, 100, 200, 0, 100, 200];
+              return <SolutionCard key={sol.title} sol={sol} delay={delays[i] ?? 0} />;
+            })}
           </div>
         </div>
       </section>
@@ -242,8 +245,10 @@ export default function LandingView() {
             </div>
           </Animate>
           <div className="grid sm:grid-cols-3 gap-6">
-            {differentiators.map((d, i) => (
-              <Animate key={d.title} type="fade-up" delay={i * 120}>
+            {differentiators.map((d, i) => {
+              const delays: Delay[] = [0, 100, 200];
+              return (
+              <Animate key={d.title} type="fade-up" delay={delays[i] ?? 0}>
                 <div
                   className="group relative rounded-2xl p-8 text-center flex flex-col items-center transition-all duration-400 hover:-translate-y-2 bg-white/[0.04] backdrop-blur-sm"
                   style={{ border: '1px solid rgba(255,255,255,0.09)', boxShadow: '0 4px 24px rgba(0,0,0,0.2)' }}
@@ -259,7 +264,8 @@ export default function LandingView() {
                     style={{ background: 'linear-gradient(90deg,#00D4F5,#84E010)' }} />
                 </div>
               </Animate>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
