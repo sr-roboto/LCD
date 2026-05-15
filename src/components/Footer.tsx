@@ -1,5 +1,7 @@
+'use client';
+
 import Link from "next/link";
-import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowRight, MessageCircle } from "lucide-react";
 
 /* ── Social icons ── */
 function FacebookIcon({ className }: { className?: string }) {
@@ -38,35 +40,23 @@ function YoutubeIcon({ className }: { className?: string }) {
 
 /* ── Link data ── */
 const footerLinks = {
-  Productos: [
-    { label: "Pizarras Digitales", href: "/productos/pizarras-digitales-portatiles" },
-    { label: "Pantallas Interactivas", href: "/productos/pantallas-interactivas" },
-    { label: "Proyectores", href: "/productos/proyectores-interactivos" },
-    { label: "Software Educativo", href: "/productos/tomi-7" },
-    { label: "Accesorios", href: "/productos/mobiliario" },
-  ],
   Soluciones: [
-    { label: "Aulas Híbridas", href: "/soluciones" },
-    { label: "Salas de Capacitacion", href: "/soluciones" },
-    { label: "Auditorios", href: "/soluciones" },
-    { label: "Salas de Reunion", href: "/soluciones" },
+    { label: "Pantallas Táctiles", href: "https://pantallastactiles.com.ar/" },
+    { label: "Pizarras Digitales", href: "https://pizarrasdigitales.com.ar/" },
+    { label: "Robótica Educativa", href: "https://www.centrodeinnovacioneducativa.com.ar/blog" },
+    { label: "Juegos Interactivos", href: "/juegos" },
+    { label: "Simuladores Médicos (RCP)", href: "https://sites.google.com/view/elementosrcp/inicio" },
   ],
   Empresa: [
     { label: "Sobre Nosotros", href: "/nosotros" },
-    { label: "Blog", href: "/blog" },
-    { label: "Trabaja con Nosotros", href: "/contacto" },
-  ],
-  Soporte: [
-    { label: "Centro de Ayuda", href: "/contacto" },
-    { label: "Garantía", href: "/contacto" },
-    { label: "Descargas", href: "/descargas" },
+    { label: "Blog y Recursos", href: "/blog" },
     { label: "Contacto", href: "/contacto" },
   ],
 };
 
 const socials = [
+  { Icon: InstagramIcon, href: "https://instagram.com/laclasedigital", label: "Instagram", isMain: true },
   { Icon: FacebookIcon, href: "https://facebook.com/laclasedigital", label: "Facebook" },
-  { Icon: InstagramIcon, href: "https://instagram.com/laclasedigital", label: "Instagram" },
   { Icon: LinkedInIcon, href: "https://linkedin.com/company/laclasedigital", label: "LinkedIn" },
   { Icon: YoutubeIcon, href: "https://www.youtube.com/user/ondafilms/videos", label: "YouTube" },
 ];
@@ -74,77 +64,154 @@ const socials = [
 export default function Footer() {
   return (
     <>
-
-      {/* ── Footer ──────────────────────────────────────────── */}
       <footer style={{ background: "var(--brand-navy-deep)", color: "white" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
+        
+        {/* Contact CTA Section with Form */}
+        <div className="border-b border-white/10 relative overflow-hidden bg-gradient-to-br from-[#0d0e52] to-[#0a0a2a]">
+          <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* CTA Text & Info */}
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">¿Listo para innovar en tu aula?</h2>
+              <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-md">
+                Completa el formulario o escríbenos por WhatsApp para recibir asesoramiento personalizado o solicitar una demostración en vivo.
+              </p>
+              
+              <Link href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" 
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1ebd5a] text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                <MessageCircle className="w-6 h-6" />
+                Contactar por WhatsApp
+              </Link>
+            </div>
 
-            {/* Brand column */}
-            <div className="lg:col-span-2">
-              <Link href="/" className="inline-block mb-4">
-                <span className="text-xl font-bold text-white">
+            {/* Contact Form */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+              <h3 className="text-2xl font-bold text-[var(--brand-navy)] mb-6">Envíanos tu consulta</h3>
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label htmlFor="name" className="text-sm font-semibold text-gray-700">Nombre Completo</label>
+                    <input type="text" id="name" placeholder="Ej. Juan Pérez" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow" />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label htmlFor="phone" className="text-sm font-semibold text-gray-700">Teléfono</label>
+                    <input type="tel" id="phone" placeholder="Ej. 11 1234-5678" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow" />
+                  </div>
+                </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="email" className="text-sm font-semibold text-gray-700">Correo Electrónico</label>
+                  <input type="email" id="email" placeholder="tu@email.com" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow" />
+                </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="message" className="text-sm font-semibold text-gray-700">Mensaje</label>
+                  <textarea id="message" rows={3} placeholder="¿En qué podemos ayudarte?" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow resize-none"></textarea>
+                </div>
+                <button type="submit" className="w-full py-4 bg-[var(--brand-cyan)] hover:bg-[#00b5d1] text-white rounded-lg font-bold text-lg transition-all shadow-md hover:shadow-lg mt-2">
+                  Enviar Mensaje
+                </button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+
+        {/* Main Footer Body */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+
+            {/* Brand & Socials (Col span 4) */}
+            <div className="lg:col-span-4">
+              <Link href="/" className="inline-block mb-6">
+                <span className="text-2xl font-black text-white tracking-tight">
                   La Clase{" "}
                   <span style={{ color: "var(--brand-cyan)" }}>Digital</span>
                 </span>
               </Link>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
-                Mas de 15 anos transformando la educacion con tecnologia de vanguardia.
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                El único ecosistema educativo que integra hardware, software y acompañamiento docente constante en toda la región.
               </p>
-              <ul className="space-y-3">
+              
+              <div className="mb-8">
+                <p className="text-sm font-bold text-white mb-3 uppercase tracking-wider">Síguenos en nuestras redes</p>
+                <div className="flex items-center gap-4">
+                  {socials.map(({ Icon, href, label, isMain }) => (
+                    <Link
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className={`flex items-center justify-center transition-all rounded-full 
+                        ${isMain ? 'w-12 h-12 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white shadow-lg hover:scale-110' : 'w-10 h-10 bg-white/10 text-white hover:bg-white/20'}`}
+                    >
+                      <Icon className={isMain ? "w-6 h-6" : "w-5 h-5"} />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <ul className="space-y-4">
                 {[
                   { Icon: MapPin, text: "Buenos Aires, Argentina" },
                   { Icon: Phone, text: "+54 11 1234-5678" },
                   { Icon: Mail, text: "info@laclasedigital.com.ar" },
                 ].map(({ Icon, text }) => (
-                  <li key={text} className="flex items-center gap-2.5 text-sm text-gray-400">
-                    <Icon className="w-4 h-4 shrink-0 text-gray-500" />
+                  <li key={text} className="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                    <Icon className="w-5 h-5 text-[var(--brand-cyan)]" />
                     {text}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Link columns */}
-            {Object.entries(footerLinks).map(([title, links]) => (
-              <div key={title}>
-                <h3 className="text-sm font-semibold text-white mb-4">{title}</h3>
-                <ul className="space-y-3">
-                  {links.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="text-sm footer-link"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {/* Link columns (Col span 4) */}
+            <div className="lg:col-span-4 flex justify-between md:justify-around gap-6">
+              {Object.entries(footerLinks).map(([title, links]) => (
+                <div key={title}>
+                  <h3 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">{title}</h3>
+                  <ul className="space-y-3">
+                    {links.map((link) => (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          className="text-sm text-gray-400 hover:text-[var(--brand-cyan)] transition-colors inline-block"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* SEO Block (Col span 4) */}
+            <div className="lg:col-span-4 bg-white/5 rounded-2xl p-6 border border-white/10">
+              <h3 className="text-sm font-bold text-[var(--brand-lime)] mb-3">Especialistas en Tecnología Educativa</h3>
+              <p className="text-xs text-gray-400 leading-relaxed text-justify">
+                Distribuidores oficiales de las principales marcas del mercado para instituciones, escuelas y empresas. 
+                Ofrecemos <strong className="font-medium text-gray-300">Pantallas Táctiles, Pantallas Interactivas (Samsung, Viewsonic, MaxHub, i3, LG, THScreen), Pizarras Digitales, Proyectores</strong> y soluciones de <strong className="font-medium text-gray-300">Robótica Educativa</strong> (Rasti, Mis Ladrillos).
+                <br /><br />
+                Pioneros en <strong className="font-medium text-gray-300">Pensamiento Computacional, Programar Desconectado</strong>, y gamificación escolar con <strong className="font-medium text-gray-300">SIMA, TOMI, PleiQ</strong>.
+                Además, somos expertos en equipamiento para ciencias y medicina: <strong className="font-medium text-gray-300">Esqueletos, Huesos, Columnas, Maquetas, Simuladores DEA, RCP, Practiman, Prestan y Torsos RCP</strong>.
+                <br /><br />
+                Contamos con servicios de <strong className="font-medium text-gray-300">Alquiler de Notebooks, Carros Portanotebooks, Mesas Táctiles, Tótems, Videojuegos Publicitarios y Capacitación Docente</strong> permanente.
+              </p>
+            </div>
+
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-500">
+        <div className="border-t border-white/10 bg-black/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-gray-500 font-medium">
               © {new Date().getFullYear()} La Clase Digital. Todos los derechos reservados.
             </p>
-            <div className="flex items-center gap-3">
-              {socials.map(({ Icon, href, label }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-8 h-8 flex items-center justify-center footer-social"
-                >
-                  <Icon className="w-4 h-4" />
-                </Link>
-              ))}
+            <div className="flex gap-4">
+              <Link href="#" className="text-xs text-gray-500 hover:text-white transition-colors">Términos y Condiciones</Link>
+              <Link href="#" className="text-xs text-gray-500 hover:text-white transition-colors">Políticas de Privacidad</Link>
             </div>
           </div>
         </div>

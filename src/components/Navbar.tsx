@@ -2,22 +2,40 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
-const navItems = [
-  { label: "Productos", href: "/productos" },
-  { label: "Soluciones", href: "/soluciones" },
-  { label: "Juegos", href: "/juegos" },
-  { label: "Cursos", href: "/cursos" },
-  { label: "Descargas", href: "/descargas" },
-  { label: "Blog", href: "/blog" },
+type NavItem = {
+  label: string;
+  href?: string;
+  subItems?: { label: string; href: string; external?: boolean }[];
+  external?: boolean;
+};
+
+const navItems: NavItem[] = [
+  { label: "Tienda", href: "https://garaged.com.ar", external: true },
+  {
+    label: "Herramientas",
+    subItems: [
+      { label: "Bienestar Docente", href: "https://bienestardocente.com.ar/", external: true },
+      { label: "Pantallas Táctiles", href: "https://pantallastactiles.com.ar/", external: true },
+      { label: "Pizarras Digitales", href: "https://pizarrasdigitales.com.ar/", external: true },
+      { label: "Juegos", href: "/juegos" },
+      { label: "Opivalia", href: "https://opivalia.com/", external: true },
+      { label: "Recursos", href: "/recursos" },
+      { label: "Descargas", href: "https://www.centrodeinnovacioneducativa.com.ar/blog", external: true },
+      { label: "Blog", href: "/blog" },
+      { label: "TOMI Digital", href: "https://tomi.digital/es", external: true },
+      { label: "Canal de YouTube", href: "https://www.youtube.com/user/ondafilms/videos", external: true },
+    ],
+  },
+  { label: "Webinar", href: "https://www.youtube.com/@EmpresariosTV", external: true },
   { label: "Nosotros", href: "/nosotros" },
-  { label: "Contacto", href: "/contacto" },
 ];
 
 export default function Navbar({ user }: { user: any }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -34,9 +52,7 @@ export default function Navbar({ user }: { user: any }) {
     <nav
       className="sticky top-0 z-50 w-full transition-all duration-300"
       style={{
-        background: scrolled
-          ? "rgba(18, 19, 107, 0.75)"
-          : "var(--brand-navy)",
+        background: scrolled ? "rgba(18, 19, 107, 0.75)" : "var(--brand-navy)",
         backdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
         borderBottom: scrolled
@@ -55,22 +71,85 @@ export default function Navbar({ user }: { user: any }) {
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <Link
+              <div
                 key={item.label}
-                href={item.href}
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors"
-                style={{ color: "rgba(255,255,255,0.8)" }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                  (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.8)";
-                  (e.currentTarget as HTMLElement).style.background = "transparent";
-                }}
+                className="relative group"
+                onMouseEnter={() => item.subItems && setActiveDropdown(item.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                {item.label}
-              </Link>
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    className="px-3 py-2 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-1"
+                    style={{ color: "rgba(255,255,255,0.8)" }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                      (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.8)";
+                      (e.currentTarget as HTMLElement).style.background = "transparent";
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    className="px-3 py-2 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-1"
+                    style={{ color: "rgba(255,255,255,0.8)" }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                      (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      if (activeDropdown !== item.label) {
+                        (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.8)";
+                        (e.currentTarget as HTMLElement).style.background = "transparent";
+                      }
+                    }}
+                  >
+                    {item.label}
+                    {item.subItems && <ChevronDown className="w-4 h-4 opacity-70" />}
+                  </button>
+                )}
+
+                {/* Dropdown for subitems */}
+                {item.subItems && activeDropdown === item.label && (
+                  <div
+                    className="absolute top-full left-0 mt-1 w-56 rounded-xl shadow-lg overflow-hidden"
+                    style={{
+                      background: "rgba(18, 19, 107, 0.95)",
+                      backdropFilter: "blur(16px)",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                    }}
+                  >
+                    <div className="py-2">
+                      {item.subItems.map((sub) => (
+                        <Link
+                          key={sub.label}
+                          href={sub.href}
+                          target={sub.external ? "_blank" : undefined}
+                          rel={sub.external ? "noopener noreferrer" : undefined}
+                          className="block px-4 py-2.5 text-sm transition-colors"
+                          style={{ color: "rgba(255,255,255,0.85)" }}
+                          onMouseEnter={(e) => {
+                            (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
+                            (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                          }}
+                          onMouseLeave={(e) => {
+                            (e.currentTarget as HTMLElement).style.background = "transparent";
+                            (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.85)";
+                          }}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -148,27 +227,44 @@ export default function Navbar({ user }: { user: any }) {
             backdropFilter: "blur(16px)",
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 py-3 space-y-1">
+          <div className="max-w-7xl mx-auto px-4 py-3 space-y-1 max-h-[80vh] overflow-y-auto">
             {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
-                style={{ color: "rgba(255,255,255,0.85)" }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.background =
-                    "rgba(255,255,255,0.08)")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.background = "transparent")
-                }
-              >
-                {item.label}
-              </Link>
+              <div key={item.label}>
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    onClick={() => setMobileOpen(false)}
+                    className="block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
+                    style={{ color: "rgba(255,255,255,0.85)" }}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <div className="block px-3 py-2.5 rounded-lg text-sm font-bold" style={{ color: "var(--brand-cyan)" }}>
+                    {item.label}
+                  </div>
+                )}
+                {item.subItems && (
+                  <div className="pl-4 space-y-1 mb-2 border-l border-white/10 ml-3">
+                    {item.subItems.map((sub) => (
+                      <Link
+                        key={sub.label}
+                        href={sub.href}
+                        target={sub.external ? "_blank" : undefined}
+                        onClick={() => setMobileOpen(false)}
+                        className="block px-3 py-2 text-sm transition-colors"
+                        style={{ color: "rgba(255,255,255,0.7)" }}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <div
-              className="pt-3 space-y-2"
+              className="pt-3 space-y-2 mt-2"
               style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
             >
               {user ? (
@@ -211,3 +307,4 @@ export default function Navbar({ user }: { user: any }) {
     </nav>
   );
 }
+
