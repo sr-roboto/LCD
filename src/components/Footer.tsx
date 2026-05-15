@@ -107,8 +107,10 @@ export default function Footer() {
                   <label htmlFor="message" className="text-sm font-semibold text-gray-700">Mensaje</label>
                   <textarea id="message" rows={3} placeholder="¿En qué podemos ayudarte?" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow resize-none"></textarea>
                 </div>
-                <button type="submit" className="w-full py-4 bg-[var(--brand-cyan)] hover:bg-[#00b5d1] text-white rounded-lg font-bold text-lg transition-all shadow-md hover:shadow-lg mt-2">
-                  Enviar Mensaje
+                <button type="submit" 
+                  className="w-full py-4 rounded-xl font-black text-base tracking-wide transition-all duration-300 hover:scale-[1.02] hover:shadow-xl mt-2"
+                  style={{ background: 'linear-gradient(135deg,#12136b,#1a1b8a)', color: '#84E010', border: '1.5px solid rgba(132,224,16,0.3)', boxShadow: '0 4px 20px rgba(18,19,107,0.4)' }}>
+                  Enviar Mensaje →
                 </button>
               </form>
             </div>
