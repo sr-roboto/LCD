@@ -42,7 +42,6 @@ export default function BlogView({ user }: { user: any }) {
         setCreating(false);
         setTitle("");
         setContent("");
-        // Reload posts
         const updatedPosts = await fetch("/api/blog").then((r) => r.json());
         setPosts(Array.isArray(updatedPosts) ? updatedPosts : []);
         router.refresh();
@@ -53,21 +52,21 @@ export default function BlogView({ user }: { user: any }) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-24 px-4">
+    <div className="min-h-screen section-dark py-24 px-4">
       <div className="max-w-5xl mx-auto">
         <Animate type="fade-down">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">Noticias y Novedades</p>
-              <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Blog Oficial</h1>
+              <div className="badge mb-3">Noticias y Novedades</div>
+              <h1 className="text-4xl font-bold text-white tracking-tight">Blog Oficial</h1>
             </div>
             {user && (
               <button
                 onClick={() => setCreating(!creating)}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white font-bold text-sm rounded-xl hover:bg-blue-700 transition-colors shadow-sm"
+                className="btn-primary"
               >
                 <Plus className="w-4 h-4" />
-                {creating ? "Cancelar" : "Nuevo Artículo"}
+                {creating ? "Cancelar" : "Nuevo Articulo"}
               </button>
             )}
           </div>
@@ -75,28 +74,28 @@ export default function BlogView({ user }: { user: any }) {
 
         {creating && user && (
           <Animate type="fade-up">
-            <form onSubmit={handleCreatePost} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-10 space-y-4">
+            <form onSubmit={handleCreatePost} className="card-dark p-6 mb-10 space-y-4">
               <input
                 type="text"
-                placeholder="Título del artículo"
+                placeholder="Titulo del articulo"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full text-xl font-bold px-4 py-3 border-none outline-none focus:ring-0 placeholder:text-gray-300"
+                className="w-full text-xl font-bold bg-transparent border-none outline-none text-white placeholder:text-[var(--foreground-subtle)]"
                 required
               />
-              <div className="h-px bg-gray-100 w-full" />
+              <div className="h-px bg-[var(--border)] w-full" />
               <textarea
-                placeholder="Escribe el contenido aquí..."
+                placeholder="Escribe el contenido aqui..."
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 rows={6}
-                className="w-full px-4 py-3 border-none outline-none focus:ring-0 placeholder:text-gray-300 resize-none text-gray-700"
+                className="w-full bg-transparent border-none outline-none text-[var(--foreground-muted)] placeholder:text-[var(--foreground-subtle)] resize-none"
                 required
               />
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-gray-900 text-white text-sm font-bold rounded-lg hover:bg-gray-800 transition-colors"
+                  className="btn-primary"
                 >
                   Publicar
                 </button>
@@ -108,31 +107,31 @@ export default function BlogView({ user }: { user: any }) {
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-white h-48 rounded-2xl animate-pulse" />
+              <div key={i} className="card-dark h-48 animate-pulse" />
             ))}
           </div>
         ) : posts.length === 0 ? (
-          <div className="text-center py-20 bg-white rounded-3xl border border-gray-100">
-            <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-lg font-bold text-gray-900">No hay artículos todavía</h3>
-            <p className="text-gray-500 text-sm mt-1">Sé el primero en escribir algo interesante.</p>
+          <div className="text-center py-20 card-dark">
+            <BookOpen className="w-12 h-12 text-[var(--foreground-subtle)] mx-auto mb-4" />
+            <h3 className="text-lg font-bold text-white">No hay articulos todavia</h3>
+            <p className="text-[var(--foreground-muted)] text-sm mt-1">Se el primero en escribir algo interesante.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {posts.map((post) => (
               <Animate key={post.id} type="fade-up" delay={100}>
                 <Link href={`/blog/${post.id}`} className="block group h-full">
-                  <div className="bg-white p-8 rounded-3xl border border-gray-100 h-full flex flex-col transition-all group-hover:shadow-xl group-hover:border-blue-100 group-hover:-translate-y-1">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+                  <div className="card-glow p-8 h-full flex flex-col transition-all hover:-translate-y-1">
+                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-[var(--brand-emerald)] transition-colors line-clamp-2">
                       {post.title}
                     </h2>
-                    <p className="text-gray-600 line-clamp-3 mb-6 flex-1 text-sm leading-relaxed">
+                    <p className="text-[var(--foreground-muted)] line-clamp-3 mb-6 flex-1 text-sm leading-relaxed">
                       {post.content}
                     </p>
-                    <div className="flex items-center gap-4 text-xs font-semibold text-gray-400 mt-auto pt-4 border-t border-gray-50">
+                    <div className="flex items-center gap-4 text-xs font-medium text-[var(--foreground-subtle)] mt-auto pt-4 border-t border-[var(--border)]">
                       <div className="flex items-center gap-1.5">
-                        <User className="w-4 h-4 text-blue-500" />
-                        {post.author?.name || "Anónimo"}
+                        <User className="w-4 h-4 text-[var(--brand-emerald)]" />
+                        {post.author?.name || "Anonimo"}
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Clock className="w-4 h-4" />

@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
     label: "Herramientas", 
     dropdown: [
       { label: "Bienestar Docente", href: "https://bienestardocente.com.ar", external: true },
-      { label: "Pantallas Táctiles", href: "https://pantallastactiles.com.ar", external: true },
+      { label: "Pantallas Tactiles", href: "https://pantallastactiles.com.ar", external: true },
       { label: "Pizarras Digitales", href: "https://pizarrasdigitales.com.ar", external: true },
       { label: "Juegos", href: "/juegos" },
       { label: "Opivalia", href: "https://opivalia.com", external: true },
@@ -65,31 +65,20 @@ export default function Navbar({ user }: { user: any }) {
         <div className={isMobile ? "w-full" : "relative"} ref={!isMobile ? dropdownRef : null}>
           <button
             onClick={() => setDropdownOpen(dropdownOpen === item.label ? null : item.label)}
-            className={`flex items-center gap-1 ${isMobile ? "w-full px-3 py-2.5" : "px-3 py-2"} rounded-lg text-sm font-medium transition-colors`}
-            style={{ color: "rgba(255,255,255,0.8)" }}
-            onMouseEnter={(e) => {
-              if (!isMobile) {
-                (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!isMobile && dropdownOpen !== item.label) {
-                (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.8)";
-                (e.currentTarget as HTMLElement).style.background = "transparent";
-              }
-            }}
+            className={`flex items-center gap-1.5 ${isMobile ? "w-full px-3 py-2.5" : "px-3 py-2"} rounded-lg text-sm font-medium transition-all text-[var(--foreground-muted)] hover:text-white hover:bg-white/5`}
           >
-            {item.label} <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen === item.label ? "rotate-180" : ""}`} />
+            {item.label} 
+            <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen === item.label ? "rotate-180" : ""}`} />
           </button>
           
           {dropdownOpen === item.label && (
             <div 
-              className={`${isMobile ? "pl-4 mt-1 space-y-1" : "absolute top-full left-0 mt-2 w-56 rounded-xl shadow-lg py-2"} transition-all`}
+              className={`${isMobile ? "pl-4 mt-1 space-y-1" : "absolute top-full left-0 mt-2 w-56 rounded-xl py-2"} transition-all`}
               style={!isMobile ? {
-                background: "rgba(18, 19, 107, 0.95)",
+                background: "var(--background-elevated)",
                 backdropFilter: "blur(16px)",
-                border: "1px solid rgba(255,255,255,0.1)",
+                border: "1px solid var(--border)",
+                boxShadow: "0 20px 50px -12px rgba(0,0,0,0.5)",
               } : {}}
             >
               {item.dropdown.map((subItem) => (
@@ -99,16 +88,7 @@ export default function Navbar({ user }: { user: any }) {
                   target={subItem.external ? "_blank" : "_self"}
                   rel={subItem.external ? "noopener noreferrer" : ""}
                   onClick={() => { setDropdownOpen(null); if (isMobile) setMobileOpen(false); }}
-                  className={`block px-4 py-2 text-sm font-medium transition-colors`}
-                  style={{ color: "rgba(255,255,255,0.8)" }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                    (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.8)";
-                    (e.currentTarget as HTMLElement).style.background = "transparent";
-                  }}
+                  className="block px-4 py-2.5 text-sm font-medium text-[var(--foreground-muted)] hover:text-white hover:bg-white/5 transition-all"
                 >
                   {subItem.label}
                 </Link>
@@ -125,16 +105,7 @@ export default function Navbar({ user }: { user: any }) {
         target={item.external ? "_blank" : "_self"}
         rel={item.external ? "noopener noreferrer" : ""}
         onClick={() => { if (isMobile) setMobileOpen(false); }}
-        className={`block ${isMobile ? "px-3 py-2.5" : "px-3 py-2"} rounded-lg text-sm font-medium transition-colors`}
-        style={{ color: "rgba(255,255,255,0.8)" }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLElement).style.color = "#ffffff";
-          (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.8)";
-          (e.currentTarget as HTMLElement).style.background = "transparent";
-        }}
+        className={`block ${isMobile ? "px-3 py-2.5" : "px-3 py-2"} rounded-lg text-sm font-medium transition-all text-[var(--foreground-muted)] hover:text-white hover:bg-white/5`}
       >
         {item.label}
       </Link>
@@ -146,21 +117,25 @@ export default function Navbar({ user }: { user: any }) {
       className="sticky top-0 z-50 w-full transition-all duration-300"
       style={{
         background: scrolled
-          ? "rgba(18, 19, 107, 0.75)"
-          : "var(--brand-navy)",
-        backdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
-        borderBottom: scrolled
-          ? "1px solid rgba(255,255,255,0.08)"
-          : "1px solid rgba(255,255,255,0.06)",
-        boxShadow: scrolled ? "0 8px 32px rgba(0,0,0,0.3)" : "none",
+          ? "rgba(10, 10, 15, 0.8)"
+          : "var(--background)",
+        backdropFilter: scrolled ? "blur(20px) saturate(180%)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(20px) saturate(180%)" : "none",
+        borderBottom: "1px solid var(--border)",
+        boxShadow: scrolled ? "0 10px 40px -10px rgba(0,0,0,0.5)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
-            <img src="/lcd_logo.png" alt="La Clase Digital" width={140} height={40} className="cursor-pointer brightness-0 invert" />
+            <img 
+              src="/lcd_logo.png" 
+              alt="La Clase Digital" 
+              width={140} 
+              height={40} 
+              className="cursor-pointer brightness-0 invert" 
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -175,33 +150,20 @@ export default function Navbar({ user }: { user: any }) {
             {!user && (
               <Link
                 href="/login"
-                className="px-5 py-2 rounded-full text-sm font-bold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
-                style={{
-                  background: "var(--brand-lime)",
-                  color: "var(--brand-navy)",
-                }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.filter = "brightness(1.1)")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.filter = "brightness(1)")
-                }
+                className="px-5 py-2 rounded-full text-sm font-semibold transition-all bg-[var(--brand-emerald)] text-[var(--background)] hover:bg-[var(--brand-emerald-light)]"
               >
-                Iniciar Sesión
+                Iniciar Sesion
               </Link>
             )}
 
             {user && (
-              <div className="flex items-center gap-4 border-l border-white/20 pl-4 ml-2">
-                <span className="text-sm font-bold" style={{ color: "var(--brand-cyan)" }}>
+              <div className="flex items-center gap-4 border-l border-[var(--border)] pl-4 ml-2">
+                <span className="text-sm font-semibold text-[var(--brand-emerald)]">
                   {user.name.split(" ")[0]}
                 </span>
                 <button
                   onClick={handleLogout}
-                  className="text-sm font-medium transition-colors"
-                  style={{ color: "rgba(255,255,255,0.6)" }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#f87171")}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)")}
+                  className="text-sm font-medium text-[var(--foreground-muted)] hover:text-red-400 transition-colors"
                 >
                   Salir
                 </button>
@@ -212,14 +174,7 @@ export default function Navbar({ user }: { user: any }) {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg transition-colors"
-            style={{ color: "rgba(255,255,255,0.9)" }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.background = "transparent")
-            }
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-[var(--foreground-muted)] hover:text-white hover:bg-white/5 transition-all"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -229,49 +184,36 @@ export default function Navbar({ user }: { user: any }) {
       {/* Mobile menu */}
       {mobileOpen && (
         <div
-          className="lg:hidden"
+          className="lg:hidden border-t border-[var(--border)]"
           style={{
-            borderTop: "1px solid rgba(255,255,255,0.1)",
-            background: "rgba(18, 19, 107, 0.95)",
-            backdropFilter: "blur(16px)",
+            background: "var(--background-elevated)",
+            backdropFilter: "blur(20px)",
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 py-3 space-y-1">
+          <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             {navItems.map((item) => (
               <NavLink key={item.label} item={item} isMobile={true} />
             ))}
-            <div
-              className="pt-3 space-y-2"
-              style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
-            >
+            <div className="pt-4 space-y-2 border-t border-[var(--border)]">
               {!user && (
                 <Link
                   href="/login"
                   onClick={() => setMobileOpen(false)}
-                  className="block w-full text-center px-4 py-2.5 rounded-full text-sm font-bold transition-all mb-2 shadow-md"
-                  style={{
-                    background: "var(--brand-lime)",
-                    color: "var(--brand-navy)",
-                  }}
+                  className="block w-full text-center px-4 py-3 rounded-full text-sm font-semibold bg-[var(--brand-emerald)] text-[var(--background)]"
                 >
-                  Iniciar Sesión
+                  Iniciar Sesion
                 </Link>
               )}
               {user && (
                 <>
-                  <div className="block px-4 py-2 text-sm font-bold" style={{ color: "var(--brand-cyan)" }}>
+                  <div className="block px-4 py-2 text-sm font-semibold text-[var(--brand-emerald)]">
                     Hola, {user.name}
                   </div>
                   <button
                     onClick={handleLogout}
-                    className="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
-                    style={{
-                      color: "#f87171",
-                      border: "1px solid rgba(248,113,113,0.3)",
-                      background: "rgba(248,113,113,0.1)",
-                    }}
+                    className="block w-full text-center px-4 py-3 rounded-lg text-sm font-medium text-red-400 border border-red-400/30 bg-red-400/10"
                   >
-                    Cerrar Sesión
+                    Cerrar Sesion
                   </button>
                 </>
               )}

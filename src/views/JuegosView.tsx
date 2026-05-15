@@ -173,28 +173,28 @@ function GamePlayer({ game, onClose }: { game: typeof games[0]; onClose: () => v
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: "rgba(0,0,0,0.85)", backdropFilter: "blur(8px)" }}
+      style={{ backgroundColor: "rgba(0,0,0,0.9)", backdropFilter: "blur(12px)" }}
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div
-        className={`relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl flex flex-col
+        className={`relative bg-[var(--background-elevated)] border border-[var(--border)] rounded-2xl overflow-hidden shadow-2xl flex flex-col
           ${fullscreen ? "w-full h-full rounded-none" : "w-full max-w-5xl"}`}
         style={{ height: fullscreen ? "100%" : "80vh" }}
       >
         {/* Header bar */}
-        <div className="flex items-center gap-3 px-4 py-3 bg-gray-800 shrink-0">
+        <div className="flex items-center gap-3 px-4 py-3 bg-[var(--background)] border-b border-[var(--border)] shrink-0">
           <span className="text-lg">{game.emoji}</span>
           <span className="text-white font-semibold text-sm flex-1 truncate">{game.title}</span>
           <button
             onClick={() => setFullscreen(!fullscreen)}
-            className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-700 text-gray-200 hover:bg-gray-600 transition-colors cursor-pointer"
+            className="px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--secondary)] text-[var(--foreground-muted)] hover:bg-white/10 transition-colors cursor-pointer"
           >
-            {fullscreen ? "⬅ Salir" : "⛶ Pantalla completa"}
+            {fullscreen ? "Salir" : "Pantalla completa"}
           </button>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-lg bg-gray-700 hover:bg-red-600 flex items-center justify-center text-white transition-colors text-sm font-bold cursor-pointer "
-          >✕</button>
+            className="w-8 h-8 rounded-lg bg-[var(--secondary)] hover:bg-red-500/20 hover:text-red-400 flex items-center justify-center text-[var(--foreground-muted)] transition-colors text-sm font-bold cursor-pointer"
+          >X</button>
         </div>
 
         {/* iframe */}
@@ -215,8 +215,7 @@ function GamePlayer({ game, onClose }: { game: typeof games[0]; onClose: () => v
           <button
             onClick={() => setDiceOpen(!diceOpen)}
             title="Tirar dado educativo"
-            className="w-12 h-12 rounded-full flex items-center justify-center shadow-xl text-white transition-all hover:scale-110 active:scale-95 cursor-pointer"
-            style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}
+            className="w-12 h-12 rounded-full flex items-center justify-center shadow-xl text-[var(--background)] transition-all hover:scale-110 active:scale-95 cursor-pointer bg-[var(--brand-emerald)]"
           >
             <Dices className="w-5 h-5" />
           </button>
@@ -272,17 +271,15 @@ function TiltCard({
         ref={cardRef}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm
-                   hover:shadow-xl hover:border-blue-200 transition-shadow duration-300
-                   will-change-transform group cursor-default flex flex-col h-full"
+        className="card-glow overflow-hidden will-change-transform group cursor-default flex flex-col h-full"
       >
         {/* Top accent bar */}
-        <div className="h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500
+        <div className="h-1 bg-gradient-to-r from-[var(--brand-emerald)] to-[var(--brand-emerald-light)]
                         origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400" />
 
         {/* Thumbnail */}
-        <div className="relative h-40 bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center overflow-hidden shrink-0">
-          <div className="absolute w-32 h-32 rounded-full border-[2px] border-dashed border-blue-100 animate-spin-slow" />
+        <div className="relative h-40 bg-[var(--background-tertiary)] flex items-center justify-center overflow-hidden shrink-0">
+          <div className="absolute w-32 h-32 rounded-full border-[2px] border-dashed border-[var(--border)] animate-spin-slow" />
           {game.img ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -296,7 +293,7 @@ function TiltCard({
               {game.emoji}
             </span>
           )}
-          <span className="absolute top-3 left-3 text-[10px] font-black text-gray-400">#{game.id}</span>
+          <span className="absolute top-3 left-3 text-[10px] font-black text-[var(--foreground-subtle)]">#{game.id}</span>
         </div>
 
         {/* Body */}
@@ -304,18 +301,16 @@ function TiltCard({
           <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 inline-block ${game.tag}`}>
             {game.subject}
           </span>
-          <h3 className="font-bold text-gray-900 text-sm leading-snug mb-1.5">{game.title}</h3>
-          <p className="text-xs text-gray-500 leading-relaxed mb-2 flex-1">{game.desc}</p>
-          <p className="text-[10px] font-semibold text-gray-400 mb-4">🎓 {game.grades}</p>
+          <h3 className="font-bold text-white text-sm leading-snug mb-1.5">{game.title}</h3>
+          <p className="text-xs text-[var(--foreground-muted)] leading-relaxed mb-2 flex-1">{game.desc}</p>
+          <p className="text-[10px] font-semibold text-[var(--foreground-subtle)] mb-4">{game.grades}</p>
 
           {/* Action buttons */}
-          <div className="flex gap-2 pt-3 border-t border-gray-100">
+          <div className="flex gap-2 pt-3 border-t border-[var(--border)]">
             {/* Jugar — opens iframe modal */}
             <button
               onClick={(e) => { e.stopPropagation(); onPlay(); }}
-              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-[11px] font-bold
-                         text-white transition-colors cursor-pointer"
-              style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}
+              className="flex-1 btn-primary py-2 text-[11px]"
             >
               <Dices className="w-3.5 h-3.5" /> Jugar
             </button>
@@ -325,8 +320,8 @@ function TiltCard({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[11px] font-semibold
-                         bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200 transition-colors "
+              className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-full text-[11px] font-semibold
+                         bg-transparent text-[var(--foreground-muted)] hover:bg-white/5 border border-[var(--border)] transition-colors"
             >
               <Download className="w-3.5 h-3.5" /> Info
             </Link>
@@ -365,8 +360,9 @@ export default function JuegosView() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative page-hero-gradient pt-20 pb-16 px-4 overflow-hidden">
-        <Blobs />
+      <section className="relative section-dark pt-20 pb-16 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-30" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.1)_0%,transparent_70%)]" />
         <div ref={heroRef} className="relative max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
@@ -375,20 +371,19 @@ export default function JuegosView() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-200
-                              bg-white text-sm text-blue-600 mb-6 shadow-sm font-medium">
+              <div className="badge mb-6">
                 <Gamepad2 className="w-4 h-4" />
                 Biblioteca de 16 juegos educativos
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-5">
-                La colección{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                  ¿Cuánto Sabés de…?
+              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
+                La coleccion{" "}
+                <span className="text-gradient">
+                  Cuanto Sabes de...
                 </span>
               </h1>
 
-              <p className="text-gray-500 text-base leading-relaxed mb-6 max-w-lg">
+              <p className="text-[var(--foreground-muted)] text-base leading-relaxed mb-6 max-w-lg">
                 Juegos educativos analógicos / digitales listos para usar en aulas, talleres y eventos.
                 Gamificación al centro del aprendizaje.
               </p>
@@ -397,10 +392,10 @@ export default function JuegosView() {
               <ul className="space-y-2.5 mb-8">
                 {features.map((f) => (
                   <li key={f.label} className="flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
-                      <f.icon className="w-3.5 h-3.5 text-blue-600" />
+                    <div className="icon-container w-8 h-8">
+                      <f.icon className="w-4 h-4" />
                     </div>
-                    <span className="text-sm text-gray-600">{f.label}</span>
+                    <span className="text-sm text-[var(--foreground-muted)]">{f.label}</span>
                   </li>
                 ))}
               </ul>
@@ -410,16 +405,13 @@ export default function JuegosView() {
                   href="https://wa.me/5491143000057"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold
-                             text-white shadow-md hover:shadow-lg transition-all"
-                  style={{ backgroundColor: "var(--brand-blue)" }}
+                  className="btn-primary"
                 >
                   <MessageCircle className="w-4 h-4" /> Consultar por WhatsApp
                 </Link>
                 <Link
                   href="mailto:marcelo@empresariostv.com.ar?subject=Consulta ¿Cuánto Sabés de?"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold
-                             text-gray-700 border border-gray-200 bg-white hover:bg-gray-50 transition-colors"
+                  className="btn-secondary"
                 >
                   <Mail className="w-4 h-4" /> Escribir por mail
                 </Link>
@@ -451,23 +443,21 @@ export default function JuegosView() {
       </section>
 
       {/* ── Search + grid ────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 section-elevated">
         <div className="max-w-6xl mx-auto">
           {/* Search bar */}
           <div className="flex items-center gap-3 mb-12 max-w-xl mx-auto">
             <div className="flex-1 relative">
               <input
                 type="text"
-                placeholder="Buscar juego por nombre o temática…"
+                placeholder="Buscar juego por nombre o tematica..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full px-4 py-3 pl-10 rounded-xl border border-gray-200 text-sm
-                           focus:outline-none focus:ring-2 focus:border-transparent bg-gray-50"
-                style={{ "--tw-ring-color": "var(--brand-blue)" } as React.CSSProperties}
+                className="input-dark pl-10"
               />
-              <Gamepad2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Gamepad2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground-subtle)]" />
             </div>
-            <span className="text-xs text-gray-400 whitespace-nowrap font-medium shrink-0">
+            <span className="text-xs text-[var(--foreground-muted)] whitespace-nowrap font-medium shrink-0">
               {filtered.length} juego{filtered.length !== 1 ? "s" : ""}
             </span>
           </div>
@@ -481,8 +471,8 @@ export default function JuegosView() {
               />
             ))}
             {filtered.length === 0 && (
-              <div className="col-span-full text-center py-16 text-gray-400">
-                No se encontraron juegos con ese término.
+              <div className="col-span-full text-center py-16 text-[var(--foreground-muted)]">
+                No se encontraron juegos con ese termino.
               </div>
             )}
           </div>
@@ -496,56 +486,49 @@ export default function JuegosView() {
       {playGame && <GamePlayer game={playGame} onClose={() => setPlayGame(null)} />}
 
       {/* ── ¿Quiénes somos? ──────────────────────────────────── */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 section-dark">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-            style={{ color: "var(--brand-blue)" }}>
-            Quiénes Somos
-          </p>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="badge-outline mb-4 mx-auto">Quienes Somos</div>
+          <h2 className="text-2xl font-bold text-white mb-4">
             Experiencias educativas gamificadas
           </h2>
-          <p className="text-gray-500 text-sm leading-relaxed">
-            Somos La Clase Digital, un equipo que diseña experiencias educativas gamificadas
+          <p className="text-[var(--foreground-muted)] text-sm leading-relaxed">
+            Somos La Clase Digital, un equipo que disena experiencias educativas gamificadas
             para escuelas, municipios y organizaciones. Nuestra serie{" "}
-            <span className="font-semibold text-gray-700">"¿Cuánto Sabés de…?"</span> combina
-            tableros físicos, cartas, dados y una app editable. Podés pedirnos crear tu juego
-            a medida, o adquirir la versión full para desarrollarlo vos mismo.
+            <span className="font-semibold text-white">"Cuanto Sabes de...?"</span> combina
+            tableros fisicos, cartas, dados y una app editable. Podes pedirnos crear tu juego
+            a medida, o adquirir la version full para desarrollarlo vos mismo.
           </p>
         </div>
       </section>
 
       {/* ── CTA contacto ─────────────────────────────────────── */}
-      <section className="py-14 px-4" style={{ backgroundColor: "var(--brand-blue)" }}>
-        <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-2xl font-bold mb-3">
-            ¿Querés implementar los juegos o necesitás un pack a medida?
+      <section className="py-16 px-6 section-elevated">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-white mb-3">
+            Queres implementar los juegos o necesitas un pack a medida?
           </h2>
-          <p className="text-blue-100 text-sm mb-8">
-            Escribinos y te armamos una propuesta para tu institución.
+          <p className="text-[var(--foreground-muted)] mb-8">
+            Escribinos y te armamos una propuesta para tu institucion.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
               href="https://wa.me/5491143000057"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white font-semibold text-sm
-                         hover:bg-blue-50 transition-colors"
-              style={{ color: "var(--brand-blue)" }}
+              className="btn-primary"
             >
               <MessageCircle className="w-4 h-4" /> WhatsApp
             </Link>
             <Link
               href="mailto:marcelo@empresariostv.com.ar?subject=Consulta ¿Cuánto Sabés de?"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/40
-                         text-white font-semibold text-sm hover:bg-white/10 transition-colors"
+              className="btn-secondary"
             >
               <Mail className="w-4 h-4" /> Escribir por mail
             </Link>
             <Link
               href="/contacto"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/40
-                         text-white font-semibold text-sm hover:bg-white/10 transition-colors"
+              className="btn-secondary"
             >
               <ArrowRight className="w-4 h-4" /> Formulario de contacto
             </Link>

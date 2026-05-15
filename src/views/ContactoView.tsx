@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight, Send } from "lucide-react";
 import Animate from "@/components/Animate";
+import Link from "next/link";
 
 export default function ContactoView() {
   const [form, setForm] = useState({
@@ -22,49 +23,46 @@ export default function ContactoView() {
   return (
     <>
       {/* Hero */}
-      <section className="page-hero-gradient py-20 px-4 text-center">
-        <Animate type="fade-down">
-          <p
-            className="text-xs font-semibold uppercase tracking-widest mb-3"
-            style={{ color: "var(--brand-blue)" }}
-          >
-            Estamos aquí para ayudarte
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Contactanos
-          </h1>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto">
-            Recibí una demo personalizada, pedí un presupuesto o consultá
-            cualquier duda sobre nuestros productos y servicios.
-          </p>
-        </Animate>
+      <section className="relative py-24 px-6 overflow-hidden section-dark">
+        <div className="absolute inset-0 bg-grid opacity-30" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.1)_0%,transparent_70%)]" />
+        
+        <div className="relative max-w-4xl mx-auto text-center">
+          <Animate type="fade-down">
+            <div className="badge mb-6 mx-auto">Estamos aqui para ayudarte</div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Contactanos
+            </h1>
+            <p className="text-lg text-[var(--foreground-muted)] max-w-xl mx-auto">
+              Recibi una demo personalizada, pedi un presupuesto o consulta
+              cualquier duda sobre nuestros productos y servicios.
+            </p>
+          </Animate>
+        </div>
       </section>
 
       {/* Content */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10">
+      <section className="py-24 px-6 section-elevated">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Info column */}
-          <Animate type="fade-right" className="lg:col-span-2 space-y-6">
+          <Animate type="fade-right" className="lg:col-span-2 space-y-8">
             <div>
-              <h2 className="text-lg font-bold text-gray-900 mb-4">Información de contacto</h2>
-              <div className="space-y-4">
+              <h2 className="text-xl font-bold text-white mb-6">Informacion de contacto</h2>
+              <div className="space-y-5">
                 {[
-                  { icon: MapPin, label: "Dirección", text: "CABA, Buenos Aires, Argentina" },
-                  { icon: Phone, label: "Teléfono", text: "011-4300-0057" },
+                  { icon: MapPin, label: "Direccion", text: "CABA, Buenos Aires, Argentina" },
+                  { icon: Phone, label: "Telefono", text: "011-4300-0057" },
                   { icon: Mail, label: "Email", text: "info@laclasedigital.com.ar" },
-                  { icon: Clock, label: "Horario", text: "Lun–Vie 9:00–18:00" },
+                  { icon: Clock, label: "Horario", text: "Lun-Vie 9:00-18:00" },
                 ].map(({ icon: Icon, label, text }, i) => (
                   <Animate key={label} type="fade-up" delay={([0, 100, 200, 300] as const)[i]}>
-                    <div className="flex gap-3">
-                      <div
-                        className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                        style={{ backgroundColor: "var(--brand-blue-light)" }}
-                      >
-                        <Icon className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
+                    <div className="flex gap-4">
+                      <div className="icon-container shrink-0">
+                        <Icon className="w-4 h-4" />
                       </div>
                       <div>
-                        <p className="text-xs text-gray-400 font-medium">{label}</p>
-                        <p className="text-sm text-gray-700">{text}</p>
+                        <p className="text-xs text-[var(--foreground-subtle)] font-medium mb-0.5">{label}</p>
+                        <p className="text-[var(--foreground-muted)]">{text}</p>
                       </div>
                     </div>
                   </Animate>
@@ -72,65 +70,67 @@ export default function ContactoView() {
               </div>
             </div>
 
-            <div>
-              <h3 className="text-sm font-bold text-gray-900 mb-3">También encontranos en</h3>
-              <div className="space-y-2">
+            <div className="card-dark p-5">
+              <h3 className="text-sm font-semibold text-white mb-4">Tambien encontranos en</h3>
+              <div className="space-y-3">
                 {[
                   { label: "Paraguay", tel: "+595 972 930 182" },
                   { label: "Uruguay", tel: "0598-94-422-6" },
                 ].map((c) => (
                   <div key={c.label} className="flex justify-between text-sm">
-                    <span className="text-gray-500">{c.label}</span>
-                    <span className="text-gray-700 font-medium">{c.tel}</span>
+                    <span className="text-[var(--foreground-subtle)]">{c.label}</span>
+                    <span className="text-[var(--foreground-muted)] font-medium">{c.tel}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <a
+            <Link
               href="https://wa.me/5491143000057"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 w-full justify-center px-5 py-2.5 rounded-lg text-sm font-semibold border-2 text-green-700 border-green-200 bg-green-50 hover:bg-green-100 transition-colors animate-glow-pulse"
+              className="btn-primary w-full justify-center"
             >
               Escribinos por WhatsApp
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </Animate>
 
           {/* Form column */}
           <Animate type="fade-left" delay={200} className="lg:col-span-3">
-            <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
+            <div className="card-dark p-8">
               {sent ? (
-                <div className="text-center py-8">
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"
-                    style={{ backgroundColor: "var(--brand-blue-light)" }}
-                  >
-                    ✓
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 rounded-full bg-[var(--brand-emerald-glow)] flex items-center justify-center mx-auto mb-6">
+                    <Send className="w-7 h-7 text-[var(--brand-emerald)]" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    ¡Mensaje recibido!
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    Mensaje recibido
                   </h3>
-                  <p className="text-gray-500 text-sm">
-                    Te contactaremos a la brevedad con la información solicitada.
+                  <p className="text-[var(--foreground-muted)]">
+                    Te contactaremos a la brevedad con la informacion solicitada.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <h2 className="text-lg font-bold text-gray-900 mb-2">
-                    Solicitar Demo Gratuita
-                  </h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <h2 className="text-xl font-bold text-white mb-2">
+                      Solicitar Demo Gratuita
+                    </h2>
+                    <p className="text-sm text-[var(--foreground-muted)]">
+                      Completa el formulario y te contactaremos en breve.
+                    </p>
+                  </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {[
-                      { id: "nombre", label: "Nombre completo", placeholder: "Juan García", type: "text" },
+                      { id: "nombre", label: "Nombre completo", placeholder: "Juan Garcia", type: "text" },
                       { id: "email", label: "Email institucional", placeholder: "juan@colegio.edu.ar", type: "email" },
-                      { id: "telefono", label: "Teléfono", placeholder: "+54 11 ····", type: "tel" },
-                      { id: "institucion", label: "Institución", placeholder: "Colegio San Martín", type: "text" },
+                      { id: "telefono", label: "Telefono", placeholder: "+54 11 ....", type: "tel" },
+                      { id: "institucion", label: "Institucion", placeholder: "Colegio San Martin", type: "text" },
                     ].map((f) => (
                       <div key={f.id}>
-                        <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                        <label className="block text-xs font-semibold text-[var(--foreground-muted)] mb-2">
                           {f.label}
                         </label>
                         <input
@@ -142,37 +142,29 @@ export default function ContactoView() {
                           onChange={(e) =>
                             setForm({ ...form, [f.id]: e.target.value })
                           }
-                          className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-transparent"
-                          style={{ "--tw-ring-color": "var(--brand-blue)" } as React.CSSProperties}
+                          className="input-dark"
                         />
                       </div>
                     ))}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                    <label className="block text-xs font-semibold text-[var(--foreground-muted)] mb-2">
                       Mensaje (opcional)
                     </label>
                     <textarea
                       id="mensaje"
-                      rows={3}
-                      placeholder="Contanos qué necesitás..."
+                      rows={4}
+                      placeholder="Contanos que necesitas..."
                       value={form.mensaje}
                       onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
-                      className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-transparent resize-none"
+                      className="input-dark resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-lg text-sm font-semibold text-white flex items-center justify-center gap-2 transition-colors"
-                    style={{ backgroundColor: "var(--brand-blue)" }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.backgroundColor = "var(--brand-blue-hover)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.backgroundColor = "var(--brand-blue)")
-                    }
+                    className="btn-primary w-full justify-center"
                   >
                     Enviar solicitud
                     <ArrowRight className="w-4 h-4" />

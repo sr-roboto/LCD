@@ -9,7 +9,6 @@ const CATALOG_URL = "https://tienda.garaged.com.ar/tecnologia-educativa/";
 const GROUPS = [
   {
     label: "Aulas Interactivas",
-    color: "#2563EB",
     images: [
       "/assets/productos/Pantalla-interactiva.png",
       "/assets/productos/PIZARRAi.png",
@@ -26,8 +25,7 @@ const GROUPS = [
     ],
   },
   {
-    label: "STEM & Robótica",
-    color: "#7C3AED",
+    label: "STEM y Robotica",
     images: [
       "/assets/productos/Chicos-y-Arduino.png",
       "/assets/productos/Labdisc.png",
@@ -39,7 +37,6 @@ const GROUPS = [
   },
   {
     label: "Software Educativo",
-    color: "#D97706",
     images: [
       "/assets/productos/Plataforma-TOMI.png",
       "/assets/productos/Smart-Learning-Suite.png",
@@ -49,7 +46,6 @@ const GROUPS = [
   },
   {
     label: "Videoconferencia",
-    color: "#DC2626",
     images: [
       "/assets/productos/conferencecam-connect.png",
       "/assets/productos/confe2.png",
@@ -60,7 +56,6 @@ const GROUPS = [
   },
   {
     label: "Conectividad",
-    color: "#0891B2",
     images: [
       "/assets/productos/HDMI-Interactivo-BEAM.png",
       "/assets/productos/ScreamBeam.png",
@@ -70,7 +65,6 @@ const GROUPS = [
   },
   {
     label: "Sonido",
-    color: "#9333EA",
     images: [
       "/assets/productos/Parlante-GBR.png",
       "/assets/productos/Parlante-con-Bluetooth.png",
@@ -80,7 +74,6 @@ const GROUPS = [
   },
   {
     label: "Salud",
-    color: "#059669",
     images: [
       "/assets/productos/Practimani.png",
       "/assets/productos/Torso-Bixesuado-XC-208i.png",
@@ -90,7 +83,6 @@ const GROUPS = [
   },
   {
     label: "Dispositivos",
-    color: "#0D9488",
     images: [
       "/assets/productos/Tabletsi.png",
       "/assets/productos/PC-BANGHOi.png",
@@ -101,7 +93,6 @@ const GROUPS = [
   },
   {
     label: "Mobiliario",
-    color: "#64748B",
     images: [
       "/assets/productos/Carro-Portanotebooks.png",
       "/assets/productos/mobiliarioi.png",
@@ -110,39 +101,34 @@ const GROUPS = [
 ];
 
 /* Flatten all images into two interleaved rows */
-const ALL_IMGS = GROUPS.flatMap((g) => g.images.map((src) => ({ src, label: g.label, color: g.color })));
+const ALL_IMGS = GROUPS.flatMap((g) => g.images.map((src) => ({ src, label: g.label })));
 
 /* Split into 2 rows, odd/even */
 const ROW1 = ALL_IMGS.filter((_, i) => i % 2 === 0);
 const ROW2 = ALL_IMGS.filter((_, i) => i % 2 === 1);
 
 /* Image tile */
-function Tile({ src, label, color }: { src: string; label: string; color: string }) {
+function Tile({ src, label }: { src: string; label: string }) {
   return (
     <Link
       href={CATALOG_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative shrink-0 group overflow-hidden rounded-2xl"
+      className="relative shrink-0 group overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--background-tertiary)]"
       style={{ width: 200, height: 180 }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
         alt={label}
-        className="w-full h-full object-contain bg-white p-3
-                   group-hover:scale-110 transition-transform duration-500"
+        className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
       />
       {/* Category badge on hover */}
       <div
         className="absolute inset-0 flex items-end justify-center pb-3
                    opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }}
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.8), transparent)" }}
       >
-        <span
-          className="text-[10px] font-bold uppercase tracking-wider text-white px-2.5 py-1 rounded-full"
-          style={{ background: color }}
-        >
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--brand-emerald)] px-3 py-1.5 rounded-full bg-[var(--brand-emerald-glow)] border border-[var(--brand-emerald)]/20">
           {label}
         </span>
       </div>
@@ -176,21 +162,16 @@ function MarqueeRow({ items, speed, reverse }: {
 
 export default function ProductsCarousel({ hideHeader = false }: { hideHeader?: boolean }) {
   return (
-    <section id="productos" className="py-20 bg-white overflow-hidden">
+    <section id="productos" className="py-20 overflow-hidden">
       {/* Header */}
       {!hideHeader && (
-        <div className="max-w-6xl mx-auto px-4 mb-10 text-center">
-          <p
-            className="text-xs font-semibold uppercase tracking-widest mb-3"
-            style={{ color: "var(--brand-blue)" }}
-          >
-            Nuestros Productos
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-            Tecnología educativa para cada necesidad
+        <div className="max-w-6xl mx-auto px-4 mb-12 text-center">
+          <div className="badge-outline mb-4 mx-auto">Nuestros Productos</div>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+            Tecnologia educativa para cada necesidad
           </h2>
-          <p className="text-gray-500 text-sm max-w-lg mx-auto">
-            Aulas interactivas, robótica, software, conectividad y más — todo en un solo catálogo.
+          <p className="text-[var(--foreground-muted)] max-w-lg mx-auto">
+            Aulas interactivas, robotica, software, conectividad y mas - todo en un solo catalogo.
           </p>
         </div>
       )}
@@ -201,7 +182,7 @@ export default function ProductsCarousel({ hideHeader = false }: { hideHeader?: 
       </div>
 
       {/* Row 2 — right to left */}
-      <div className="mb-10">
+      <div className="mb-12">
         <MarqueeRow items={ROW2} speed={45} reverse />
       </div>
 
@@ -211,12 +192,10 @@ export default function ProductsCarousel({ hideHeader = false }: { hideHeader?: 
           href={CATALOG_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-base font-bold
-                     text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-200"
-          style={{ background: "linear-gradient(135deg, var(--brand-blue), #7C3AED)" }}
+          className="btn-primary inline-flex"
         >
           <ShoppingBag className="w-5 h-5" />
-          Ver catálogo completo y comprar
+          Ver catalogo completo
           <ArrowRight className="w-5 h-5" />
         </Link>
       </div>
