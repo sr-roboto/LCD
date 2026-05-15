@@ -9,12 +9,12 @@ import Animate from '@/components/Animate';
 
 /* ─── Solutions ──────────────────────────────────────────────── */
 const solutions = [
-  { title: 'Pantallas Táctiles', subtitle: 'Las Mejores Marcas · Accesorios · Aplicaciones', img: '/assets/home/pantalla-con-lcd.jpeg', links: [{ label: 'Usabilidad', href: 'https://pantallastactiles.com.ar/' }, { label: 'Precios e Info', href: 'https://sites.google.com/view/transformardigitalmenteelaula/inicio' }] },
-  { title: 'Muebles y Pizarras Interactivas', subtitle: 'TOMI · Mesas Táctiles · Carros Portanotebooks', img: '/assets/home/carro-podio.png', links: [{ label: 'Usabilidad', href: 'https://pizarrasdigitales.com.ar/' }, { label: 'Precios e Info', href: 'https://sites.google.com/view/transformardigitalmenteelaula/inicio' }] },
-  { title: 'Espacios Makers', subtitle: 'Robótica · Streaming · Ciencia · Arte · Creatividad', img: '/assets/home/blu-streaming.png', links: [{ label: 'Recursos', href: 'https://www.centrodeinnovacioneducativa.com.ar/blog' }, { label: 'Precios e Info', href: 'https://sites.google.com/view/espacioscreativos/inicio' }] },
-  { title: 'Juegos Interactivos Modificables', subtitle: 'Robótica · Emociones · Finanzas · RCP · Salud · Ciencia', img: '/assets/home/juegos-interactivos.png', links: [{ label: 'Acceder', href: '/juegos' }] },
-  { title: 'RCP y Prácticas Médicas', subtitle: 'Torsos · Esqueletos · Maquetas · Simuladores · Accesorios', img: '/assets/home/todo-rcp.jpg', links: [{ label: 'Precios e Info', href: 'https://sites.google.com/view/elementosrcp/inicio' }] },
-  { title: 'Alquiler de Equipos · Videojuegos', subtitle: 'Para Empresas · Eventos · Desarrollo Personalizado', img: '/assets/home/alquiler-videojuegos.png', links: [{ label: 'Alquiler de Equipos', href: 'https://alquilerdepc.com' }, { label: 'Videojuegos', href: 'https://fiestasinteractivas.com.ar' }] },
+  { title: 'Pantallas Táctiles', subtitle: 'Las Mejores Marcas · Accesorios · Aplicaciones', img: '/assets/home/pantalla-con-lcd.webp', links: [{ label: 'Usabilidad', href: 'https://pantallastactiles.com.ar/' }, { label: 'Precios e Info', href: 'https://sites.google.com/view/transformardigitalmenteelaula/inicio' }] },
+  { title: 'Muebles y Pizarras Interactivas', subtitle: 'TOMI · Mesas Táctiles · Carros Portanotebooks', img: '/assets/home/carro-podio.webp', links: [{ label: 'Usabilidad', href: 'https://pizarrasdigitales.com.ar/' }, { label: 'Precios e Info', href: 'https://sites.google.com/view/transformardigitalmenteelaula/inicio' }] },
+  { title: 'Espacios Makers', subtitle: 'Robótica · Streaming · Ciencia · Arte · Creatividad', img: '/assets/home/blu-streaming.webp', links: [{ label: 'Recursos', href: 'https://www.centrodeinnovacioneducativa.com.ar/blog' }, { label: 'Precios e Info', href: 'https://sites.google.com/view/espacioscreativos/inicio' }] },
+  { title: 'Juegos Interactivos Modificables', subtitle: 'Robótica · Emociones · Finanzas · RCP · Salud · Ciencia', img: '/assets/home/juegos-interactivos.webp', links: [{ label: 'Acceder', href: '/juegos' }] },
+  { title: 'RCP y Prácticas Médicas', subtitle: 'Torsos · Esqueletos · Maquetas · Simuladores · Accesorios', img: '/assets/home/todo-rcp.webp', links: [{ label: 'Precios e Info', href: 'https://sites.google.com/view/elementosrcp/inicio' }] },
+  { title: 'Alquiler de Equipos · Videojuegos', subtitle: 'Para Empresas · Eventos · Desarrollo Personalizado', img: '/assets/home/alquiler-videojuegos.webp', links: [{ label: 'Alquiler de Equipos', href: 'https://alquilerdepc.com' }, { label: 'Videojuegos', href: 'https://fiestasinteractivas.com.ar' }] },
 ];
 
 const differentiators = [
@@ -102,11 +102,11 @@ export default function LandingView() {
 
             {/* Left */}
             <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8 text-[11px] font-bold uppercase tracking-widest"
-                style={{ background: 'rgba(132,224,16,0.1)', color: '#84E010', border: '1px solid rgba(132,224,16,0.28)' }}>
+              {/* <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8 text-[11px] font-bold uppercase tracking-widest"
+                style={{ color: '#84E010', border: '2px solid rgba(132,224,16,0.28)' }}>
                 <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#84E010' }} />
                 Más de 15 años transformando aulas
-              </div>
+              </div> */}
 
               <h1 className="font-extrabold text-white leading-[1.05] mb-6"
                 style={{ fontSize: 'clamp(2.6rem,5.5vw,4.2rem)', letterSpacing: '-0.04em' }}>
@@ -128,13 +128,13 @@ export default function LandingView() {
 
               <div className="flex flex-wrap gap-4">
                 <Link href="#soluciones"
-                  className="group inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-black tracking-wide transition-all duration-300 hover:scale-[1.04] hover:brightness-110"
+                  className="group inline-flex items-center gap-2 rounded-sm px-7 py-3.5 text-sm font-black tracking-wide transition-all duration-300 hover:scale-[1.04] hover:brightness-110"
                   style={{ background: 'linear-gradient(135deg,#84E010,#5ebd00)', color: '#061a00', boxShadow: '0 8px 28px rgba(132,224,16,0.32)' }}>
                   Explorar Soluciones
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link href="/contacto"
-                  className="inline-flex items-center rounded-full px-7 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.04]"
+                  className="inline-flex items-center rounded-sm px-7 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.04]"
                   style={{ background: 'rgba(0,212,245,0.09)', border: '1.5px solid rgba(0,212,245,0.35)', backdropFilter: 'blur(8px)' }}>
                   Solicitar Asesoramiento
                 </Link>
@@ -144,19 +144,20 @@ export default function LandingView() {
             {/* Right — image */}
             <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.18 }} className="relative">
 
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]"
+              <div className="relative rounded-lg overflow-hidden aspect-[4/3]"
                 style={{ border: '1.5px solid rgba(0,212,245,0.18)', boxShadow: '0 10px 20px rgba(0,0,0,0.15)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/home/mesa-tactil-nino.png" alt="Niña en mesa táctil" className="w-full h-full object-cover" />
+                <img src="/assets/home/mesa-tactil-nino.webp" alt="Niña en mesa táctil" className="w-full h-full object-cover" />
 
               </div>
 
             </motion.div>
           </div>
-        </div>
+        </div >
 
         {/* Brands strip */}
-        <div className="relative z-10 mt-12" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        < div className="relative z-10 mt-12" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }
+        }>
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <p className="text-center text-[10px] uppercase tracking-[0.2em] font-bold pt-5 pb-1"
               style={{ color: 'rgba(0,212,245,0.4)' }}>
@@ -164,11 +165,11 @@ export default function LandingView() {
             </p>
             <BrandsMarquee />
           </div>
-        </div>
-      </section>
+        </div >
+      </section >
 
       {/* ══════════ SOLUCIONES — Fondo claro / acordeón ══════════ */}
-      <section id="soluciones" className="py-24 px-4 sm:px-6" style={{ background: '#F0F4FF' }}>
+      < section id="soluciones" className="py-24 px-4 sm:px-6" style={{ background: '#F0F4FF' }}>
         <div className="max-w-6xl mx-auto">
           <Animate type="fade-up">
             <div className="text-center mb-14">
@@ -187,10 +188,10 @@ export default function LandingView() {
             })}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ══════════ VIDEO — Oscuro con acento ════════════════════ */}
-      <section className="py-20 px-4 sm:px-6 relative overflow-hidden"
+      < section className="py-20 px-4 sm:px-6 relative overflow-hidden"
         style={{ background: 'linear-gradient(160deg,#0f172a 0%,#12136b 100%)' }}>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none opacity-10"
           style={{ background: 'radial-gradient(circle,#84E010,transparent 70%)' }} />
@@ -210,10 +211,10 @@ export default function LandingView() {
             </div>
           </Animate>
         </div>
-      </section>
+      </section >
 
       {/* ══════════ CLIENTES — Blanco limpio ═════════════════════ */}
-      <section className="py-20 px-4 sm:px-6 bg-white">
+      < section className="py-20 px-4 sm:px-6 bg-white" >
         <div className="max-w-5xl mx-auto text-center">
           <Animate type="fade-up">
             <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: '#12136b' }}>Nuestros Clientes</p>
@@ -223,14 +224,14 @@ export default function LandingView() {
           </Animate>
           <Animate type="zoom-in" delay={150}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/CLIENTESWEB-nuevo.png" alt="Clientes de La Clase Digital"
+            <img src="/assets/CLIENTESWEB-nuevo.webp" alt="Clientes de La Clase Digital"
               className="w-full max-w-4xl mx-auto object-contain" />
           </Animate>
         </div>
-      </section>
+      </section >
 
       {/* ══════════ POR QUÉ ELEGIRNOS — Oscuro premium ══════════ */}
-      <section className="py-24 px-4 sm:px-6 relative overflow-hidden"
+      < section className="py-24 px-4 sm:px-6 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg,#080a2e 0%,#12136b 100%)' }}>
         <div className="absolute inset-0 opacity-[0.03]"
           style={{ backgroundImage: 'linear-gradient(rgba(0,212,245,1) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,245,1) 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
@@ -248,36 +249,36 @@ export default function LandingView() {
             {differentiators.map((d, i) => {
               const delays: Delay[] = [0, 100, 200];
               return (
-              <Animate key={d.title} type="fade-up" delay={delays[i] ?? 0}>
-                <div
-                  className="group relative rounded-2xl p-8 text-center flex flex-col items-center transition-all duration-400 hover:-translate-y-2 bg-white/[0.04] backdrop-blur-sm"
-                  style={{ border: '1px solid rgba(255,255,255,0.09)', boxShadow: '0 4px 24px rgba(0,0,0,0.2)' }}
-                  onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 16px 48px rgba(0,212,245,0.12), 0 4px 24px rgba(0,0,0,0.3)'; el.style.borderColor = 'rgba(0,212,245,0.3)'; }}
-                  onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 4px 24px rgba(0,0,0,0.2)'; el.style.borderColor = 'rgba(255,255,255,0.09)'; }}>
-                  <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6"
-                    style={{ background: 'rgba(0,212,245,0.12)', border: '1.5px solid rgba(0,212,245,0.22)' }}>
-                    <d.icon className="w-7 h-7" style={{ color: '#00D4F5' }} />
+                <Animate key={d.title} type="fade-up" delay={delays[i] ?? 0}>
+                  <div
+                    className="group relative rounded-2xl p-8 text-center flex flex-col items-center transition-all duration-400 hover:-translate-y-2 bg-white/[0.04] backdrop-blur-sm"
+                    style={{ border: '1px solid rgba(255,255,255,0.09)', boxShadow: '0 4px 24px rgba(0,0,0,0.2)' }}
+                    onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 16px 48px rgba(0,212,245,0.12), 0 4px 24px rgba(0,0,0,0.3)'; el.style.borderColor = 'rgba(0,212,245,0.3)'; }}
+                    onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 4px 24px rgba(0,0,0,0.2)'; el.style.borderColor = 'rgba(255,255,255,0.09)'; }}>
+                    <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6"
+                      style={{ background: 'rgba(0,212,245,0.12)', border: '1.5px solid rgba(0,212,245,0.22)' }}>
+                      <d.icon className="w-7 h-7" style={{ color: '#00D4F5' }} />
+                    </div>
+                    <h3 className="font-bold text-white text-base mb-3">{d.title}</h3>
+                    <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.48)' }}>{d.desc}</p>
+                    <div className="absolute bottom-0 left-8 right-8 h-[2px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                      style={{ background: 'linear-gradient(90deg,#00D4F5,#84E010)' }} />
                   </div>
-                  <h3 className="font-bold text-white text-base mb-3">{d.title}</h3>
-                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.48)' }}>{d.desc}</p>
-                  <div className="absolute bottom-0 left-8 right-8 h-[2px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                    style={{ background: 'linear-gradient(90deg,#00D4F5,#84E010)' }} />
-                </div>
-              </Animate>
+                </Animate>
               );
             })}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ══════════ PRODUCTS — Fondo claro / aireado ═════════════ */}
-      <section className="py-16" style={{ background: '#F0F4FF' }}>
+      < section className="py-16" style={{ background: '#F0F4FF' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: '#12136b' }}>Catálogo</p>
           <h2 className="text-3xl font-extrabold" style={{ color: '#12136b' }}>Explora nuestros productos</h2>
         </div>
         <ProductsCarousel />
-      </section>
+      </section >
     </>
   );
 }

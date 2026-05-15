@@ -65,20 +65,20 @@ export default function Footer() {
   return (
     <>
       <footer style={{ background: "var(--brand-navy-deep)", color: "white" }}>
-        
+
         {/* Contact CTA Section with Form */}
         <div className="border-b border-white/10 relative overflow-hidden bg-gradient-to-br from-[#0d0e52] to-[#0a0a2a]">
           <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             {/* CTA Text & Info */}
             <div>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">¿Listo para innovar en tu aula?</h2>
               <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-md">
                 Completa el formulario o escríbenos por WhatsApp para recibir asesoramiento personalizado o solicitar una demostración en vivo.
               </p>
-              
-              <Link href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" 
+
+              <Link href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1ebd5a] text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                 <MessageCircle className="w-6 h-6" />
                 Contactar por WhatsApp
@@ -107,14 +107,14 @@ export default function Footer() {
                   <label htmlFor="message" className="text-sm font-semibold text-gray-700">Mensaje</label>
                   <textarea id="message" rows={3} placeholder="¿En qué podemos ayudarte?" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow resize-none"></textarea>
                 </div>
-                <button type="submit" 
+                <button type="submit"
                   className="w-full py-4 rounded-xl font-black text-base tracking-wide transition-all duration-300 hover:scale-[1.02] hover:shadow-xl mt-2"
                   style={{ background: 'linear-gradient(135deg,#12136b,#1a1b8a)', color: '#84E010', border: '1.5px solid rgba(132,224,16,0.3)', boxShadow: '0 4px 20px rgba(18,19,107,0.4)' }}>
                   Enviar Mensaje →
                 </button>
               </form>
             </div>
-            
+
           </div>
         </div>
 
@@ -133,7 +133,7 @@ export default function Footer() {
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 El único ecosistema educativo que integra hardware, software y acompañamiento docente constante en toda la región.
               </p>
-              
+
               <div className="mb-8">
                 <p className="text-sm font-bold text-white mb-3 uppercase tracking-wider">Síguenos en nuestras redes</p>
                 <div className="flex items-center gap-4">
@@ -189,10 +189,10 @@ export default function Footer() {
             </div>
 
             {/* SEO Block (Col span 4) */}
-            <div className="lg:col-span-4 bg-white/5 rounded-2xl p-6 border border-white/10">
+            <div className="lg:col-span-4 ">
               <h3 className="text-sm font-bold text-[var(--brand-lime)] mb-3">Especialistas en Tecnología Educativa</h3>
               <p className="text-xs text-gray-400 leading-relaxed text-justify">
-                Distribuidores oficiales de las principales marcas del mercado para instituciones, escuelas y empresas. 
+                Distribuidores oficiales de las principales marcas del mercado para instituciones, escuelas y empresas.
                 Ofrecemos <strong className="font-medium text-gray-300">Pantallas Táctiles, Pantallas Interactivas (Samsung, Viewsonic, MaxHub, i3, LG, THScreen), Pizarras Digitales, Proyectores</strong> y soluciones de <strong className="font-medium text-gray-300">Robótica Educativa</strong> (Rasti, Mis Ladrillos).
                 <br /><br />
                 Pioneros en <strong className="font-medium text-gray-300">Pensamiento Computacional, Programar Desconectado</strong>, y gamificación escolar con <strong className="font-medium text-gray-300">SIMA, TOMI, PleiQ</strong>.
