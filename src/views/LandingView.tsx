@@ -2,47 +2,71 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, ShieldCheck, Users, Cpu, Star } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle, Award, Handshake } from 'lucide-react';
 import { brands } from '@/lib/data';
 import ProductsCarousel from '@/components/ProductsCarousel';
 import Animate from '@/components/Animate';
 
 /* ─── Data ────────────────────────────────────────────────────── */
-const stats = [
-  { value: '500+', label: 'Instituciones equipadas', color: 'var(--brand-cyan)' },
-  { value: '15.000+', label: 'Docentes capacitados', color: 'var(--brand-lime)' },
-  { value: '23', label: 'Provincias alcanzadas', color: 'var(--brand-cyan)' },
-];
-
 const solutions = [
   {
-    title: 'Aulas Híbridas',
-    desc: 'Tecnología interactiva para enseñar de manera presencial y remota al mismo tiempo.',
-    img: '/assets/pizarras/Ebeam-Seccion.png',
-    href: '/soluciones',
-    bg: 'linear-gradient(135deg, #12136b 0%, #1a237e 100%)',
+    title: 'Pantallas Táctiles',
+    desc: 'Las Mejores Marcas. Accesorios - Aplicaciones.',
+    img: '/assets/home/pantalla-con-lcd.jpeg',
+    links: [
+      { label: 'Usabilidad', href: 'https://pantallastactiles.com.ar' },
+      { label: 'Precios e Info', href: 'https://sites.google.com/view/transformardigitalmenteelaula/inicio' }
+    ]
   },
   {
-    title: 'Laboratorios STEAM',
-    desc: 'Espacios de innovación con robótica, impresión 3D y recursos para ciencia y matemáticas.',
-    img: '/assets/laboratorios/robotica.jpg',
-    href: '/soluciones',
-    bg: 'linear-gradient(135deg, #0d1b4b 0%, #12136b 100%)',
+    title: 'Muebles y Pizarras Interactivas',
+    desc: 'TOMI - Mesas Táctiles. Carros Portanotebooks.',
+    img: '/assets/home/carro-podio.png',
+    links: [
+      { label: 'Usabilidad', href: 'https://pizarrasdigitales.com.ar' },
+      { label: 'Precios e Info', href: 'https://sites.google.com/view/transformardigitalmenteelaula/inicio' }
+    ]
   },
   {
-    title: 'Entornos sin Internet',
-    desc: 'Soluciones offline para instituciones rurales o con conectividad limitada.',
-    img: '/assets/laboratorios/no.jpg',
-    href: '/soluciones',
-    bg: 'linear-gradient(135deg, #0a1628 0%, #0d0e52 100%)',
+    title: 'Espacios Makers',
+    desc: 'Robótica - Streaming - Ciencia. Arte - Creatividad - Gamificación.',
+    img: '/assets/home/blu-streaming.png',
+    links: [
+      { label: 'Recursos', href: 'https://www.centrodeinnovacioneducativa.com.ar/blog' },
+      { label: 'Precios e Info', href: 'https://sites.google.com/view/espacioscreativos/inicio' }
+    ]
   },
+  {
+    title: 'Juegos Interactivos Modificables',
+    desc: 'Robótica - Emociones - Finanzas. RCP - Salud - Ciencia y mucho más.',
+    img: '/assets/home/juegos-interactivos.png',
+    links: [
+      { label: 'Acceder', href: '/juegos' }
+    ]
+  },
+  {
+    title: 'RCP y Prácticas Médicas',
+    desc: 'Torsos - Esqueletos - Maquetas. Simuladores - Accesorios.',
+    img: '/assets/home/todo-rcp.jpg',
+    links: [
+      { label: 'Precios e Info', href: 'https://sites.google.com/view/elementosrcp/inicio' }
+    ]
+  },
+  {
+    title: 'Alquiler y Videojuegos',
+    desc: 'Alquiler de Equipos y Desarrollo de Videojuegos Personalizados. Para Empresas y Eventos.',
+    img: '/assets/home/alquiler-videojuegos.png',
+    links: [
+      { label: 'Alquiler', href: 'https://alquilerdepc.com' },
+      { label: 'Videojuegos', href: 'https://fiestasinteractivas.com.ar' }
+    ]
+  }
 ];
 
 const differentiators = [
-  { icon: ShieldCheck, title: 'Distribuidores Oficiales', desc: 'Únicos representantes autorizados de Mimio, eBeam, Practi-Man y THScreen en Argentina.' },
-  { icon: Users, title: 'Soporte Pedagógico Real', desc: 'No vendemos cajas: acompañamos con capacitación in-situ y seguimiento continuo.' },
-  { icon: Cpu, title: 'Ecosistema Integrado', desc: 'Hardware + Software + Gamificación (TOMi) + Capacitación en un único proveedor.' },
-  { icon: Star, title: '15 Años de Trayectoria', desc: 'Más de 2.000 instituciones transformaron sus aulas en Argentina, Paraguay y Uruguay.' },
+  { icon: CheckCircle, title: 'Soluciones Integrales', desc: 'Hardware, software y capacitación todo en un solo proveedor de confianza.' },
+  { icon: Award, title: 'Amplia Experiencia', desc: 'Más de 15 años liderando la transformación digital en aulas de todo el país.' },
+  { icon: Handshake, title: 'Acompañamiento Constante', desc: 'Soporte técnico y pedagógico continuo para asegurar el éxito en cada institución.' },
 ];
 
 const partners = [
@@ -51,28 +75,7 @@ const partners = [
   { img: '/assets/pizarrasdigitales.png', name: 'Pizarras Digitales', desc: 'Todo sobre pizarras digitales para el aula.', href: 'https://pizarrasdigitales.com.ar/', color: '#16a34a', bg: '#F0FDF4' },
 ];
 
-/* ─── Brands Marquee ──────────────────────────────────────────── */
-function BrandsMarquee() {
-  const doubled = [...brands, ...brands];
-  return (
-    <section className="py-8 bg-white border-b border-gray-100 overflow-hidden">
-      <p className="text-center text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-5">
-        Marcas oficiales que distribuimos
-      </p>
-      <div className="relative overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-        <div className="marquee-track">
-          {doubled.map((brand, i) => (
-            <span key={i} className="mx-10 text-sm font-bold text-gray-300 hover:text-gray-500 transition-colors cursor-default whitespace-nowrap shrink-0">
-              {brand}
-            </span>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+/* ─── Removed Brands Marquee as per mockup ─── */
 
 /* ─── Main Component ──────────────────────────────────────────── */
 export default function LandingView() {
@@ -86,77 +89,51 @@ export default function LandingView() {
         <div className="absolute bottom-[-60px] left-[30%] w-[300px] h-[300px] rounded-full opacity-8 pointer-events-none"
           style={{ background: 'radial-gradient(circle, var(--brand-lime), transparent 70%)' }} />
 
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Left — headline + CTA */}
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
                 style={{ background: 'rgba(0,212,245,0.12)', color: 'var(--brand-cyan)', border: '1px solid rgba(0,212,245,0.25)' }}>
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: 'var(--brand-cyan)' }} />
-                Más de 15 años transformando aulas
+                La tecnología que tu aula necesita
               </span>
 
-              <h1 className="text-white font-extrabold mb-3 leading-[1.1]"
-                style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', letterSpacing: '-0.03em' }}>
-                Transformamos
+              <h1 className="text-white font-extrabold mb-4 leading-[1.1]"
+                style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', letterSpacing: '-0.03em' }}>
+                Un Puente entre
                 <br />
-                la{' '}
-                <span style={{
+                la <span style={{
                   background: 'linear-gradient(90deg, var(--brand-cyan), var(--brand-lime))',
                   WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-                }}>
-                  Educación
-                </span>
+                }}>Educación</span>
+                <br />y la <span style={{ color: 'var(--brand-cyan)' }}>Tecnología</span>
               </h1>
 
-              {/* Lime underline accent */}
-              <div className="mb-6" style={{ width: 56, height: 3, background: 'var(--brand-lime)', borderRadius: 2 }} />
+              <div className="mb-6" style={{ width: 64, height: 4, background: '#f59e0b', borderRadius: 2 }} />
 
-              <p className="text-base mb-10 max-w-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                Distribuidores oficiales de pizarras digitales, pantallas interactivas
-                y simuladores médicos en Argentina, Paraguay y Uruguay.
+              <p className="text-lg mb-10 max-w-lg leading-relaxed text-gray-300 font-medium">
+                Pantallas táctiles, robótica, juegos interactivos y muebles a medida. Fabricamos, instalamos y capacitamos en todo el país.
               </p>
 
-              <div className="flex flex-wrap gap-3">
-                <Link href="/contacto" className="btn-lime flex items-center gap-2">
-                  Contáctanos <ArrowRight className="w-4 h-4" />
+              <div className="flex flex-wrap gap-4">
+                <Link href="/soluciones" className="flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  style={{ background: '#f59e0b', color: '#ffffff' }}>
+                  Explorar Soluciones
                 </Link>
-                <Link href="https://www.youtube.com/user/ondafilms/videos" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-all"
-                  style={{ border: '1px solid rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.06)' }}>
-                  <Play className="w-4 h-4" /> Ver Video
+                <Link href="/contacto" className="flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  style={{ background: 'var(--brand-cyan)', color: '#ffffff' }}>
+                  Solicitar Asesoramiento
                 </Link>
               </div>
             </motion.div>
 
-            {/* Right — stats panel */}
+            {/* Right — Image */}
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              className="rounded-2xl p-8 lg:p-10"
-              style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                Nuestro impacto
-              </p>
-              <div className="space-y-8">
-                {stats.map((s) => (
-                  <div key={s.label} className="flex items-center gap-5">
-                    <div className="w-1 h-14 rounded-full shrink-0" style={{ background: s.color }} />
-                    <div>
-                      <p className="font-extrabold leading-none mb-1" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', color: s.color, letterSpacing: '-0.04em' }}>
-                        {s.value}
-                      </p>
-                      <p className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>{s.label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 36, paddingTop: 28 }}>
-                <Link href="/soluciones"
-                  className="inline-flex items-center gap-2 text-sm font-semibold transition-all"
-                  style={{ color: 'var(--brand-lime)' }}>
-                  Explorar todas las soluciones <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+              className="relative w-full aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-gray-800">
+              <img src="/assets/home/mesa-tactil-nino.png" alt="Niña interactuando con mesa táctil" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+              <div className="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none"></div>
             </motion.div>
 
           </div>
@@ -180,37 +157,38 @@ export default function LandingView() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {solutions.map((sol, i) => (
-              <Animate key={sol.title} type="fade-up" delay={([0, 150, 300] as const)[i]}>
-                <Link href={sol.href} className="group block overflow-hidden rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" style={{ border: '1px solid #e5e7eb' }}>
-                  {/* Image area with fallback bg */}
-                  <div className="relative overflow-hidden" style={{ height: 220 }}>
+              <Animate key={sol.title} type="fade-up" delay={([0, 150, 300, 0, 150, 300] as const)[i]}>
+                <div className="group block overflow-hidden rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white flex flex-col h-full" style={{ border: '1px solid #e5e7eb' }}>
+                  {/* Image area */}
+                  <div className="relative overflow-hidden border-b border-gray-100" style={{ height: 200 }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={sol.img} alt={sol.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      style={{ mixBlendMode: 'luminosity', opacity: 0.85 }}
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                     />
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,19,107,0.85) 0%, rgba(18,19,107,0.3) 55%, transparent 100%)' }} />
-                    <div className="absolute bottom-0 left-0 px-5 py-4">
-                      <h3 className="text-white font-bold text-lg leading-tight">{sol.title}</h3>
-                    </div>
                   </div>
                   {/* Body */}
-                  <div className="p-5 bg-white">
-                    <p className="text-sm text-gray-500 leading-relaxed mb-4">{sol.desc}</p>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all group-hover:gap-2.5" style={{ color: 'var(--brand-navy)' }}>
-                      Conocer solución <ArrowRight className="w-4 h-4" />
-                    </span>
+                  <div className="p-4 flex flex-col flex-1 bg-white">
+                    <h3 className="font-bold text-gray-900 text-lg leading-tight text-center mb-1">{sol.title}</h3>
+                    <p className="text-sm text-gray-600 leading-snug text-center mb-4 flex-1">{sol.desc}</p>
+                    <div className="flex flex-wrap items-center justify-center gap-4 mt-auto">
+                      {sol.links.map(link => (
+                        <Link key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : '_self'}
+                          className="inline-flex items-center text-sm font-bold transition-all hover:underline"
+                          style={{ color: '#ef4444' }}>
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </Link>
+                </div>
               </Animate>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════ BRANDS ══════════════════════════════════ */}
-      <BrandsMarquee />
+      {/* ─── Brands Marquee removed ─── */}
 
       {/* ═══════════════ VIDEO ═══════════════════════════════════ */}
       <section className="py-16 px-6" style={{ background: '#f7f8fc' }}>
@@ -219,121 +197,48 @@ export default function LandingView() {
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-gray-900">Mirá cómo transformamos el aula</h2>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 aspect-video">
-              <iframe src="https://www.youtube.com/embed/CItDjMo1snI?rel=0&modestbranding=1"
-                title="La Clase Digital" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen className="w-full h-full" />
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-video relative group bg-gray-900">
+              <video
+                src="/assets/robotica-talleres.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100"
+              />
             </div>
           </Animate>
         </div>
       </section>
 
-      {/* ═══════════════ PRODUCTS ════════════════════════════════ */}
-      <ProductsCarousel />
-
-      {/* ═══════════════ CLIENTES ════════════════════════════════ */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-5xl mx-auto text-center">
-          <Animate type="fade-up">
-            <p className="text-[11px] font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--brand-navy)' }}>
-              Nuestros Clientes
-            </p>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Instituciones que confían en nosotros</h2>
-            <p className="text-gray-500 text-sm max-w-xl mx-auto mb-10">
-              Más de 500 instituciones eligieron La Clase Digital para transformar sus aulas.
-            </p>
-          </Animate>
-          <Animate type="zoom-in" delay={200}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/CLIENTESWEB-nuevo.png" alt="Clientes" className="w-full max-w-4xl mx-auto object-contain object-center " />
-          </Animate>
-        </div>
-      </section>
-
-      {/* ═══════════════ PLATAFORMAS ═════════════════════════════ */}
-      <section className="py-16 px-6" style={{ background: '#f7f8fc' }}>
-        <div className="max-w-5xl mx-auto">
-          <Animate type="fade-up">
-            <div className="text-center mb-10">
-              <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--brand-navy)' }}>Ecosistema Digital</p>
-              <h2 className="text-2xl font-bold text-gray-900">Plataformas de nuestro ecosistema</h2>
-            </div>
-          </Animate>
-
-          {/* TOMi */}
-          <Animate type="zoom-in" delay={100}>
-            <Link href="https://tomi.digital/es" target="_blank" rel="noopener noreferrer"
-              className="group flex flex-col md:flex-row items-center gap-6 rounded-xl p-6 mb-5 transition-all hover:shadow-lg"
-              style={{ background: 'linear-gradient(135deg, #eef2ff, #f5f3ff)', border: '1.5px solid #c4b5fd66' }}>
-              <div className="w-16 h-16 bg-white rounded-xl shadow-sm border border-gray-100 p-2 shrink-0 flex items-center justify-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/tomidigital.png" alt="TOMi Digital" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex-1 text-center md:text-left">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-purple-600">Plataforma educativa destacada</span>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">TOMi Digital</h3>
-                <p className="text-sm text-gray-500">Gamificación educativa líder en Latinoamérica. Juegos interactivos, tableros y contenido curricular integrado.</p>
-              </div>
-              <span className="shrink-0 px-5 py-2.5 rounded-lg text-sm font-bold text-white animate-glow-pulse"
-                style={{ background: 'linear-gradient(135deg, #2563EB, #7C3AED)' }}>
-                Ir a TOMi Digital →
-              </span>
-            </Link>
-          </Animate>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {partners.map((p, i) => (
-              <Animate key={p.name} type="fade-up" delay={([200, 300, 400] as const)[i]}>
-                <Link href={p.href} target="_blank" rel="noopener noreferrer"
-                  className="group rounded-xl border-2 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col gap-3"
-                  style={{ borderColor: `${p.color}33`, backgroundColor: p.bg }}>
-                  <div className="flex items-center gap-3">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={p.img} alt={p.name} className="w-10 h-10 object-contain rounded-lg shrink-0" />
-                    <div>
-                      <p className="font-bold text-sm" style={{ color: p.color }}>{p.name}</p>
-                      <p className="text-xs text-gray-500 leading-snug mt-0.5">{p.desc}</p>
-                    </div>
-                  </div>
-                  <span className="text-[11px] font-bold self-start px-2.5 py-1 rounded-full text-white" style={{ backgroundColor: p.color }}>
-                    Visitar sitio →
-                  </span>
-                </Link>
-              </Animate>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ─── Clientes and Plataformas removed ─── */}
 
       {/* ═══════════════ POR QUÉ ELEGIRNOS ══════════════════════ */}
-      <section className="py-20 px-6" style={{ background: 'var(--brand-navy)' }}>
+      <section className="py-20 px-6" style={{ background: 'linear-gradient(to bottom, #f0f9ff, #e0f2fe)' }}>
         <div className="max-w-6xl mx-auto">
           <Animate type="fade-up">
-            <div className="text-center mb-14">
-              <p className="text-[11px] font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--brand-cyan)' }}>Por qué elegirnos</p>
-              <h2 className="text-3xl font-bold text-white">No somos un proveedor más</h2>
-              <p className="mt-3 max-w-xl mx-auto text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                El único ecosistema educativo que combina hardware oficial, software y acompañamiento pedagógico.
-              </p>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--brand-navy)]" style={{ color: '#1e3a8a' }}>¿Por qué elegir La Clase Digital?</h2>
             </div>
           </Animate>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {differentiators.map((d, i) => (
-              <Animate key={d.title} type="fade-up" delay={([0, 100, 200, 300] as const)[i]}>
-                <div className="rounded-xl p-6 transition-all hover:-translate-y-1"
-                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                    style={{ background: 'rgba(0,212,245,0.15)' }}>
-                    <d.icon className="w-5 h-5" style={{ color: 'var(--brand-cyan)' }} />
+              <Animate key={d.title} type="fade-up" delay={([0, 100, 200] as const)[i]}>
+                <div className="flex flex-col items-center text-center p-6 transition-all hover:-translate-y-2">
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-md"
+                    style={{ background: i === 0 ? '#3b82f6' : '#f97316', color: 'white' }}>
+                    <d.icon className="w-10 h-10" />
                   </div>
-                  <h3 className="font-bold text-white text-sm mb-2">{d.title}</h3>
-                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>{d.desc}</p>
+                  <h3 className="font-extrabold text-lg text-gray-900 mb-3" style={{ color: '#1e3a8a' }}>{d.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm font-medium">{d.desc}</p>
                 </div>
               </Animate>
             ))}
           </div>
         </div>
       </section>
+
+      {/* ─── Products removed ─── */}
     </>
   );
 }

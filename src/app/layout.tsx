@@ -17,16 +17,17 @@ export const metadata: Metadata = {
   description:
     "Distribuidores oficiales de pizarras digitales, pantallas táctiles y simuladores médicos en Argentina. Más de 20 años equipando instituciones educativas con tecnología pedagógica real.",
   keywords: [
-    "pantallas táctiles educativas Argentina",
-    "pizarras digitales interactivas",
-    "Mimio Argentina",
-    "eBeam Argentina",
-    "ViewSonic educación",
-    "simuladores RCP Argentina",
-    "gamificación TOMi",
-    "robótica escolar Argentina",
-    "La Clase Digital",
-    "tecnología educativa Buenos Aires",
+    "robótica educativa", "proyectores", "Streaming Escolar", "Pantallas Táctiles", 
+    "Rasti", "Mis Ladrillos", "Esqueletos", "Pantallas Interactivas", "Samsung", 
+    "Viewsonic", "TLT", "The Learning Touch", "MaxHub", "i3", "i3Connect", "i3Touch", 
+    "LG", "Pensamiento Computacional", "Programar Desconectado", "SIMA", "TOMI", 
+    "PleiQ", "Smart", "THScreen", "Wacom", "Tableta Digitalizadora", "Tecnología Educativa", 
+    "LaClaseDigital", "GarageD", "Esqueleto", "Hueso", "Columna", "Maqueta", 
+    "Primeros Auxilios", "RCP", "Heinlich", "Simuladores DEA", "Torsos RCP", "ODD", 
+    "Nexo", "Practiman", "Prestan", "Carro Portanotebooks", "Alquiler de Notebooks", 
+    "Totem", "Mesa Táctil", "Tablets", "Alquiler", "Rotafolios", "VideoJuegos Personalizados", 
+    "Videojuegos para Empresas", "Videojuegos Publicitarios", "Educación", "Escuela", 
+    "Colegio", "Capacitación Docente", "Formación Docente"
   ],
   openGraph: {
     title: "La Clase Digital — Ecosistema Educativo Integral",
