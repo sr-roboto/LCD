@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 import { getSession } from "@/lib/auth";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -56,6 +57,7 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
+        <CustomCursor />
         <Navbar user={user} />
         <main className="flex-grow">{children}</main>
         <Footer />

@@ -33,7 +33,7 @@ export default function Animate({
   className = "",
   style,
   as: Tag = "div",
-  threshold = 0.12,
+  threshold = 0.05,
 }: AnimateProps) {
   const { ref, inView } = useInView(threshold);
 
