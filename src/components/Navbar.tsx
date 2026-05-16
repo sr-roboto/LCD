@@ -34,8 +34,9 @@ const navItems: NavItem[] = [
         group: "Recursos y contenido",
         items: [
           { label: "Juegos", href: "/juegos" },
-          { label: "Recursos", href: "/recursos" },
-          { label: "Descargas", href: "https://www.centrodeinnovacioneducativa.com.ar/blog", external: true },
+          { label: "Cursos", href: "/cursos" },
+          { label: "Recursos", href: "https://www.centrodeinnovacioneducativa.com.ar/blog", external: true },
+          { label: "Descargas", href: "/descargas" },
           { label: "Blog", href: "/blog" },
           { label: "Canal de YouTube", href: "https://www.youtube.com/user/ondafilms/videos", external: true },
         ],

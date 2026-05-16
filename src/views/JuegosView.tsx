@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Gamepad2, BookOpen, Printer, Smartphone, CheckCircle, ArrowRight, MessageCircle, Mail, Download, Dices } from "lucide-react";
@@ -409,7 +409,7 @@ export default function JuegosView() {
             <div className="flex-1 relative">
               <input type="text" placeholder="Buscar juego por nombre o temática…"
                 value={search} onChange={(e) => setSearch(e.target.value)}
-                className="w-full px-4 py-3 pl-10 rounded-xl text-sm outline-none transition-all shadow-sm"
+                className="w-full px-4 py-3 pl-10 rounded-xl text-sm outline-none transition-all shadow-sm cursor-text"
                 style={{ background: "#ffffff", border: "1px solid rgba(18,19,107,0.1)", color: "#12136b" }}
                 onFocus={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#00D4F5"; (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 3px rgba(0,212,245,0.1)"; }}
                 onBlur={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(18,19,107,0.1)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
