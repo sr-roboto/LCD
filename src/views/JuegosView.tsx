@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Gamepad2, BookOpen, Printer, Smartphone, CheckCircle, ArrowRight, MessageCircle, Mail, Download, Dices } from "lucide-react";
 import DiceRoller from "@/components/DiceRoller";
+import AnimatedEduBg from "@/components/AnimatedEduBg";
 
 const DRIVE_URL = "https://drive.google.com/drive/folders/1K4nh03b2j2gKehKguP8uVYECKlGAk4xgy";
 
@@ -272,17 +273,19 @@ function TiltCard({
         ref={cardRef}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm
-                   hover:shadow-xl hover:border-blue-200 transition-shadow duration-300
-                   will-change-transform group cursor-default flex flex-col h-full"
+        className="rounded-2xl overflow-hidden will-change-transform group cursor-default flex flex-col h-full transition-all duration-300"
+        style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(0,212,245,0.15)", boxShadow: "0 2px 16px rgba(0,0,0,0.3)" }}
+        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 16px 48px rgba(0,212,245,0.15)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,245,0.4)"; }}
       >
         {/* Top accent bar */}
-        <div className="h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500
-                        origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400" />
+        <div className="h-[2px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+          style={{ background: "linear-gradient(90deg,#00D4F5,#84E010)" }} />
 
         {/* Thumbnail */}
-        <div className="relative h-40 bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center overflow-hidden shrink-0">
-          <div className="absolute w-32 h-32 rounded-full border-[2px] border-dashed border-blue-100 animate-spin-slow" />
+        <div className="relative h-40 flex items-center justify-center overflow-hidden shrink-0"
+          style={{ background: "linear-gradient(135deg,#080a2e,#12136b)" }}>
+          <div className="absolute w-32 h-32 rounded-full border-[2px] border-dashed animate-spin-slow"
+            style={{ borderColor: "rgba(0,212,245,0.2)" }} />
           {game.img ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -296,7 +299,7 @@ function TiltCard({
               {game.emoji}
             </span>
           )}
-          <span className="absolute top-3 left-3 text-[10px] font-black text-gray-400">#{game.id}</span>
+          <span className="absolute top-3 left-3 text-[10px] font-black" style={{ color: "rgba(0,212,245,0.5)" }}>#{game.id}</span>
         </div>
 
         {/* Body */}
@@ -304,30 +307,19 @@ function TiltCard({
           <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 inline-block ${game.tag}`}>
             {game.subject}
           </span>
-          <h3 className="font-bold text-gray-900 text-sm leading-snug mb-1.5">{game.title}</h3>
-          <p className="text-xs text-gray-500 leading-relaxed mb-2 flex-1">{game.desc}</p>
-          <p className="text-[10px] font-semibold text-gray-400 mb-4">🎓 {game.grades}</p>
-
-          {/* Action buttons */}
-          <div className="flex gap-2 pt-3 border-t border-gray-100">
-            {/* Jugar — opens iframe modal */}
-            <button
-              onClick={(e) => { e.stopPropagation(); onPlay(); }}
-              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-[11px] font-bold
-                         text-white transition-colors cursor-pointer"
-              style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}
-            >
+          <h3 className="font-bold text-white text-sm leading-snug mb-1.5">{game.title}</h3>
+          <p className="text-xs leading-relaxed mb-2 flex-1" style={{ color: "rgba(255,255,255,0.5)" }}>{game.desc}</p>
+          <p className="text-[10px] font-semibold mb-4" style={{ color: "rgba(255,255,255,0.35)" }}>🎓 {game.grades}</p>
+          <div className="flex gap-2 pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+            <button onClick={(e) => { e.stopPropagation(); onPlay(); }}
+              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-[11px] font-bold text-white transition-colors cursor-pointer"
+              style={{ background: "linear-gradient(135deg,#12136b,#00D4F5)" }}>
               <Dices className="w-3.5 h-3.5" /> Jugar
             </button>
-            {/* Info — opens Drive folder */}
-            <Link
-              href={game.driveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link href={game.driveUrl} target="_blank" rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[11px] font-semibold
-                         bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200 transition-colors "
-            >
+              className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[11px] font-semibold transition-colors cursor-pointer"
+              style={{ background: "rgba(132,224,16,0.12)", border: "1px solid rgba(132,224,16,0.3)", color: "#84E010" }}>
               <Download className="w-3.5 h-3.5" /> Info
             </Link>
           </div>
@@ -365,9 +357,12 @@ export default function JuegosView() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative page-hero-gradient pt-20 pb-16 px-4 overflow-hidden">
-        <Blobs />
-        <div ref={heroRef} className="relative max-w-5xl mx-auto">
+      <section className="relative overflow-hidden pt-20 pb-16 px-4"
+        style={{ background: "linear-gradient(135deg,#080a2e 0%,#12136b 55%,#0b1246 100%)", minHeight: "52vh" }}>
+        <AnimatedEduBg opacity={0.12} />
+        <div className="absolute top-[-60px] right-[5%] w-[400px] h-[400px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle,rgba(132,224,16,0.08) 0%,transparent 68%)" }} />
+        <div className="relative z-10 max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <motion.div
@@ -376,46 +371,36 @@ export default function JuegosView() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
 
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-5">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] mb-4" style={{ color: "#84E010" }}>Biblioteca Educativa</p>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5" style={{ letterSpacing: "-0.03em" }}>
                 La colección{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                  ¿Cuánto Sabés de…?
-                </span>
+                <span style={{ color: "#00D4F5" }}>¿Cuánto Sabés de…?</span>
               </h1>
-
-              <p className="text-gray-500 text-base leading-relaxed mb-6 max-w-lg">
+              <p className="text-base leading-relaxed mb-6 max-w-lg" style={{ color: "rgba(255,255,255,0.55)" }}>
                 Juegos educativos analógicos / digitales listos para usar en aulas, talleres y eventos.
                 Gamificación al centro del aprendizaje.
               </p>
 
-              {/* Features */}
               <ul className="space-y-2.5 mb-8">
                 {features.map((f) => (
                   <li key={f.label} className="flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
-                      <f.icon className="w-3.5 h-3.5 text-blue-600" />
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                      style={{ background: "rgba(0,212,245,0.15)", border: "1px solid rgba(0,212,245,0.3)" }}>
+                      <f.icon className="w-3.5 h-3.5" style={{ color: "#00D4F5" }} />
                     </div>
-                    <span className="text-sm text-gray-600">{f.label}</span>
+                    <span className="text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>{f.label}</span>
                   </li>
                 ))}
               </ul>
-
               <div className="flex flex-wrap gap-3">
-                <Link
-                  href="https://wa.me/5491143000057"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold
-                             text-white shadow-md hover:shadow-lg transition-all"
-                  style={{ backgroundColor: "var(--brand-blue)" }}
-                >
+                <Link href="https://wa.me/5491143000057" target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all hover:-translate-y-0.5"
+                  style={{ background: "#84E010", color: "#0d0e52" }}>
                   <MessageCircle className="w-4 h-4" /> Consultar por WhatsApp
                 </Link>
-                <Link
-                  href="mailto:marcelo@empresariostv.com.ar?subject=Consulta ¿Cuánto Sabés de?"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold
-                             text-gray-700 border border-gray-200 bg-white hover:bg-gray-50 transition-colors"
-                >
+                <Link href="mailto:marcelo@empresariostv.com.ar?subject=Consulta ¿Cuánto Sabés de?"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all hover:-translate-y-0.5"
+                  style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.85)" }}>
                   <Mail className="w-4 h-4" /> Escribir por mail
                 </Link>
               </div>
@@ -446,23 +431,22 @@ export default function JuegosView() {
       </section>
 
       {/* ── Search + grid ────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          {/* Search bar */}
+      <section className="py-16 px-4 relative overflow-hidden"
+        style={{ background: "linear-gradient(180deg,#0b1246 0%,#080a2e 100%)" }}>
+        <AnimatedEduBg opacity={0.06} />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-12 max-w-xl mx-auto">
             <div className="flex-1 relative">
-              <input
-                type="text"
-                placeholder="Buscar juego por nombre o temática…"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full px-4 py-3 pl-10 rounded-xl border border-gray-200 text-sm
-                           focus:outline-none focus:ring-2 focus:border-transparent bg-gray-50"
-                style={{ "--tw-ring-color": "var(--brand-blue)" } as React.CSSProperties}
+              <input type="text" placeholder="Buscar juego por nombre o temática…"
+                value={search} onChange={(e) => setSearch(e.target.value)}
+                className="w-full px-4 py-3 pl-10 rounded-xl text-sm outline-none transition-all"
+                style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(0,212,245,0.25)", color: "#fff" }}
+                onFocus={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,245,0.6)"; }}
+                onBlur={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,245,0.25)"; }}
               />
-              <Gamepad2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Gamepad2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "#00D4F5" }} />
             </div>
-            <span className="text-xs text-gray-400 whitespace-nowrap font-medium shrink-0">
+            <span className="text-xs whitespace-nowrap font-medium shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
               {filtered.length} juego{filtered.length !== 1 ? "s" : ""}
             </span>
           </div>
@@ -491,58 +475,39 @@ export default function JuegosView() {
       {playGame && <GamePlayer game={playGame} onClose={() => setPlayGame(null)} />}
 
       {/* ── ¿Quiénes somos? ──────────────────────────────────── */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4" style={{ background: "#F0F4FF" }}>
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-            style={{ color: "var(--brand-blue)" }}>
-            Quiénes Somos
-          </p>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Experiencias educativas gamificadas
-          </h2>
-          <p className="text-gray-500 text-sm leading-relaxed">
-            Somos La Clase Digital, un equipo que diseña experiencias educativas gamificadas
-            para escuelas, municipios y organizaciones. Nuestra serie{" "}
-            <span className="font-semibold text-gray-700">"¿Cuánto Sabés de…?"</span> combina
-            tableros físicos, cartas, dados y una app editable. Podés pedirnos crear tu juego
-            a medida, o adquirir la versión full para desarrollarlo vos mismo.
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#12136b" }}>Quiénes Somos</p>
+          <h2 className="text-2xl font-extrabold mb-4" style={{ color: "#12136b" }}>Experiencias educativas gamificadas</h2>
+          <p className="text-sm leading-relaxed text-gray-500">
+            Somos La Clase Digital, un equipo que diseña experiencias educativas gamificadas para escuelas, municipios y organizaciones. Nuestra serie{" "}
+            <span className="font-semibold" style={{ color: "#12136b" }}>"¿Cuánto Sabés de…?"</span> combina tableros físicos, cartas, dados y una app editable.
           </p>
         </div>
       </section>
 
       {/* ── CTA contacto ─────────────────────────────────────── */}
-      <section className="py-14 px-4" style={{ backgroundColor: "var(--brand-blue)" }}>
-        <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-2xl font-bold mb-3">
-            ¿Querés implementar los juegos o necesitás un pack a medida?
-          </h2>
-          <p className="text-blue-100 text-sm mb-8">
-            Escribinos y te armamos una propuesta para tu institución.
-          </p>
+      <section className="py-14 px-4 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg,#080a2e 0%,#12136b 100%)" }}>
+        <AnimatedEduBg opacity={0.08} />
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-extrabold text-white mb-3">¿Querés implementar los juegos o necesitás un pack a medida?</h2>
+          <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>Escribinos y te armamos una propuesta para tu institución.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="https://wa.me/5491143000057"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white font-semibold text-sm
-                         hover:bg-blue-50 transition-colors"
-              style={{ color: "var(--brand-blue)" }}
-            >
+            <Link href="https://wa.me/5491143000057" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+              style={{ background: "#84E010", color: "#0d0e52" }}>
               <MessageCircle className="w-4 h-4" /> WhatsApp
             </Link>
-            <Link
-              href="mailto:marcelo@empresariostv.com.ar?subject=Consulta ¿Cuánto Sabés de?"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/40
-                         text-white font-semibold text-sm hover:bg-white/10 transition-colors"
-            >
+            <Link href="mailto:marcelo@empresariostv.com.ar?subject=Consulta ¿Cuánto Sabés de?"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+              style={{ background: "rgba(0,212,245,0.12)", border: "1px solid rgba(0,212,245,0.3)", color: "#00D4F5" }}>
               <Mail className="w-4 h-4" /> Escribir por mail
             </Link>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/40
-                         text-white font-semibold text-sm hover:bg-white/10 transition-colors"
-            >
-              <ArrowRight className="w-4 h-4" /> Formulario de contacto
+            <Link href="/contacto"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+              style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.8)" }}>
+              <ArrowRight className="w-4 h-4" /> Formulario
             </Link>
           </div>
         </div>

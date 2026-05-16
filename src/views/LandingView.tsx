@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, Users, Star } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Users, Star, MessageCircle } from 'lucide-react';
 import { brands } from '@/lib/data';
 import ProductsCarousel from '@/components/ProductsCarousel';
 import Animate from '@/components/Animate';
@@ -354,6 +354,62 @@ export default function LandingView() {
         </div>
         <ProductsCarousel />
       </motion.section>
+
+
+
+      <div className="border-b border-white/10 relative overflow-hidden bg-gradient-to-br from-[#0d0e52] to-[#0a0a2a]">
+        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          {/* CTA Text & Info */}
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">¿Listo para innovar en tu aula?</h2>
+            <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-md">
+              Completa el formulario o escríbenos por WhatsApp para recibir asesoramiento personalizado o solicitar una demostración en vivo.
+            </p>
+
+            <Link href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1ebd5a] text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+              <MessageCircle className="w-6 h-6" />
+              Contactar por WhatsApp
+            </Link>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+            <h3 className="text-2xl font-bold text-[var(--brand-navy)] mb-6">Envíanos tu consulta</h3>
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label htmlFor="name" className="text-sm font-semibold text-gray-700">Nombre Completo</label>
+                  <input type="text" id="name" placeholder="Ej. Juan Pérez" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow" />
+                </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="phone" className="text-sm font-semibold text-gray-700">Teléfono</label>
+                  <input type="tel" id="phone" placeholder="Ej. 11 1234-5678" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow" />
+                </div>
+              </div>
+              <div className="space-y-1.5">
+                <label htmlFor="email" className="text-sm font-semibold text-gray-700">Correo Electrónico</label>
+                <input type="email" id="email" placeholder="tu@email.com" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow" />
+              </div>
+              <div className="space-y-1.5">
+                <label htmlFor="message" className="text-sm font-semibold text-gray-700">Mensaje</label>
+                <textarea id="message" rows={3} placeholder="¿En qué podemos ayudarte?" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--brand-cyan)] transition-shadow resize-none"></textarea>
+              </div>
+              <button type="submit"
+                className="w-full py-4 rounded-xl font-black text-base tracking-wide transition-all duration-300 hover:scale-[1.02] hover:shadow-xl mt-2"
+                style={{ background: 'linear-gradient(135deg,#12136b,#1a1b8a)', color: '#84E010', border: '1.5px solid rgba(132,224,16,0.3)', boxShadow: '0 4px 20px rgba(18,19,107,0.4)' }}>
+                Enviar Mensaje →
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
     </>
+
+
+
   );
 }
