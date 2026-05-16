@@ -375,11 +375,6 @@ export default function JuegosView() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-200
-                              bg-white text-sm text-blue-600 mb-6 shadow-sm font-medium">
-                <Gamepad2 className="w-4 h-4" />
-                Biblioteca de 16 juegos educativos
-              </div>
 
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-5">
                 La colección{" "}
