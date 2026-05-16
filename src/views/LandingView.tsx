@@ -8,6 +8,7 @@ import { brands } from '@/lib/data';
 import ProductsCarousel from '@/components/ProductsCarousel';
 import Animate from '@/components/Animate';
 import VideoPlayer from '@/components/VideoPlayer';
+import AnimatedEduBg from '@/components/AnimatedEduBg';
 
 /* ─── Solutions ──────────────────────────────────────────────── */
 const solutions = [
@@ -173,9 +174,7 @@ export default function LandingView() {
           minHeight: 'calc(100vh - 64px)',
           background: 'linear-gradient(135deg,#080a2e 0%,#12136b 55%,#0b1246 100%)',
         }}>
-        {/* Mesh grid */}
-        <div className="absolute inset-0 opacity-[0.035]"
-          style={{ backgroundImage: 'linear-gradient(rgba(0,212,245,1) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,245,1) 1px,transparent 1px)', backgroundSize: '56px 56px' }} />
+        <AnimatedEduBg opacity={0.13} />
         <div className="absolute top-[-80px] right-[5%] w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: 'radial-gradient(circle,rgba(132,224,16,0.08) 0%,transparent 68%)' }} />
         <div className="absolute bottom-[-60px] left-[10%] w-[420px] h-[420px] rounded-full pointer-events-none"
@@ -305,8 +304,8 @@ export default function LandingView() {
         viewport={{ once: true, amount: 0.08 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         style={{ background: 'linear-gradient(135deg,#080a2e 0%,#12136b 100%)' }}>
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{ backgroundImage: 'linear-gradient(rgba(0,212,245,1) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,245,1) 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
+        <AnimatedEduBg opacity={0.15} />
+
         <div className="relative z-10 max-w-6xl mx-auto">
           <Animate type="fade-up">
             <div className="text-center mb-16">

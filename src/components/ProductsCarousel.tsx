@@ -15,7 +15,6 @@ const GROUPS = [
       "/assets/productos/PIZARRAi.png",
       "/assets/productos/LCD-Interactivo-TH-SCREENi.png",
       "/assets/productos/proyector1.png",
-      "/assets/productos/proyector2.png",
       "/assets/productos/Tomi-7-Maestro.png",
       "/assets/productos/ROTAFOLLLIO.jpg",
       "/assets/productos/Mesa-Interactiva-THSCREEN.png",
@@ -29,12 +28,10 @@ const GROUPS = [
     label: "STEM & Robótica",
     color: "#7C3AED",
     images: [
-      "/assets/productos/Chicos-y-Arduino.png",
       "/assets/productos/Labdisc.png",
-      "/assets/productos/Rasti-cuadrado.jpg",
       "/assets/productos/Robot.jpg",
       "/assets/productos/sima-1.png",
-      "/assets/productos/sima4-200x199-1.png",
+
     ],
   },
   {
@@ -63,8 +60,6 @@ const GROUPS = [
     color: "#0891B2",
     images: [
       "/assets/productos/HDMI-Interactivo-BEAM.png",
-      "/assets/productos/ScreamBeam.png",
-      "/assets/productos/HDMI-INTERACTIVO.png",
       "/assets/productos/ToWmi.png",
     ],
   },
@@ -95,7 +90,6 @@ const GROUPS = [
       "/assets/productos/Tabletsi.png",
       "/assets/productos/PC-BANGHOi.png",
       "/assets/productos/Notebook-Reciclada-Bangho.png",
-      "/assets/productos/notebook-reciclada-1.png",
       "/assets/productos/Impresora.png",
     ],
   },
