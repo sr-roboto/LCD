@@ -176,11 +176,10 @@ export default function LoginModal({ open, onClose, onSwitchToRegister }: LoginM
                     type="submit"
                     disabled={loading}
                     whileTap={{ scale: 0.97 }}
-                    className="w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all mt-2"
+                    className="w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all mt-2 "
                     style={{
                       background: loading ? 'rgba(132,224,16,0.5)' : '#84E010',
                       color: '#0d0e52',
-                      cursor: loading ? 'not-allowed' : 'pointer',
                     }}
                     onMouseEnter={(e) => { if (!loading) (e.currentTarget as HTMLElement).style.background = '#9ef020'; }}
                     onMouseLeave={(e) => { if (!loading) (e.currentTarget as HTMLElement).style.background = '#84E010'; }}>

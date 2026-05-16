@@ -109,7 +109,7 @@ export default function RegisterView() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 rounded-2xl text-[#0d0e52] font-black text-sm transition-all shadow-xl shadow-[#84E010]/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-green-500/40 active:scale-95"
+                className="w-full py-4 rounded-2xl text-[#0d0e52] font-black text-sm transition-all shadow-xl shadow-[#84E010]/20 flex items-center justify-center gap-2 disabled:opacity-50 hover:shadow-green-500/40 active:scale-95"
                 style={{ background: "#84E010" }}
               >
                 {loading ? "Creando cuenta..." : "Comenzar ahora"}

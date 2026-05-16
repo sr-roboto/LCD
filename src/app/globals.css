@@ -126,13 +126,14 @@
 }
 
 @layer base {
-  * {
+  *, *::before, *::after {
     @apply border-border outline-ring/50;
     box-sizing: border-box;
+    cursor: none !important;
   }
   html {
     scroll-behavior: smooth;
-    cursor: none;
+    cursor: none !important;
   }
   body {
     @apply bg-background text-foreground;
@@ -141,10 +142,10 @@
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    cursor: none;
+    cursor: none !important;
   }
-  a, button, [role="button"], input, textarea, select, [tabindex] {
-    cursor: none;
+  a, button, [role="button"], input, textarea, select, [tabindex], label {
+    cursor: none !important;
   }
 
   /* Tipografía corporativa — jerarquía más definida */

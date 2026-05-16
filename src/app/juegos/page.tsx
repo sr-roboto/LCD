@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import JuegosView from "@/views/JuegosView";
 
 export const metadata: Metadata = {
-  title: "Juegos Educativos | La Clase Digital",
+  title: "Juegos Educativos Interactivos",
   description:
-    'Biblioteca de 15 juegos educativos analógicos y digitales "¿Cuánto Sabés de…?" para aulas, talleres y eventos. Gamificación al centro del aprendizaje.',
+    'Biblioteca de juegos interactivos "¿Cuánto Sabés de…?". Gamificación lista para usar en aulas, talleres y eventos educativos.',
 };
 
 export default function JuegosPage() {

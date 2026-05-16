@@ -198,7 +198,6 @@ export default function RegisterModal({ open, onClose, onSwitchToLogin }: Regist
                   style={{
                     background: success ? '#84E010' : loading ? 'rgba(0,212,245,0.5)' : '#00D4F5',
                     color: '#0d0e52',
-                    cursor: (loading || success) ? 'not-allowed' : 'pointer',
                   }}
                   onMouseEnter={(e) => { if (!loading && !success) (e.currentTarget as HTMLElement).style.background = '#22e3ff'; }}
                   onMouseLeave={(e) => { if (!loading && !success) (e.currentTarget as HTMLElement).style.background = '#00D4F5'; }}>

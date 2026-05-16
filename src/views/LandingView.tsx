@@ -225,7 +225,7 @@ export default function LandingView() {
               <div className="bg-conic/[from_var(--border-angle)] from-[#00D4F5]/20 via-[#00D4F5] to-[#00D4F5]/20 animate-rotate-border rounded-[2.5rem] p-[1.5px] shadow-2xl">
                 <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/3] bg-[#080a2e]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/assets/home/mesa-tactil-nino.webp" alt="Niña en mesa táctil" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src="/assets/home/mesa-tactil-nino.webp" alt="Niña utilizando mesa táctil interactiva de La Clase Digital para aprendizaje lúdico" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   
                   {/* Destello (Shimmer/Glint effect) */}
                   <div className="absolute inset-0 pointer-events-none overflow-hidden">

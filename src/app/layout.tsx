@@ -14,31 +14,54 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "La Clase Digital | Tecnología Educativa, Pantallas Táctiles y Robótica",
+  metadataBase: new URL("https://www.laclasedigital.com.ar"),
+  title: {
+    default: "La Clase Digital | Tecnología Educativa, Pantallas Táctiles y Robótica",
+    template: "%s | La Clase Digital"
+  },
   description:
-    "Soluciones integrales en Tecnología Educativa para escuelas, colegios y empresas. Proveedores de pantallas táctiles, pizarras digitales, robótica educativa, proyectores, simuladores médicos (RCP, DEA, esqueletos) y alquiler de equipos.",
+    "Ecosistema educativo integral: hardware, software y capacitación. Expertos en pantallas táctiles, robótica, juegos educativos y simuladores médicos en Argentina, Paraguay y Uruguay.",
   keywords: [
-    "robótica educativa", "proyectores", "Streaming Escolar", "Pantallas Táctiles",
-    "Rasti", "Mis Ladrillos", "Esqueletos", "Pantallas Interactivas", "Samsung",
-    "Viewsonic", "TLT", "The Learning Touch", "MaxHub", "i3", "i3Connect",
-    "i3Touch", "LG", "Pensamiento Computacional", "Programar Desconectado", "SIMA",
-    "TOMI", "PleiQ", "Smart", "THScreen", "Wacom", "Tableta Digitalizadora",
-    "Tecnología Educativa", "LaClaseDigital", "GarageD", "Esqueleto", "Hueso",
-    "Columna", "Maqueta", "Primeros Auxilios", "RCP", "Heinlich", "Simuladores DEA",
-    "Torsos RCP", "ODD", "Nexo", "Practiman", "Prestan", "Carro Portanotebooks",
-    "Alquiler de Notebooks", "Totem", "Mesa Táctil", "Tablets", "Alquiler",
-    "Rotafolios", "VideoJuegos Personalizados", "Videojuegos para Empresas",
-    "Videojuegos Publicitarios", "Educación", "Escuela", "Colegio", "Capacitación Docente",
-    "Formación Docente", "pizarras digitales interactivas", "Mimio Argentina", "eBeam Argentina"
+    "robótica educativa", "pantallas táctiles", "pizarras digitales", "tecnología educativa",
+    "simuladores médicos", "RCP", "Arduino", "TOMi Digital", "gamificación", "LCD",
+    "La Clase Digital", "GarageD", "Buenos Aires", "Argentina"
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "La Clase Digital — Ecosistema Educativo Integral",
     description:
-      "Hardware, software y capacitación docente. El único ecosistema educativo completo en Argentina.",
+      "Hardware, software y capacitación docente. El único ecosistema educativo completo en el Cono Sur.",
     url: "https://www.laclasedigital.com.ar",
     siteName: "La Clase Digital",
     locale: "es_AR",
     type: "website",
+    images: [
+      {
+        url: "/lcd_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "La Clase Digital Logo",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "La Clase Digital | Tecnología Educativa",
+    description: "Liderando la transformación digital educativa con soluciones integrales.",
+    images: ["/lcd_logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -49,12 +72,30 @@ export default async function RootLayout({
 }>) {
   const user = await getSession();
   
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "La Clase Digital",
+    "url": "https://www.laclasedigital.com.ar",
+    "logo": "https://www.laclasedigital.com.ar/lcd_logo.png",
+    "sameAs": [
+      "https://www.facebook.com/laclasedigital",
+      "https://www.instagram.com/laclasedigital",
+      "https://www.youtube.com/user/ondafilms"
+    ],
+    "description": "Líderes en tecnología educativa y soluciones integrales para el aula en Latinoamérica."
+  };
+
   return (
     <html lang="es" className={plusJakartaSans.variable} suppressHydrationWarning>
       <head>
         <meta name="geo.region" content="AR" />
         <meta name="geo.placename" content="Buenos Aires" />
         <link rel="icon" href="/favicon.ico" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
         <CustomCursor />
