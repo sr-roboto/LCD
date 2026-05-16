@@ -297,6 +297,31 @@ export default function Navbar({ user }: { user: any }) {
                       ))}
                     </div>
                   )}
+                  {item.subGroups && (
+                    <div className="pl-4 space-y-3 mb-4 border-l border-white/10 ml-3 mt-1">
+                      {item.subGroups.map((group) => (
+                        <div key={group.group}>
+                          <p className="text-[10px] font-black uppercase tracking-widest mb-2 px-3 opacity-50" style={{ color: "#00D4F5" }}>
+                            {group.group}
+                          </p>
+                          <div className="space-y-1">
+                            {group.items.map((sub) => (
+                              <Link
+                                key={sub.label}
+                                href={sub.href}
+                                target={sub.external ? "_blank" : undefined}
+                                onClick={() => setMobileOpen(false)}
+                                className="block px-3 py-2 text-sm transition-colors rounded-lg active:bg-white/5"
+                                style={{ color: "rgba(255,255,255,0.75)" }}
+                              >
+                                • {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
               <div

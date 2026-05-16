@@ -50,80 +50,25 @@ export default function VideoPlayer({ src, poster }: VideoPlayerProps) {
   const progressRef = useRef<HTMLDivElement>(null);
   const hideTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const [playing, setPlaying] = useState(false);
-  const [ended, setEnded] = useState(false);
-  const [muted, setMuted] = useState(false);
-  const [progress, setProgress] = useState(0);          // 0–1
-  const [buffered, setBuffered] = useState(0);           // 0–1
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [volume, setVolume] = useState(1);
+  const [playing, setPlaying] = useState(true);
+  const [muted, setMuted] = useState(true);
   const [showControls, setShowControls] = useState(true);
-  const [showVolumeSlider, setShowVolumeSlider] = useState(false);
 
   /* Auto-hide controls */
-  const resetHide = useCallback(() => {
-    setShowControls(true);
-    if (hideTimeout.current) clearTimeout(hideTimeout.current);
-    hideTimeout.current = setTimeout(() => {
-      if (playing) setShowControls(false);
-    }, 2800);
-  }, [playing]);
-
-  /* Events */
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-
-    const onTimeUpdate = () => {
-      setCurrentTime(v.currentTime);
-      setProgress(v.duration ? v.currentTime / v.duration : 0);
-      if (v.buffered.length > 0) {
-        setBuffered(v.buffered.end(v.buffered.length - 1) / v.duration);
-      }
-    };
-    const onLoaded = () => setDuration(v.duration);
-    const onPlay = () => { setPlaying(true); setEnded(false); };
-    const onPause = () => setPlaying(false);
-    const onEnded = () => {
-      setPlaying(false);
-      setEnded(true);
+    if (playing) {
+      const timer = setTimeout(() => setShowControls(false), 3000);
+      return () => clearTimeout(timer);
+    } else {
       setShowControls(true);
-    };
-
-    v.addEventListener('timeupdate', onTimeUpdate);
-    v.addEventListener('loadedmetadata', onLoaded);
-    v.addEventListener('play', onPlay);
-    v.addEventListener('pause', onPause);
-    v.addEventListener('ended', onEnded);
-
-    return () => {
-      v.removeEventListener('timeupdate', onTimeUpdate);
-      v.removeEventListener('loadedmetadata', onLoaded);
-      v.removeEventListener('play', onPlay);
-      v.removeEventListener('pause', onPause);
-      v.removeEventListener('ended', onEnded);
-    };
-  }, []);
+    }
+  }, [playing]);
 
   const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
-    if (ended) {
-      v.currentTime = 0;
-      setEnded(false);
-    }
     playing ? v.pause() : v.play();
-    resetHide();
-  };
-
-  const seekTo = (e: React.MouseEvent<HTMLDivElement>) => {
-    const bar = progressRef.current;
-    const v = videoRef.current;
-    if (!bar || !v) return;
-    const rect = bar.getBoundingClientRect();
-    const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-    v.currentTime = pct * v.duration;
+    setPlaying(!playing);
   };
 
   const toggleMute = () => {
@@ -133,29 +78,14 @@ export default function VideoPlayer({ src, poster }: VideoPlayerProps) {
     setMuted(!muted);
   };
 
-  const changeVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const v = videoRef.current;
-    if (!v) return;
-    const val = parseFloat(e.target.value);
-    v.volume = val;
-    setVolume(val);
-    setMuted(val === 0);
-  };
-
-  const toggleFullscreen = () => {
-    const el = containerRef.current;
-    if (!el) return;
-    if (document.fullscreenElement) document.exitFullscreen();
-    else el.requestFullscreen();
-  };
-
   return (
     <div
       ref={containerRef}
-      className="relative select-none overflow-hidden"
-      style={{ borderRadius: '16px', background: '#000', boxShadow: '0 0 80px rgba(0,212,245,0.12), 0 40px 100px rgba(0,0,0,0.6)' }}
-      onMouseMove={resetHide}
-      onMouseLeave={() => { if (playing) setShowControls(false); }}>
+      className="relative select-none overflow-hidden group"
+      style={{ borderRadius: '24px', background: '#000', boxShadow: '0 40px 100px rgba(0,0,0,0.5)' }}
+      onMouseEnter={() => setShowControls(true)}
+      onMouseLeave={() => playing && setShowControls(false)}
+    >
 
       {/* Video */}
       <video
@@ -163,124 +93,47 @@ export default function VideoPlayer({ src, poster }: VideoPlayerProps) {
         src={src}
         poster={poster}
         className="w-full block"
-        style={{ display: 'block', maxHeight: '72vh', objectFit: 'contain', background: '#000' }}
+        style={{ display: 'block', maxHeight: '80vh', objectFit: 'contain' }}
         onClick={togglePlay}
         playsInline
+        autoPlay
+        muted
+        loop
       />
 
-      {/* ── Overlay gradient bottom ── */}
-      <div className="absolute inset-x-0 bottom-0 pointer-events-none"
-        style={{ height: '45%', background: 'linear-gradient(to top, rgba(4,5,28,0.95) 0%, transparent 100%)' }} />
-
-      {/* ── Big play/pause center button ── */}
-      <AnimatePresence>
-        {(!playing || ended) && (
-          <motion.button
-            key={ended ? 'replay' : 'play'}
-            initial={{ opacity: 0, scale: 0.6 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.6 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-            onClick={togglePlay}
-            className="absolute inset-0 flex items-center justify-center pointer-events-auto"
-            aria-label={ended ? 'Replay' : 'Play'}>
-            <div className="flex items-center justify-center rounded-full"
-              style={{ width: 72, height: 72, background: 'rgba(0,212,245,0.18)', border: '2px solid rgba(0,212,245,0.5)', backdropFilter: 'blur(12px)', color: '#00D4F5' }}>
-              {ended ? <ReplayIcon /> : <PlayIcon />}
-            </div>
-          </motion.button>
-        )}
-      </AnimatePresence>
-
-      {/* ── Controls bar ── */}
+      {/* ── Simple Controls ── */}
       <AnimatePresence>
         {showControls && (
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: 0.2 }}
-            className="absolute inset-x-0 bottom-0 px-4 pb-3 pt-2 pointer-events-auto">
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute bottom-6 left-6 flex items-center gap-3 z-20"
+          >
+            {/* Play/Pause Button */}
+            <button
+              onClick={togglePlay}
+              className="w-12 h-12 flex items-center justify-center rounded-full transition-transform hover:scale-110 active:scale-95 shadow-lg"
+              style={{ background: '#84E010', color: '#0d0e52' }}
+            >
+              {playing ? <PauseIcon /> : <PlayIcon />}
+            </button>
 
-            {/* Progress bar */}
-            <div
-              ref={progressRef}
-              onClick={seekTo}
-              className="w-full mb-3 relative group"
-              style={{ height: 4, cursor: 'pointer' }}>
-              {/* Track */}
-              <div className="absolute inset-0 rounded-full" style={{ background: 'rgba(255,255,255,0.15)' }} />
-              {/* Buffered */}
-              <div className="absolute top-0 left-0 h-full rounded-full transition-all duration-300"
-                style={{ width: `${buffered * 100}%`, background: 'rgba(255,255,255,0.22)' }} />
-              {/* Progress */}
-              <div className="absolute top-0 left-0 h-full rounded-full transition-none"
-                style={{ width: `${progress * 100}%`, background: 'linear-gradient(90deg,#00D4F5,#84E010)' }} />
-              {/* Thumb */}
-              <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                style={{ left: `calc(${progress * 100}% - 6px)`, background: '#fff', boxShadow: '0 0 6px rgba(0,212,245,0.8)' }} />
-            </div>
-
-            {/* Bottom row */}
-            <div className="flex items-center gap-3">
-              {/* Play/Pause */}
-              <button onClick={togglePlay}
-                className="text-white hover:text-cyan-400 transition-colors flex-shrink-0"
-                aria-label={playing ? 'Pause' : 'Play'}>
-                {playing ? <PauseIcon /> : <PlayIcon />}
-              </button>
-
-              {/* Time */}
-              <span className="text-xs font-mono flex-shrink-0" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                {formatTime(currentTime)} / {formatTime(duration)}
-              </span>
-
-              <div className="flex-1" />
-
-              {/* Replay badge */}
-              {ended && (
-                <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-                  style={{ background: 'rgba(132,224,16,0.2)', color: '#84E010', border: '1px solid rgba(132,224,16,0.4)' }}>
-                  Replay
-                </span>
-              )}
-
-              {/* Volume */}
-              <div className="relative flex items-center"
-                onMouseEnter={() => setShowVolumeSlider(true)}
-                onMouseLeave={() => setShowVolumeSlider(false)}>
-                <button onClick={toggleMute} className="text-white hover:text-cyan-400 transition-colors" aria-label="Mute">
-                  <VolumeIcon muted={muted} />
-                </button>
-                <AnimatePresence>
-                  {showVolumeSlider && (
-                    <motion.div
-                      initial={{ width: 0, opacity: 0 }}
-                      animate={{ width: 72, opacity: 1 }}
-                      exit={{ width: 0, opacity: 0 }}
-                      className="overflow-hidden ml-2">
-                      <input type="range" min="0" max="1" step="0.05"
-                        value={muted ? 0 : volume}
-                        onChange={changeVolume}
-                        className="w-full accent-cyan-400"
-                        style={{ height: 4 }} />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Fullscreen */}
-              <button onClick={toggleFullscreen} className="text-white hover:text-cyan-400 transition-colors" aria-label="Fullscreen">
-                <FullscreenIcon />
-              </button>
-            </div>
+            {/* Mute/Unmute Button */}
+            <button
+              onClick={toggleMute}
+              className="w-10 h-10 flex items-center justify-center rounded-full transition-all hover:bg-white/20 backdrop-blur-md border border-white/20 shadow-lg"
+              style={{ background: 'rgba(255,255,255,0.1)', color: '#fff' }}
+            >
+              <VolumeIcon muted={muted} />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Live border glow */}
-      <div className="absolute inset-0 pointer-events-none rounded-[16px]"
-        style={{ boxShadow: 'inset 0 0 0 1.5px rgba(0,212,245,0.18)' }} />
+      <div className="absolute inset-0 pointer-events-none rounded-[24px]"
+        style={{ boxShadow: 'inset 0 0 0 1.5px rgba(255,255,255,0.1)' }} />
     </div>
   );
 }

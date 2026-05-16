@@ -77,7 +77,7 @@ export default function CustomCursor() {
                 height: 10,
                 borderRadius: '50%',
                 background: '#00D4F5',
-                boxShadow: '0 0 10px rgba(0,212,245,0.7)',
+                boxShadow: '0 2px 10px rgba(0,0,0,0.3), 0 0 10px rgba(0,212,245,0.5)',
               }} />
           ) : (
             /* Manito al pasar sobre interactivos */
@@ -92,7 +92,7 @@ export default function CustomCursor() {
               exit={{ scale: 0, opacity: 0, rotate: -20 }}
               transition={{ type: 'spring', stiffness: 320, damping: 20 }}
               style={{
-                filter: 'drop-shadow(0 0 10px rgba(132,224,16,0.85))',
+                filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.2)) drop-shadow(0 0 8px rgba(132,224,16,0.6))',
                 transformOrigin: '40% 80%',
               }}>
               <HandSVG />
@@ -117,6 +117,7 @@ export default function CustomCursor() {
             height: 38,
             borderRadius: '50%',
             border: '2px solid #00D4F5',
+            boxShadow: '0 2px 15px rgba(0,0,0,0.2)',
           }} />
       </motion.div>
     </>

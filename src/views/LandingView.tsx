@@ -222,7 +222,7 @@ export default function LandingView() {
             {/* Right — image */}
             <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.18 }} className="relative">
               <div className="relative rounded-lg overflow-hidden aspect-[4/3]"
-                style={{ border: '1.5px solid rgba(0,212,245,0.18)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}>
+                style={{ border: '1.5 px solid rgba(0,212,245,0.18)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/home/mesa-tactil-nino.webp" alt="Niña en mesa táctil" className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to top,rgba(8,10,46,0.4) 0%,transparent 55%)' }} />

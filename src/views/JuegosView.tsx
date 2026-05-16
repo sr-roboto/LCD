@@ -249,8 +249,13 @@ function GameCard({
       className="h-full group animate-in fade-in slide-in-from-bottom-8 duration-700 ease-out fill-mode-both"
       style={{ animationDelay: `${(index % 4) * 100}ms` }}
     >
-      <div className="rounded-2xl overflow-hidden flex flex-col h-full group border border-gray-100 hover:border-cyan-400 transition-all duration-300 shadow-md hover:shadow-xl bg-white"
-        style={{ transform: "translateZ(0)" }}>
+      <div className="rounded-3xl overflow-hidden flex flex-col h-full group border border-white/50 hover:border-[#00D4F5] transition-all duration-500 shadow-lg hover:shadow-2xl relative"
+        style={{ 
+          background: "rgba(255, 255, 255, 0.4)", 
+          backdropFilter: "blur(16px) saturate(180%)",
+          WebkitBackdropFilter: "blur(16px) saturate(180%)",
+          transform: "translateZ(0)" 
+        }}>
 
         {/* Thumbnail — full cover */}
         <div className="relative h-48 overflow-hidden shrink-0">
@@ -261,7 +266,7 @@ function GameCard({
               alt={game.title}
               loading="lazy"
               decoding="async"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center"
@@ -272,26 +277,28 @@ function GameCard({
             </div>
           )}
           {/* Overlay gradient so text is readable */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top,rgba(10,11,46,0.85) 0%,transparent 55%)" }} />
-          <span className={`absolute bottom-2.5 left-3 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${game.tag}`}>
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top,rgba(10,11,46,0.6) 0%,transparent 45%)" }} />
+          <span className={`absolute bottom-2.5 left-3 text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-lg backdrop-blur-md ${game.tag}`}
+            style={{ border: "1px solid rgba(255,255,255,0.2)" }}>
             {game.subject}
           </span>
         </div>
 
         {/* Body */}
-        <div className="p-4 flex flex-col flex-1">
-          <h3 className="font-bold text-sm leading-snug mb-1.5" style={{ color: "#12136b" }}>{game.title}</h3>
-          <p className="text-xs leading-relaxed mb-3 flex-1 text-gray-500">{game.desc}</p>
-          <div className="flex gap-2 pt-3 border-t border-gray-100">
+        <div className="p-5 flex flex-col flex-1 relative z-10">
+          <h3 className="font-extrabold text-sm leading-snug mb-2 group-hover:text-[#00D4F5] transition-colors" style={{ color: "#12136b" }}>{game.title}</h3>
+          <p className="text-xs leading-relaxed mb-4 flex-1 font-medium" style={{ color: "rgba(18,19,107,0.7)" }}>{game.desc}</p>
+          
+          <div className="flex gap-2 pt-4 border-t border-white/40">
             <button onClick={(e) => { e.stopPropagation(); onPlay(); }}
-              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-[12px] font-bold transition-all  hover:opacity-90 shadow-sm"
-              style={{ background: "#12136b", color: "#ffffff" }}>
+              className="flex-2 flex-grow-[2] flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[12px] font-bold transition-all hover:shadow-lg hover:shadow-[#84E010]/30 active:scale-95"
+              style={{ background: "#84E010", color: "#0d0e52" }}>
               <Dices className="w-3.5 h-3.5" /> Jugar
             </button>
             <Link href={game.driveUrl} target="_blank" rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-bold transition-all  hover:bg-gray-50"
-              style={{ background: "#ffffff", border: "1px solid #e5e7eb", color: "#4b5563" }}>
+              className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-[12px] font-bold transition-all hover:bg-white/40 backdrop-blur-md active:scale-95 shadow-sm"
+              style={{ background: "rgba(255,255,255,0.3)", border: "1px solid rgba(255,255,255,0.5)", color: "#12136b" }}>
               <Download className="w-3.5 h-3.5" /> Info
             </Link>
           </div>
@@ -404,6 +411,7 @@ export default function JuegosView() {
       {/* ── Search + grid ────────────────────────────────────── */}
       <section className="py-16 px-4 relative overflow-hidden"
         style={{ background: "#F0F4FF" }}>
+        <Blobs />
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-12 max-w-xl mx-auto">
             <div className="flex-1 relative">
