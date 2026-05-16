@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ExternalLink, Clock, CheckCircle, BookOpen, Users, Briefcase, Target } from "lucide-react";
 import Animate from "@/components/Animate";
+import AnimatedEduBg from "@/components/AnimatedEduBg";
 
 const ENROLL_URL = "https://laclasedigital.com.ar/Cursos/laclase/IT/oferta-academica-dokuma/index.html#info";
 const PDF_URL = "https://laclasedigital.com.ar/Cursos/laclase/IT/wp-content/uploads/2018/08/DiplomadoVirutal2020.pdf";
@@ -202,14 +203,10 @@ export default function CursosView() {
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section
-        className="relative py-20 px-4 text-white overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0a1628 0%, #0d2444 50%, #0f3460 100%)" }}
+        className="relative py-24 px-4 text-white overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #080a2e 0%, #12136b 55%, #0b1246 100%)" }}
       >
-        {/* Network grid background */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #00d4ff 1px, transparent 0)`,
-          backgroundSize: "40px 40px",
-        }} />
+        <AnimatedEduBg />
 
         <div className="relative max-w-5xl mx-auto">
           {/* Partner logos */}
@@ -246,8 +243,8 @@ export default function CursosView() {
                   href={ENROLL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-white text-sm transition-all hover:shadow-2xl hover:-translate-y-0.5 animate-glow-pulse"
-                  style={{ backgroundColor: "#22C55E" }}
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-sm transition-all hover:shadow-2xl hover:-translate-y-0.5 animate-glow-pulse"
+                  style={{ backgroundColor: "#84E010", color: "#0d0e52" }}
                 >
                   ¡Inscripciones Abiertas!
                 </Link>
@@ -257,10 +254,10 @@ export default function CursosView() {
             {/* Stats box */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "120h", label: "Duración total", color: "#22C55E" },
-                { value: "17h", label: "Por curso virtual", color: "#38BDF8" },
-                { value: "8", label: "Cursos virtuales", color: "#A78BFA" },
-                { value: "4", label: "Talleres prácticos", color: "#FB923C" },
+                { value: "120h", label: "Duración total", color: "#84E010" },
+                { value: "17h", label: "Por curso virtual", color: "#00D4F5" },
+                { value: "8", label: "Cursos virtuales", color: "#ffffff" },
+                { value: "4", label: "Talleres prácticos", color: "#84E010" },
               ].map((s, i) => (
                 <Animate key={s.label} type="zoom-in" delay={([100, 200, 300, 400] as const)[i]}>
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center h-full">
@@ -280,8 +277,8 @@ export default function CursosView() {
           {/* Hero image strip */}
           <Animate type="zoom-in">
             <div
-              className="rounded-2xl overflow-hidden mb-8 flex flex-col md:flex-row items-stretch min-h-[180px]"
-              style={{ background: "linear-gradient(135deg, #0a1628, #1a3a6e)" }}
+              className="rounded-3xl overflow-hidden mb-12 flex flex-col md:flex-row items-stretch min-h-[180px] shadow-2xl"
+              style={{ background: "linear-gradient(135deg, #080a2e, #12136b)" }}
             >
               <div className="flex-1 p-8 flex flex-col justify-center">
                 <p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-2">Diplomado virtual en:</p>
@@ -298,8 +295,8 @@ export default function CursosView() {
                   href={ENROLL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 rounded-lg font-bold text-sm text-white transition-all hover:opacity-90 animate-glow-pulse"
-                  style={{ backgroundColor: "#22C55E" }}
+                  className="px-6 py-3 rounded-xl font-bold text-sm transition-all hover:opacity-90 animate-glow-pulse shadow-lg"
+                  style={{ backgroundColor: "#84E010", color: "#0d0e52" }}
                 >
                   ¡Inscripciones Abiertas!
                 </Link>
@@ -325,7 +322,7 @@ export default function CursosView() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-5 py-3 text-xs font-bold uppercase tracking-wide border-b-2 transition-colors ${
                       activeTab === tab.id
-                        ? "border-blue-600 text-blue-600"
+                        ? "border-[#00D4F5] text-[#12136b]"
                         : "border-transparent text-gray-400 hover:text-gray-600"
                     }`}
                   >
@@ -346,118 +343,44 @@ export default function CursosView() {
       </section>
 
       {/* ── CURSOS VIRTUALES ─────────────────────────────────── */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-20 px-4" style={{ backgroundColor: "#F0F4FF" }}>
+        <div className="max-w-6xl mx-auto">
           <Animate type="fade-up">
-            <div className="text-center mb-10">
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">
+            <div className="text-center mb-16">
+              <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#00D4F5" }}>
                 Cursos Virtuales · 17 horas c/u
               </p>
-              <h2 className="text-2xl font-extrabold text-gray-900">Cursos independientes</h2>
-              <p className="text-gray-500 text-sm mt-2 max-w-lg mx-auto">
-                Podés cursarlos de forma independiente o como parte del Diplomado completo.
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ color: "#12136b" }}>
+                Cursos independientes
+              </h2>
+              <p className="text-sm mt-2 max-w-lg mx-auto" style={{ color: "rgba(18,19,107,0.7)" }}>
+                Podés cursarlos de forma independiente o como parte del Diplomado completo. Accede a herramientas innovadoras para la transformación de tu aula.
               </p>
             </div>
           </Animate>
 
-          {/* Top 4 — light bg */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-            {courses.slice(0, 4).map((c, i) => (
-              <Animate key={c.title} type="fade-up" delay={([0, 100, 200, 300] as const)[i]}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {courses.map((c, i) => (
+              <Animate key={c.title} type="fade-up" delay={([0, 100, 200, 300] as const)[i % 4]}>
                 <div
-                  className="rounded-2xl p-5 flex flex-col items-center text-center gap-3 border border-gray-100 hover:shadow-md transition-all h-full"
-                  style={{ backgroundColor: c.bg }}
+                  className="bg-white rounded-3xl p-8 flex flex-col items-center text-center gap-5 transition-all duration-300 hover:-translate-y-2 h-full relative overflow-hidden group"
+                  style={{ boxShadow: "0 10px 40px -10px rgba(18,19,107,0.08)", border: "1px solid rgba(18,19,107,0.05)" }}
                 >
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: "radial-gradient(circle at center, rgba(0,212,245,0.05) 0%, transparent 70%)" }} />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.img} alt={c.title} className="h-16 w-16 object-contain" />
-                  <p className="text-xs font-bold leading-snug mt-2" style={{ color: c.color }}>{c.title}</p>
-                  <Link
-                    href={ENROLL_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto text-[10px] font-bold px-3 py-1.5 rounded-lg text-white"
-                    style={{ backgroundColor: "#22C55E" }}
-                  >
-                    ¡Inscripciones Abiertas!
-                  </Link>
-                </div>
-              </Animate>
-            ))}
-          </div>
-
-          {/* Bottom 4 — dark bg */}
-          <Animate type="fade-up" delay={400}>
-            <div
-              className="rounded-2xl p-6 grid grid-cols-2 md:grid-cols-4 gap-4"
-              style={{ background: "linear-gradient(135deg, #0d2444, #1a3a6e)" }}
-            >
-              {courses.slice(4).map((c) => (
-                <div key={c.title} className="flex flex-col items-center text-center gap-3">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.img} alt={c.title} className="h-16 w-16 object-contain" />
-                  <p className="text-xs font-bold text-white leading-snug mt-2">{c.title}</p>
-                  <Link
-                    href={ENROLL_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto text-[10px] font-bold px-3 py-1.5 rounded-lg text-white"
-                    style={{ backgroundColor: "#22C55E" }}
-                  >
-                    ¡Inscripciones Abiertas!
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </Animate>
-        </div>
-      </section>
-
-      {/* ── TALLERES ─────────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <Animate type="fade-up">
-            <div
-              className="text-center py-4 mb-10 rounded-xl"
-              style={{ backgroundColor: "#2563EB" }}
-            >
-              <h2 className="text-2xl font-extrabold text-white tracking-wide uppercase">Talleres</h2>
-            </div>
-          </Animate>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {workshops.map((w, i) => (
-              <Animate key={w.title} type={i % 2 === 0 ? "fade-right" : "fade-left"} delay={i < 2 ? 100 : 300}>
-                <div
-                  className="rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all h-full"
-                >
-                  {/* Header */}
-                  <div
-                    className="px-6 py-4 flex items-center gap-4"
-                    style={{ backgroundColor: i % 2 === 0 ? "#EFF6FF" : "#F0FDF4" }}
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={w.img} alt={w.title} className="h-12 w-12 object-contain shrink-0" />
-                    <h3 className="font-bold text-gray-900 text-sm">
-                      <span className="text-blue-600 font-extrabold block mb-1">TALLER: </span>
-                      {w.title}
-                    </h3>
-                  </div>
-                  {/* Topics */}
-                  <div className="px-6 py-4">
-                    <ul className="space-y-2">
-                      {w.topics.map((t) => (
-                        <li key={t} className="flex items-center gap-2 text-sm text-blue-700">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                          {t}
-                        </li>
-                      ))}
-                    </ul>
+                  <img src={c.img} alt={c.title} className="h-28 w-28 object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-md" />
+                  
+                  <h3 className="text-base font-extrabold leading-snug mt-2" style={{ color: "#12136b" }}>
+                    {c.title}
+                  </h3>
+                  
+                  <div className="mt-auto pt-4 w-full">
                     <Link
                       href={ENROLL_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-flex text-[11px] font-bold px-4 py-2 rounded-lg text-white animate-glow-pulse"
-                      style={{ backgroundColor: "#22C55E" }}
+                      className="block w-full text-xs font-bold px-4 py-3 rounded-xl transition-all shadow-md hover:shadow-lg"
+                      style={{ backgroundColor: "#84E010", color: "#0d0e52" }}
                     >
                       ¡Inscripciones Abiertas!
                     </Link>
@@ -469,10 +392,69 @@ export default function CursosView() {
         </div>
       </section>
 
+      {/* ── TALLERES ─────────────────────────────────────────── */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <Animate type="fade-up">
+            <div
+              className="text-center py-5 mb-12 rounded-2xl shadow-lg"
+              style={{ backgroundColor: "#12136b" }}
+            >
+              <h2 className="text-2xl font-extrabold text-white tracking-wide uppercase">Talleres</h2>
+            </div>
+          </Animate>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {workshops.map((w, i) => (
+              <Animate key={w.title} type={i % 2 === 0 ? "fade-right" : "fade-left"} delay={i < 2 ? 100 : 300}>
+                <div
+                  className="rounded-3xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all h-full bg-white flex flex-col"
+                >
+                  {/* Header */}
+                  <div
+                    className="px-8 py-6 flex items-center gap-5 border-b border-gray-100"
+                    style={{ backgroundColor: "rgba(18,19,107,0.02)" }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={w.img} alt={w.title} className="h-16 w-16 object-contain shrink-0 drop-shadow-sm" />
+                    <h3 className="font-extrabold text-lg leading-tight" style={{ color: "#12136b" }}>
+                      <span className="text-xs uppercase tracking-widest block mb-1 opacity-70">TALLER</span>
+                      {w.title}
+                    </h3>
+                  </div>
+                  {/* Topics */}
+                  <div className="px-8 py-6 flex flex-col flex-1">
+                    <ul className="space-y-3 mb-6">
+                      {w.topics.map((t) => (
+                        <li key={t} className="flex items-start gap-3 text-sm font-medium" style={{ color: "rgba(18,19,107,0.8)" }}>
+                          <span className="w-2 h-2 rounded-full shrink-0 mt-1.5" style={{ backgroundColor: "#00D4F5" }} />
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-auto pt-2">
+                      <Link
+                        href={ENROLL_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex w-full justify-center text-xs font-bold px-4 py-3 rounded-xl transition-all shadow-md hover:shadow-lg"
+                        style={{ backgroundColor: "#84E010", color: "#0d0e52" }}
+                      >
+                        ¡Inscripciones Abiertas!
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA FINAL ────────────────────────────────────────── */}
       <section
-        className="py-16 px-4 text-center text-white"
-        style={{ background: "linear-gradient(135deg, #0a1628, #1a3a6e)" }}
+        className="py-20 px-4 text-center text-white"
+        style={{ background: "linear-gradient(135deg, #080a2e, #12136b)" }}
       >
         <Animate type="zoom-in">
           <h2 className="text-2xl font-extrabold mb-3">¿Listo para transformar tu práctica educativa?</h2>
@@ -484,8 +466,8 @@ export default function CursosView() {
               href={ENROLL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 rounded-xl font-bold text-white text-sm transition-all hover:opacity-90 animate-glow-pulse"
-              style={{ backgroundColor: "#22C55E" }}
+              className="px-8 py-3.5 rounded-xl font-bold text-sm transition-all hover:shadow-2xl hover:-translate-y-0.5 animate-glow-pulse"
+              style={{ backgroundColor: "#84E010", color: "#0d0e52" }}
             >
               ¡Inscribirme ahora!
             </Link>
