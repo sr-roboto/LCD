@@ -7,6 +7,7 @@ import { ArrowRight, ShieldCheck, Users, Star } from 'lucide-react';
 import { brands } from '@/lib/data';
 import ProductsCarousel from '@/components/ProductsCarousel';
 import Animate from '@/components/Animate';
+import VideoPlayer from '@/components/VideoPlayer';
 
 /* ─── Solutions ──────────────────────────────────────────────── */
 const solutions = [
@@ -60,6 +61,7 @@ function SolutionCard({ sol, delay }: { sol: typeof solutions[0]; delay: Delay }
     const rotY = ((x - cx) / cx) * 7;
     card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-6px)`;
     card.style.boxShadow = `${-rotY * 2}px ${rotX * 2}px 40px rgba(0,212,245,0.18), 0 20px 48px rgba(18,19,107,0.12)`;
+    card.style.borderRadius = '8px';
     if (spot) {
       spot.style.left = `${x}px`;
       spot.style.top = `${y}px`;
@@ -73,84 +75,86 @@ function SolutionCard({ sol, delay }: { sol: typeof solutions[0]; delay: Delay }
     if (!card) return;
     card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
     card.style.boxShadow = '0 2px 16px rgba(18,19,107,0.07)';
+    card.style.borderRadius = '8px';
     if (spot) spot.style.opacity = '0';
   };
 
   return (
     <Animate type="fade-up" delay={delay}>
-      <div
-        ref={cardRef}
-        className="group relative bg-white flex flex-col h-full"
-        style={{
-          borderRadius: '16px',
-          overflow: 'hidden',
-          border: '1px solid rgba(18,19,107,0.08)',
-          boxShadow: '0 2px 16px rgba(18,19,107,0.07)',
-          transition: 'transform 0.12s ease, box-shadow 0.12s ease',
-          willChange: 'transform',
-        }}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}>
-
-        {/* Spotlight — sigue al cursor */}
+      {/* Wrapper: maneja border-radius + overflow — nunca recibe transform */}
+      <div className="h-full" style={{ borderRadius: '8px', overflow: 'hidden' }}>
         <div
-          ref={spotRef}
-          className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-1/2 rounded-full"
+          ref={cardRef}
+          className="group relative bg-white flex flex-col h-full"
           style={{
-            width: '180px',
-            height: '180px',
-            background: 'radial-gradient(circle, rgba(0,212,245,0.12) 0%, transparent 70%)',
-            opacity: 0,
-            transition: 'opacity 0.3s ease',
-          }} />
+            border: '1px solid rgba(18,19,107,0.08)',
+            boxShadow: '0 2px 16px rgba(18,19,107,0.07)',
+            transition: 'transform 0.12s ease, box-shadow 0.12s ease',
+            willChange: 'transform',
+          }}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}>
 
-        {/* Image */}
-        <div className="relative h-48 overflow-hidden bg-gray-100 flex-shrink-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={sol.img} alt={sol.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+          {/* Spotlight — sigue al cursor */}
+          <div
+            ref={spotRef}
+            className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-1/2 rounded-full"
+            style={{
+              width: '180px',
+              height: '180px',
+              background: 'radial-gradient(circle, rgba(0,212,245,0.12) 0%, transparent 70%)',
+              opacity: 0,
+              transition: 'opacity 0.3s ease',
+            }} />
 
-          {/* Base overlay */}
-          <div className="absolute inset-0"
-            style={{ background: 'linear-gradient(to top,rgba(18,19,107,0.5) 0%,transparent 50%)' }} />
+          {/* Image */}
+          <div className="relative h-48 overflow-hidden bg-gray-100 flex-shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={sol.img} alt={sol.title}
+              className="w-full h-full object-cover transition-transform duration-500 scale-110 group-hover:scale-125"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
 
-          {/* Hover overlay — sube desde abajo */}
-          <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-all duration-300"
-            style={{ background: 'linear-gradient(to top,rgba(12,13,80,0.85) 0%,rgba(12,13,80,0.3) 60%,transparent 100%)' }}>
-            <div className="hidden sm:flex gap-2 translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+            {/* Base overlay */}
+            <div className="absolute inset-0"
+              style={{ background: 'linear-gradient(to top,rgba(18,19,107,0.5) 0%,transparent 50%)' }} />
+
+            {/* Hover overlay — sube desde abajo */}
+            <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-all duration-300"
+              style={{ background: 'linear-gradient(to top,rgba(12,13,80,0.85) 0%,rgba(12,13,80,0.3) 60%,transparent 100%)' }}>
+              <div className="hidden sm:flex gap-2 translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+                {sol.links.map((link) => (
+                  <Link key={link.label} href={link.href}
+                    target={link.href.startsWith('http') ? '_blank' : '_self'}
+                    className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full"
+                    style={{ background: 'rgba(0,212,245,0.2)', color: '#00D4F5', border: '1px solid rgba(0,212,245,0.4)', backdropFilter: 'blur(8px)' }}>
+                    {link.label} <ArrowRight className="w-2.5 h-2.5" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom gradient line */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
+              style={{ background: 'linear-gradient(90deg,#00D4F5,#84E010)' }} />
+          </div>
+
+          {/* Body */}
+          <div className="p-5 flex flex-col flex-grow relative z-20">
+            <h3 className="font-bold text-sm mb-1 text-center leading-snug" style={{ color: '#12136b' }}>{sol.title}</h3>
+            <p className="text-[11px] text-center leading-relaxed mb-4 flex-grow text-gray-400">{sol.subtitle}</p>
+            {/* Botones: solo visibles en mobile (en desktop usa el hover overlay) */}
+            <div className="sm:hidden flex flex-wrap justify-center gap-2 mt-auto">
               {sol.links.map((link) => (
                 <Link key={link.label} href={link.href}
                   target={link.href.startsWith('http') ? '_blank' : '_self'}
-                  className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full"
-                  style={{ background: 'rgba(0,212,245,0.2)', color: '#00D4F5', border: '1px solid rgba(0,212,245,0.4)', backdropFilter: 'blur(8px)' }}>
-                  {link.label} <ArrowRight className="w-2.5 h-2.5" />
+                  className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full transition-all duration-200"
+                  style={{ background: 'rgba(18,19,107,0.06)', color: '#12136b', border: '1px solid rgba(18,19,107,0.12)' }}>
+                  {link.label} <ArrowRight className="w-3 h-3" />
                 </Link>
               ))}
             </div>
           </div>
-
-          {/* Bottom gradient line */}
-          <div className="absolute bottom-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
-            style={{ background: 'linear-gradient(90deg,#00D4F5,#84E010)' }} />
-        </div>
-
-        {/* Body */}
-        <div className="p-5 flex flex-col flex-grow relative z-20">
-          <h3 className="font-bold text-sm mb-1 text-center leading-snug" style={{ color: '#12136b' }}>{sol.title}</h3>
-          <p className="text-[11px] text-center leading-relaxed mb-4 flex-grow text-gray-400">{sol.subtitle}</p>
-          {/* Botones: solo visibles en mobile (en desktop usa el hover overlay) */}
-          <div className="sm:hidden flex flex-wrap justify-center gap-2 mt-auto">
-            {sol.links.map((link) => (
-              <Link key={link.label} href={link.href}
-                target={link.href.startsWith('http') ? '_blank' : '_self'}
-                className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full transition-all duration-200"
-                style={{ background: 'rgba(18,19,107,0.06)', color: '#12136b', border: '1px solid rgba(18,19,107,0.12)' }}>
-                {link.label} <ArrowRight className="w-3 h-3" />
-              </Link>
-            ))}
-          </div>
-        </div>
+        </div>{/* ← cierre wrapper border-radius */}
       </div>
     </Animate>
   );
@@ -272,12 +276,7 @@ export default function LandingView() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: '#84E010' }}>En acción</p>
             <h2 className="text-3xl font-extrabold text-white">Mirá cómo transformamos el aula</h2>
           </div>
-          <div className="rounded-2xl overflow-hidden"
-            style={{ border: '1.5px solid rgba(0,212,245,0.2)', boxShadow: '0 0 60px rgba(0,212,245,0.1), 0 32px 80px rgba(0,0,0,0.5)' }}>
-            <video src="/assets/robotica-talleres.mp4" controls className="w-full block bg-gray-900" poster="/assets/home/todo-rcp.jpg">
-              Tu navegador no soporta este formato.
-            </video>
-          </div>
+          <VideoPlayer src="/assets/robotica-talleres.mp4" poster="/assets/home/todo-rcp.jpg" />
         </div>
       </motion.section>
 

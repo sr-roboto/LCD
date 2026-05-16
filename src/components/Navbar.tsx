@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
+import LoginModal from "@/components/LoginModal";
+import RegisterModal from "@/components/RegisterModal";
 
 type SubItem = { label: string; href: string; external?: boolean };
 type NavItem = {
@@ -48,6 +50,8 @@ export default function Navbar({ user }: { user: any }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [loginOpen, setLoginOpen] = useState(false);
+  const [registerOpen, setRegisterOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -61,6 +65,7 @@ export default function Navbar({ user }: { user: any }) {
   };
 
   return (
+    <>
     <nav
       className="sticky top-0 z-50 w-full transition-all duration-300"
       style={{
@@ -206,24 +211,15 @@ export default function Navbar({ user }: { user: any }) {
                 </button>
               </div>
             ) : (
-              <Link
-                href="/login"
+              <button
+                onClick={() => setLoginOpen(true)}
                 className="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
-                style={{
-                  background: "var(--brand-lime)",
-                  color: "#0d0e52",
-                }}
-                onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.background =
-                  "var(--brand-lime-hover)")
-                }
-                onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.background =
-                  "var(--brand-lime)")
-                }
+                style={{ background: 'var(--brand-lime)', color: '#0d0e52' }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = 'var(--brand-lime-hover)')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = 'var(--brand-lime)')}
               >
                 Iniciar Sesión
-              </Link>
+              </button>
             )}
           </div>
 
@@ -316,23 +312,33 @@ export default function Navbar({ user }: { user: any }) {
                   </button>
                 </>
               ) : (
-                <Link
-                  href="/login"
-                  onClick={() => setMobileOpen(false)}
+                <button
+                  onClick={() => { setMobileOpen(false); setLoginOpen(true); }}
                   className="block w-full text-center px-4 py-2.5 rounded-full text-sm font-semibold transition-all"
-                  style={{
-                    background: "var(--brand-lime)",
-                    color: "#0d0e52",
-                  }}
+                  style={{ background: 'var(--brand-lime)', color: '#0d0e52' }}
                 >
                   Iniciar Sesión
-                </Link>
+                </button>
               )}
             </div>
           </div>
         </div>
       )}
     </nav>
+
+    {/* ── Login Modal ── */}
+    <LoginModal
+      open={loginOpen}
+      onClose={() => setLoginOpen(false)}
+      onSwitchToRegister={() => setRegisterOpen(true)}
+    />
+    {/* ── Register Modal ── */}
+    <RegisterModal
+      open={registerOpen}
+      onClose={() => setRegisterOpen(false)}
+      onSwitchToLogin={() => setLoginOpen(true)}
+    />
+    </>
   );
 }
 
