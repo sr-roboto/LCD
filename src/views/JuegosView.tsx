@@ -1,11 +1,15 @@
 "use client";
 
-import { useRef, useCallback, useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Gamepad2, BookOpen, Printer, Smartphone, CheckCircle, ArrowRight, MessageCircle, Mail, Download, Dices } from "lucide-react";
-import DiceRoller from "@/components/DiceRoller";
+import dynamic from "next/dynamic";
 import AnimatedEduBg from "@/components/AnimatedEduBg";
+
+// Lazy load modals
+const DiceRoller = dynamic(() => import("@/components/DiceRoller"), { ssr: false });
+// If GamePlayer is in another file, you could dynamic import it here too. But it's defined in the same file.
 
 const DRIVE_URL = "https://drive.google.com/drive/folders/1K4nh03b2j2gKehKguP8uVYECKlGAk4xgy";
 
@@ -188,13 +192,13 @@ function GamePlayer({ game, onClose }: { game: typeof games[0]; onClose: () => v
           <span className="text-white font-semibold text-sm flex-1 truncate">{game.title}</span>
           <button
             onClick={() => setFullscreen(!fullscreen)}
-            className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-700 text-gray-200 hover:bg-gray-600 transition-colors cursor-pointer"
+            className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-700 text-gray-200 hover:bg-gray-600 transition-colors "
           >
             {fullscreen ? "⬅ Salir" : "⛶ Pantalla completa"}
           </button>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-lg bg-gray-700 hover:bg-red-600 flex items-center justify-center text-white transition-colors text-sm font-bold cursor-pointer "
+            className="w-8 h-8 rounded-lg bg-gray-700 hover:bg-red-600 flex items-center justify-center text-white transition-colors text-sm font-bold  "
           >✕</button>
         </div>
 
@@ -216,7 +220,7 @@ function GamePlayer({ game, onClose }: { game: typeof games[0]; onClose: () => v
           <button
             onClick={() => setDiceOpen(!diceOpen)}
             title="Tirar dado educativo"
-            className="w-12 h-12 rounded-full flex items-center justify-center shadow-xl text-white transition-all hover:scale-110 active:scale-95 cursor-pointer"
+            className="w-12 h-12 rounded-full flex items-center justify-center shadow-xl text-white transition-all hover:scale-110 active:scale-95 "
             style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}
           >
             <Dices className="w-5 h-5" />
@@ -230,102 +234,70 @@ function GamePlayer({ game, onClose }: { game: typeof games[0]; onClose: () => v
 }
 
 
-/* ─── 3D Tilt card ──────────────────────────────────────────── */
-function TiltCard({
+/* ─── Animated-border card ──────────────────────────────────── */
+function GameCard({
   game,
   index,
-  onDice,
   onPlay,
 }: {
   game: typeof games[0];
   index: number;
-  onDice: () => void;
   onPlay: () => void;
 }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const onMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const el = cardRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const rotX = (((e.clientY - rect.top) / rect.height) - 0.5) * -12;
-    const rotY = (((e.clientX - rect.left) / rect.width) - 0.5) * 12;
-    el.style.transform = `perspective(700px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.03)`;
-    el.style.transition = "transform 0.08s ease";
-  }, []);
-
-  const onMouseLeave = useCallback(() => {
-    const el = cardRef.current;
-    if (!el) return;
-    el.style.transform = "perspective(700px) rotateX(0deg) rotateY(0deg) scale(1)";
-    el.style.transition = "transform 0.5s ease";
-  }, []);
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.5, delay: (index % 4) * 0.07, ease: [0.22, 1, 0.36, 1] }}
-      className="h-full"
+    <div
+      className="h-full group animate-in fade-in slide-in-from-bottom-8 duration-700 ease-out fill-mode-both"
+      style={{ animationDelay: `${(index % 4) * 100}ms` }}
     >
-      <div
-        ref={cardRef}
-        onMouseMove={onMouseMove}
-        onMouseLeave={onMouseLeave}
-        className="rounded-2xl overflow-hidden will-change-transform group cursor-default flex flex-col h-full transition-all duration-300"
-        style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(0,212,245,0.15)", boxShadow: "0 2px 16px rgba(0,0,0,0.3)" }}
-        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 16px 48px rgba(0,212,245,0.15)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,245,0.4)"; }}
-      >
-        {/* Top accent bar */}
-        <div className="h-[2px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-          style={{ background: "linear-gradient(90deg,#00D4F5,#84E010)" }} />
+      <div className="rounded-2xl overflow-hidden flex flex-col h-full group border border-gray-100 hover:border-cyan-400 transition-all duration-300 shadow-md hover:shadow-xl bg-white"
+        style={{ transform: "translateZ(0)" }}>
 
-        {/* Thumbnail */}
-        <div className="relative h-40 flex items-center justify-center overflow-hidden shrink-0"
-          style={{ background: "linear-gradient(135deg,#080a2e,#12136b)" }}>
-          <div className="absolute w-32 h-32 rounded-full border-[2px] border-dashed animate-spin-slow"
-            style={{ borderColor: "rgba(0,212,245,0.2)" }} />
+        {/* Thumbnail — full cover */}
+        <div className="relative h-48 overflow-hidden shrink-0">
           {game.img ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={game.img}
               alt={game.title}
-              className="max-h-full max-w-full object-contain relative z-10
-                         group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
-            <span className="text-5xl relative z-10 group-hover:scale-125 transition-transform duration-500 select-none">
-              {game.emoji}
-            </span>
+            <div className="absolute inset-0 flex items-center justify-center"
+              style={{ background: "linear-gradient(135deg,#F0F4FF,#E0E7FF)" }}>
+              <span className="text-6xl group-hover:scale-110 transition-transform duration-500 select-none">
+                {game.emoji}
+              </span>
+            </div>
           )}
-          <span className="absolute top-3 left-3 text-[10px] font-black" style={{ color: "rgba(0,212,245,0.5)" }}>#{game.id}</span>
+          {/* Overlay gradient so text is readable */}
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top,rgba(10,11,46,0.85) 0%,transparent 55%)" }} />
+          <span className={`absolute bottom-2.5 left-3 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${game.tag}`}>
+            {game.subject}
+          </span>
         </div>
 
         {/* Body */}
         <div className="p-4 flex flex-col flex-1">
-          <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 inline-block ${game.tag}`}>
-            {game.subject}
-          </span>
-          <h3 className="font-bold text-white text-sm leading-snug mb-1.5">{game.title}</h3>
-          <p className="text-xs leading-relaxed mb-2 flex-1" style={{ color: "rgba(255,255,255,0.5)" }}>{game.desc}</p>
-          <p className="text-[10px] font-semibold mb-4" style={{ color: "rgba(255,255,255,0.35)" }}>🎓 {game.grades}</p>
-          <div className="flex gap-2 pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+          <h3 className="font-bold text-sm leading-snug mb-1.5" style={{ color: "#12136b" }}>{game.title}</h3>
+          <p className="text-xs leading-relaxed mb-3 flex-1 text-gray-500">{game.desc}</p>
+          <div className="flex gap-2 pt-3 border-t border-gray-100">
             <button onClick={(e) => { e.stopPropagation(); onPlay(); }}
-              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-[11px] font-bold text-white transition-colors cursor-pointer"
-              style={{ background: "linear-gradient(135deg,#12136b,#00D4F5)" }}>
+              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-[12px] font-bold transition-all  hover:opacity-90 shadow-sm"
+              style={{ background: "#12136b", color: "#ffffff" }}>
               <Dices className="w-3.5 h-3.5" /> Jugar
             </button>
             <Link href={game.driveUrl} target="_blank" rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[11px] font-semibold transition-colors cursor-pointer"
-              style={{ background: "rgba(132,224,16,0.12)", border: "1px solid rgba(132,224,16,0.3)", color: "#84E010" }}>
+              className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-bold transition-all  hover:bg-gray-50"
+              style={{ background: "#ffffff", border: "1px solid #e5e7eb", color: "#4b5563" }}>
               <Download className="w-3.5 h-3.5" /> Info
             </Link>
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -346,7 +318,6 @@ export default function JuegosView() {
   const [search, setSearch] = useState("");
   const [diceOpen, setDiceOpen] = useState(false);
   const [playGame, setPlayGame] = useState<typeof games[0] | null>(null);
-  const heroRef = useRef(null);
 
   const filtered = games.filter(
     (g) =>
@@ -432,21 +403,20 @@ export default function JuegosView() {
 
       {/* ── Search + grid ────────────────────────────────────── */}
       <section className="py-16 px-4 relative overflow-hidden"
-        style={{ background: "linear-gradient(180deg,#0b1246 0%,#080a2e 100%)" }}>
-        <AnimatedEduBg opacity={0.06} />
+        style={{ background: "#F0F4FF" }}>
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-12 max-w-xl mx-auto">
             <div className="flex-1 relative">
               <input type="text" placeholder="Buscar juego por nombre o temática…"
                 value={search} onChange={(e) => setSearch(e.target.value)}
-                className="w-full px-4 py-3 pl-10 rounded-xl text-sm outline-none transition-all"
-                style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(0,212,245,0.25)", color: "#fff" }}
-                onFocus={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,245,0.6)"; }}
-                onBlur={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,245,0.25)"; }}
+                className="w-full px-4 py-3 pl-10 rounded-xl text-sm outline-none transition-all shadow-sm"
+                style={{ background: "#ffffff", border: "1px solid rgba(18,19,107,0.1)", color: "#12136b" }}
+                onFocus={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#00D4F5"; (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 3px rgba(0,212,245,0.1)"; }}
+                onBlur={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(18,19,107,0.1)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
               />
-              <Gamepad2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "#00D4F5" }} />
+              <Gamepad2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 opacity-50" style={{ color: "#12136b" }} />
             </div>
-            <span className="text-xs whitespace-nowrap font-medium shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <span className="text-xs whitespace-nowrap font-medium shrink-0" style={{ color: "rgba(18,19,107,0.5)" }}>
               {filtered.length} juego{filtered.length !== 1 ? "s" : ""}
             </span>
           </div>
@@ -454,8 +424,7 @@ export default function JuegosView() {
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filtered.map((game, i) => (
-              <TiltCard key={game.id} game={game} index={i}
-                onDice={() => setDiceOpen(true)}
+              <GameCard key={game.id} game={game} index={i}
                 onPlay={() => setPlayGame(game)}
               />
             ))}
@@ -489,7 +458,6 @@ export default function JuegosView() {
       {/* ── CTA contacto ─────────────────────────────────────── */}
       <section className="py-14 px-4 relative overflow-hidden"
         style={{ background: "linear-gradient(135deg,#080a2e 0%,#12136b 100%)" }}>
-        <AnimatedEduBg opacity={0.08} />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-extrabold text-white mb-3">¿Querés implementar los juegos o necesitás un pack a medida?</h2>
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>Escribinos y te armamos una propuesta para tu institución.</p>
