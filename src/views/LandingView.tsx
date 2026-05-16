@@ -221,17 +221,25 @@ export default function LandingView() {
 
             {/* Right — image */}
             <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.18 }}
-              className="relative max-w-lg mx-auto lg:ml-auto w-full">
-              <div className="bg-conic/[from_var(--border-angle)] from-[#00D4F5]/20 via-[#00D4F5] to-[#00D4F5]/20 animate-rotate-border rounded-[2rem] p-[2px] shadow-2xl">
-                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] bg-[#080a2e]">
+              className="relative max-w-2xl mx-auto lg:ml-auto w-full group">
+              <div className="bg-conic/[from_var(--border-angle)] from-[#00D4F5]/20 via-[#00D4F5] to-[#00D4F5]/20 animate-rotate-border rounded-[2.5rem] p-[1.5px] shadow-2xl">
+                <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/3] bg-[#080a2e]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/assets/home/mesa-tactil-nino.webp" alt="Niña en mesa táctil" className="w-full h-full object-cover" />
+                  <img src="/assets/home/mesa-tactil-nino.webp" alt="Niña en mesa táctil" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  
+                  {/* Destello (Shimmer/Glint effect) */}
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent w-1/2 h-full -skew-x-[25deg] animate-shimmer" 
+                      style={{ animationDuration: '3s' }} />
+                  </div>
+
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top,rgba(8,10,46,0.4) 0%,transparent 55%)' }} />
                 </div>
               </div>
 
-              {/* Decorative Glow */}
-              <div className="absolute -inset-4 bg-[#00D4F5]/20 blur-3xl -z-10 rounded-full animate-pulse" />
+              {/* Decorative Glows */}
+              <div className="absolute -inset-10 bg-[#00D4F5]/25 blur-[100px] -z-10 rounded-full animate-pulse" />
+              <div className="absolute -inset-2 bg-gradient-to-br from-[#84E010]/20 to-[#00D4F5]/20 blur-2xl -z-10 rounded-[3rem] opacity-50" />
             </motion.div>
           </div>
         </div>

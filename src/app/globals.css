@@ -68,6 +68,11 @@
 
 @theme inline {
   --animate-rotate-border: border-rotate 3s linear infinite;
+  --animate-shimmer: shimmer 3s infinite;
+  @keyframes shimmer {
+    0% { transform: translateX(-200%) skewX(-20deg); }
+    100% { transform: translateX(200%) skewX(-20deg); }
+  }
   --font-sans: 'Plus Jakarta Sans', 'system-ui', sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
