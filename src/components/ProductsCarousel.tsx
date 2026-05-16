@@ -39,7 +39,6 @@ const GROUPS = [
     color: "#D97706",
     images: [
       "/assets/productos/Plataforma-TOMI.png",
-      "/assets/productos/Smart-Learning-Suite.png",
       "/assets/productos/Gestion-de-Aulai.png",
       "/assets/productos/MimioView.png",
     ],
