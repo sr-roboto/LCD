@@ -389,20 +389,22 @@ export default function JuegosView() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:block"
+              className="hidden lg:block relative max-w-lg mx-auto lg:ml-auto w-full"
             >
-              <div className="relative">
-                {/* Pulse ring */}
-                <div className="absolute inset-0 rounded-2xl border-1 " />
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <div className="bg-conic/[from_var(--border-angle)] from-[#00D4F5]/20 via-[#00D4F5] to-[#00D4F5]/20 animate-rotate-border rounded-[2rem] p-[2px] shadow-2xl">
+                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] bg-[#080a2e]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/assets/juegos/cuantoSabes_cuerpo.jpeg"
                     alt="¿Cuánto Sabés de Tu Cuerpo? — Juego educativo"
-                    className="w-full object-cover"
+                    className="w-full h-full object-cover"
                   />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top,rgba(10,11,46,0.4) 0%,transparent 55%)" }} />
                 </div>
               </div>
+              
+              {/* Decorative Glow */}
+              <div className="absolute -inset-4 bg-[#00D4F5]/20 blur-3xl -z-10 rounded-full animate-pulse" />
             </motion.div>
           </div>
         </div>

@@ -62,7 +62,7 @@ function SolutionCard({ sol, delay }: { sol: typeof solutions[0]; delay: Delay }
     const rotY = ((x - cx) / cx) * 7;
     card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-6px)`;
     card.style.boxShadow = `${-rotY * 2}px ${rotX * 2}px 40px rgba(0,212,245,0.18), 0 20px 48px rgba(18,19,107,0.12)`;
-    card.style.borderRadius = '8px';
+    card.style.borderRadius = '16px';
     if (spot) {
       spot.style.left = `${x}px`;
       spot.style.top = `${y}px`;
@@ -76,14 +76,14 @@ function SolutionCard({ sol, delay }: { sol: typeof solutions[0]; delay: Delay }
     if (!card) return;
     card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
     card.style.boxShadow = '0 2px 16px rgba(18,19,107,0.07)';
-    card.style.borderRadius = '8px';
+    card.style.borderRadius = '16px';
     if (spot) spot.style.opacity = '0';
   };
 
   return (
     <Animate type="fade-up" delay={delay}>
       {/* Wrapper: maneja border-radius + overflow — nunca recibe transform */}
-      <div className="h-full" style={{ borderRadius: '8px', overflow: 'hidden' }}>
+      <div className="h-full" style={{ borderRadius: '16px', overflow: 'hidden' }}>
         <div
           ref={cardRef}
           className="group relative bg-white flex flex-col h-full"
@@ -220,13 +220,18 @@ export default function LandingView() {
             </motion.div>
 
             {/* Right — image */}
-            <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.18 }} className="relative">
-              <div className="relative rounded-lg overflow-hidden aspect-[4/3]"
-                style={{ border: '1.5px solid rgba(0,212,245,0.18)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/home/mesa-tactil-nino.webp" alt="Niña en mesa táctil" className="w-full h-full object-cover" />
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top,rgba(8,10,46,0.4) 0%,transparent 55%)' }} />
+            <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.18 }}
+              className="relative max-w-lg mx-auto lg:ml-auto w-full">
+              <div className="bg-conic/[from_var(--border-angle)] from-[#00D4F5]/20 via-[#00D4F5] to-[#00D4F5]/20 animate-rotate-border rounded-[2rem] p-[2px] shadow-2xl">
+                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] bg-[#080a2e]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/assets/home/mesa-tactil-nino.webp" alt="Niña en mesa táctil" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top,rgba(8,10,46,0.4) 0%,transparent 55%)' }} />
+                </div>
               </div>
+
+              {/* Decorative Glow */}
+              <div className="absolute -inset-4 bg-[#00D4F5]/20 blur-3xl -z-10 rounded-full animate-pulse" />
             </motion.div>
           </div>
         </div>
