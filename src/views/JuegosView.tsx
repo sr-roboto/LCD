@@ -250,11 +250,11 @@ function GameCard({
       style={{ animationDelay: `${(index % 4) * 100}ms` }}
     >
       <div className="rounded-3xl overflow-hidden flex flex-col h-full group border border-white/50 hover:border-[#00D4F5] transition-all duration-500 shadow-lg hover:shadow-2xl relative"
-        style={{ 
-          background: "rgba(255, 255, 255, 0.4)", 
+        style={{
+          background: "rgba(255, 255, 255, 0.4)",
           backdropFilter: "blur(16px) saturate(180%)",
           WebkitBackdropFilter: "blur(16px) saturate(180%)",
-          transform: "translateZ(0)" 
+          transform: "translateZ(0)"
         }}>
 
         {/* Thumbnail — full cover */}
@@ -288,7 +288,7 @@ function GameCard({
         <div className="p-5 flex flex-col flex-1 relative z-10">
           <h3 className="font-extrabold text-sm leading-snug mb-2 group-hover:text-[#00D4F5] transition-colors" style={{ color: "#12136b" }}>{game.title}</h3>
           <p className="text-xs leading-relaxed mb-4 flex-1 font-medium" style={{ color: "rgba(18,19,107,0.7)" }}>{game.desc}</p>
-          
+
           <div className="flex gap-2 pt-4 border-t border-white/40">
             <button onClick={(e) => { e.stopPropagation(); onPlay(); }}
               className="flex-2 flex-grow-[2] flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[12px] font-bold transition-all hover:shadow-lg hover:shadow-[#84E010]/30 active:scale-95"
@@ -393,7 +393,7 @@ export default function JuegosView() {
             >
               <div className="relative">
                 {/* Pulse ring */}
-                <div className="absolute inset-0 rounded-2xl border-2 " />
+                <div className="absolute inset-0 rounded-2xl border-1 " />
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
