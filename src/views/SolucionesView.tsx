@@ -86,42 +86,46 @@ export default function SolucionesView() {
         </div>
       </section>
 
-      {/* ── Solutions cards ───────────────────────────────── */}
-      <section className="py-20 px-4" style={{ background: "#ffffff" }}>
-        <div className="max-w-6xl mx-auto">
+      <section className="py-24 px-4 relative overflow-hidden" style={{ background: "#F0F4FF" }}>
+        <div className="max-w-6xl mx-auto relative z-10">
           <Animate type="fade-up">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#12136b" }}>Servicios</p>
-              <h2 className="text-3xl font-extrabold" style={{ color: "#12136b" }}>¿Qué ofrecemos?</h2>
+            <div className="text-center mb-16">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "#12136b" }}>Nuestros Servicios</p>
+              <h2 className="text-4xl font-extrabold" style={{ color: "#12136b" }}>¿Qué ofrecemos?</h2>
+              <p className="mt-4 text-gray-500 text-sm max-w-lg mx-auto">Acompañamos a las instituciones en cada paso de su evolución digital.</p>
             </div>
           </Animate>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {solutions.map((sol, i) => (
               <Animate key={sol.title} type="fade-up" delay={([0, 100, 200] as const)[i]}>
-                <div className="rounded-2xl p-8 flex flex-col h-full transition-all duration-300 hover:-translate-y-2"
-                  style={{ border: "1px solid rgba(18,19,107,0.1)", boxShadow: "0 2px 16px rgba(18,19,107,0.06)", background: "#fff" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = `0 16px 48px ${sol.color}22, 0 4px 24px rgba(0,0,0,0.1)`; (e.currentTarget as HTMLElement).style.borderColor = `${sol.color}55`; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(18,19,107,0.06)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(18,19,107,0.1)"; }}>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: `${sol.color}18`, border: `1.5px solid ${sol.color}44` }}>
-                    <sol.icon className="w-6 h-6" style={{ color: sol.color }} />
+                <div className="rounded-[2rem] p-10 flex flex-col h-full transition-all duration-500 hover:-translate-y-2 relative group overflow-hidden border border-white/60"
+                  style={{ background: "rgba(255,255,255,0.5)", backdropFilter: "blur(12px)", boxShadow: "0 20px 40px rgba(18,19,107,0.05)" }}>
+                  
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: `radial-gradient(circle at top right, ${sol.color}11 0%, transparent 70%)` }} />
+                  
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+                    style={{ background: "#12136b" }}>
+                    <sol.icon className="w-7 h-7" style={{ color: "#00D4F5" }} />
                   </div>
-                  <h3 className="text-xl font-extrabold mb-2" style={{ color: "#12136b" }}>{sol.title}</h3>
-                  <p className="text-sm text-gray-500 mb-6">{sol.desc}</p>
-                  <ul className="space-y-2 mb-8 flex-grow">
+                  
+                  <h3 className="text-2xl font-extrabold mb-4 group-hover:text-[#12136b] transition-colors" style={{ color: "#12136b" }}>{sol.title}</h3>
+                  <p className="text-sm font-medium leading-relaxed mb-8" style={{ color: "rgba(18,19,107,0.6)" }}>{sol.desc}</p>
+                  
+                  <ul className="space-y-3 mb-10 flex-grow">
                     {sol.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
-                        <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: sol.color }} />
+                      <li key={f} className="flex items-center gap-3 text-sm font-bold" style={{ color: "#12136b" }}>
+                        <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: sol.color }} />
                         {f}
                       </li>
                     ))}
                   </ul>
+                  
                   <Link href={sol.href}
                     target={sol.external ? "_blank" : undefined}
                     rel={sol.external ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90 mt-auto self-start"
-                    style={{ background: `linear-gradient(135deg,#12136b,${sol.color})` }}>
-                    {sol.cta} <ArrowRight className="w-3.5 h-3.5" />
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-black text-[#0d0e52] transition-all hover:shadow-xl hover:shadow-green-500/20 active:scale-95 mt-auto self-start"
+                    style={{ background: "#84E010" }}>
+                    {sol.cta} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </Animate>
