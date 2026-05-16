@@ -343,19 +343,13 @@ export default function LandingView() {
       </motion.section>
 
       {/* ══════════ PRODUCTS ════════════════════════════════════ */}
-      <motion.section className="py-16"
+      <motion.section className="mb-16"
         initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.08 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         style={{ background: '#F0F4FF' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: '#12136b' }}>Catálogo</p>
-          <h2 className="text-3xl font-extrabold" style={{ color: '#12136b' }}>Explora nuestros productos</h2>
-        </div>
         <ProductsCarousel />
       </motion.section>
-
-
 
       <div className="border-b border-white/10 relative overflow-hidden bg-gradient-to-br from-[#0d0e52] to-[#0a0a2a]">
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
